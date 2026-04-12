@@ -1,44 +1,44 @@
 # X 動態摘要
-📅 2026 年 4 月 12 日 ｜ 最後更新：23:41 UTC
+📅 2026 年 4 月 12 日 ｜ 最後更新：23:50 UTC
 
-今日話題涵蓋 🤖 AI 模型與工具、🌐 地緣政治、🔐 資安與隱私、💰 財經 與 🧩 其他觀察，精選 50 則核心動態。
+今日話題涵蓋 🤖 AI 模型與工具、🌐 地緣政治、⚙️ 系統設計、🖥️ 前端開發、💰 財經 與 🧩 其他觀察，精選 50 則核心動態。
 
 ## 🤖 AI 模型與工具
 
-- Yesterday I let GPT-5 [↗](https://x.com/samsaffron/status/2043109613646516453)
-- Suspect that most negative Claude feedback boils down to two things: 1 [↗](https://x.com/0xblacklight/status/2043390535239672225)
-- This chart puts the datacenter demands into perspective very clearly [↗](https://x.com/levie/status/2043192337111924930)
-- Nous Research has open-sourced hermes-agent-self-evolution—a codebase that lets AI agents evolve their own prompts, The [↗](https://x.com/KKaWSB/status/2043119101028274268)
-- SOMEONE JUST BUILT THE THING ANDREJ KARPATHY DESCRIBED NEEDING AND NEVER HAD [↗](https://x.com/KanikaBK/status/2043282245369442729)
-- Six days ago I called the Mythos price sheet a leaked bill of materials [↗](https://x.com/benitoz/status/2043426108536979860)
-- Grateful Minimax M2 [↗](https://x.com/ZenMagnets/status/2043158379888345590)
-- Defending MiniMax I think it’s fine they set up a license [↗](https://x.com/0xSero/status/2043434713826603358)
-- I know @steipete had his account reinstated, but with all of the @openclaw updates and user agent files tweaks posted on [↗](https://x.com/lukewestlake/status/2042962351847080242)
-- 6 users are noticing something [↗](https://x.com/AlexEngineerAI/status/2043342177330430035)
-- Many people are complaining that Claude has gotten dumber [↗](https://x.com/mubeitech/status/2043084538423767257)
-- 2026 TREND: GlobalClaw → my employee GPT-5 [↗](https://x.com/Drew_code0/status/2043410864288735636)
-- Predictions for end-of-year 2026: - OpenAI kills OAUTH access for 3rd party tools OpenClaw/Hermes [↗](https://x.com/farzyness/status/2043430743322296504)
-- What a crazy week in AI Zai’s best open source model GLM-5 [↗](https://x.com/dr_cintas/status/2043390476032901157)
-- Anyone using Claude Code this week and counting on it for analysis, double-check all output and recheck that it's doing [↗](https://x.com/Jhaddix/status/2043099129392623705)
-- Anthropic CEO: “50% of all tech jobs, entry-level lawyers, consultants, and finance professionals will be completely wip [↗](https://x.com/cgtwts/status/2043415996841828794)
-- After gathering everyone's opinions yesterday, I stayed up all night playing with this hermes agent [↗](https://x.com/xincctnnq/status/2043430003942293704)
-- This might be the most important observation about Claude Mythos that nobody is picking up on [↗](https://x.com/godofprompt/status/2043267441518628995)
 - We're still in the 1st inning and many tools appear to be converging on similar UX for managing parallel agent sessions [↗](https://x.com/addyosmani/status/2043426663070081375)
+- SOMEONE JUST BUILT THE THING ANDREJ KARPATHY DESCRIBED NEEDING AND NEVER HAD [↗](https://x.com/KanikaBK/status/2043282245369442729)
+- What a crazy week in AI Zai’s best open source model GLM-5 [↗](https://x.com/dr_cintas/status/2043390476032901157)
 - Another week on the road meeting with a couple dozen IT and AI leaders from large enterprises across banking, media, ret [↗](https://x.com/levie/status/2043426157367095397)
+- Everyone assumes LLMs are the future of AI [↗](https://x.com/alex_prompter/status/2043415890507731276)
+- We haven’t created great abstractions for parallel work because it was so difficult to do before [↗](https://x.com/MatthewSchrager/status/2043423661147795660)
+- Will AI agents ruin the internet [↗](https://x.com/gregisenberg/status/2043400791760007465)
+- My father-in-law worked at Anthropic up until December [↗](https://x.com/jamonholmgren/status/2043120466043498591)
+- OpenAI is desperate to ruin ChatGPT with ads [↗](https://x.com/kenshii_ai/status/2043397488087015829)
+- (re) Introducing the FIRST free and open-source, multi-agent IDE environment where you build your own interface with rep [↗](https://x.com/jasonkneen/status/2043095869503787476)
+- FWIW we're finding that models do fine out of the box and even better with our system prompt [↗](https://x.com/marktechson/status/2042969764243415061)
+- Build a Claude Managed Agent on Vercel that: • connects to GitHub, Notion, Slack • securely handles user auth with Vault [↗](https://x.com/vercel_dev/status/2043079086180819016)
+- Asked my @NousResearch Hermes agent to setup @CloudflareDev Browser Rendering CDP [↗](https://x.com/harshil1712/status/2043296888644833603)
+- [DEMO] From prompt to pipeline with Genie Code [↗](https://x.com/databricks/status/2043347246607966312)
 
 ## 🌐 地緣政治
 
-- 10 commits and +4600 lines of code on kodebase-go in the last 24 hours EPUB/image/OCR converters, KB lint engine, YouTub [↗](https://x.com/pedronauck/status/2043117405820342584)
-- Central Command (CENTCOM) has announced that beginning on Monday, April 13 at 10:00AM Eastern Time, in accordance with t [↗](https://x.com/sentdefender/status/2043435367437676591)
-- The US just made a massive bet — and it could backfire spectacularly [↗](https://x.com/globalsarang/status/2043369814752915683)
 - The next market surprise may come from JAPAN [↗](https://x.com/LogWeaver/status/2043409790437634433)
-- NEW: JD Vance's final offer handed over to Iran at the Islamabad talks before the collapse consisted of the following si [↗](https://x.com/HormuzLetter/status/2043412661308645799)
-- The Magic is Gone: Trump's entrance tonight into UFC 327 in Miami should be a wake up call for Trump and his handlers [↗](https://x.com/ThomasPaineBand/status/2043149741161169330)
-- JUST IN "We will not be involved in blockade of the Strait, we are urgently working with France, Spain and other partner [↗](https://x.com/rebelliousdogra/status/2043383636310061283)
+- S&P 500-linked futures on Hyperliquid tumble 2% to ~6,700 after another busy weekend of negative Iran war headlines [↗](https://x.com/JesseCohenInv/status/2043428935241736544)
+- NEW: Fox’s @TomiLahren : Despite China being instrumental in convincing Iran to agree with a ceasefire and talks with t [↗](https://x.com/TVNewsNow/status/2043109953335099869)
 
-## 🔐 資安與隱私
+## ⚙️ 系統設計
 
-- Took a couple months hiatus after the death-threat phone calls to my family from the crypto weirdos [↗](https://x.com/Steve_Yegge/status/2043127887059210470)
+- Few years ago I build https:// eda-visuals [↗](https://x.com/boyney123/status/2043400782062457197)
+
+## 🖥️ 前端開發
+
+- The first 3 seconds are everything [↗](https://x.com/ZoltanErdos/status/2043252005632663664)
+- WIP: Complex grouped data made simple with @shadcn Data Grid powered by @tanstack , built for @base_ui and @radix_ui [↗](https://x.com/reui_io/status/2043300240183210448)
+- Vite just replaced both esbuild AND Rollup with a single Rust bundler [↗](https://x.com/apnahive/status/2043190667997053281)
+- starting to build internal projects, thinking about switching to @tan_stack currently using react-router framework [↗](https://x.com/necrydark/status/2043296208433627228)
+- CodeChecker is an open-source tool visualizing reports of source code analyzer tools with a @vuetifyjs UI - https:// mad [↗](https://x.com/MadeWithVueJS/status/2043365028703645903)
+- New project at work and im leaning toward @tan_stack over @nextjs [↗](https://x.com/aayushbtw/status/2042927382668214302)
+- A library for diff rendering and code display [↗](https://x.com/azu_re/status/2043151996031750518)
 
 ## 💰 財經
 
@@ -46,11 +46,11 @@
 
 ## 🧩 其他觀察
 
+- cracked it open [↗](https://x.com/sudoingX/status/2043401369311465585)
+- This week, the Linux kernel project finally created a formal, project-wide policy explicitly allowing AI-assisted code c [↗](https://x.com/rohanpaul_ai/status/2043426697027228026)
+- A year ago I was asking ChatGPT how to open a terminal, today: - I am invited on TV tomorrow to talk about the app - Get [↗](https://x.com/kurbaitaev/status/2042833631891329108)
 - India is quietly becoming a training floor for humanoid robots, with workers filming thousands of first-person hand task [↗](https://x.com/rohanpaul_ai/status/2043406553903214850)
 - hey, built a dockerfile linter that roasts you instead of just underlining things in red [↗](https://x.com/immanuel_vibe/status/2043406641165459707)
-- Accessibility work often gets stuck at triage [↗](https://x.com/github/status/2043031580185129450)
-- Ok, I started with NVIDIA's NVFP4, but it's so fast on the B200, that I'll also have time to run redhatAI's FP8 [↗](https://x.com/bnjmn_marie/status/2043359433045008638)
-- perplexity computer has one feature that saves me a ton of time every day: scheduled tasks [↗](https://x.com/Voxyz_ai/status/2043358482217210177)
 
 ---
-📊 採集 442 條，精選 50 則 ｜ 來源：X ｜ 更新：23:41 UTC
+📊 採集 442 條，精選 50 則 ｜ 來源：X ｜ 更新：23:50 UTC
