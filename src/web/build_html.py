@@ -14,9 +14,9 @@ SECTION_META: dict[str, str] = {
     'geopolitics': '🌐 地緣政治',
     'engineering': '⚙️ 軟體工程',
     'frontend':    '🖥️ 前端開發',
-    'security':    '🔐 資安與隱私',
+    'security':    '🔐 資安',
     'finance':     '💰 財經',
-    'other':       '🧩 其他觀察',
+    'other':       '📌 其他',
 }
 
 # Per-section hard cap (None = unlimited)
@@ -55,6 +55,15 @@ THEME_RULES: list[tuple[str, tuple[str, ...]]] = [
         ),
     ),
     (
+        'frontend',
+        (
+            'react', 'vue', 'svelte', 'angular', 'next.js', 'nextjs', 'nuxt', 'astro',
+            'vite', 'tailwind', 'shadcn', 'radix', 'frontend', 'front-end',
+            'css', 'design system', 'web component', 'vercel', 'netlify',
+            'storybook', 'browser', 'ui', 'ux', 'component',
+        ),
+    ),
+    (
         'engineering',
         (
             # backend / infra
@@ -70,14 +79,6 @@ THEME_RULES: list[tuple[str, tuple[str, ...]]] = [
             'open source', 'devops', 'sre', 'observability', 'tracing', 'monitoring',
             # general engineering
             'software engineer', 'software engineering', 'developer experience',
-        ),
-    ),
-    (
-        'frontend',
-        (
-            'react', 'vue', 'svelte', 'angular', 'next.js', 'nextjs', 'nuxt', 'astro',
-            'vite', 'tailwind', 'shadcn', 'radix', 'frontend', 'front-end',
-            'css', 'design system', 'web component', 'vercel', 'netlify',
         ),
     ),
     (
@@ -156,7 +157,7 @@ def _post_link(post: ScoredPost) -> str:
     record = post.record
     if not record.url:
         return ''
-    return f'<a class="item-link" href="{escape(record.url)}" target="_blank" rel="noreferrer">查看推文</a>'
+    return f'<a class="item-link" href="{escape(record.url)}" target="_blank" rel="noreferrer">原文</a>'
 
 
 def _fallback_text(text: str, limit: int = 180) -> str:
@@ -164,27 +165,9 @@ def _fallback_text(text: str, limit: int = 180) -> str:
     return clean[:limit]
 
 
-_ENGINEERING_SUBTITLES: list[tuple[str, list[str]]] = [
-    ('⚙️ DevOps 與基礎設施', ['docker', 'kubernetes', 'k8s', 'ci/cd', 'cicd', 'terraform', 'ansible', 'helm', 'deploy', 'container', 'pipeline', 'infra', 'nginx', 'prometheus', 'grafana', 'observability']),
-    ('⚙️ 後端開發',          ['api', 'database', 'golang', 'rust', 'python', 'django', 'fastapi', 'microservice', 'grpc', 'sql', 'postgres', 'redis', 'backend', 'server-side', 'rabbitmq', 'kafka', 'orm']),
-    ('⚙️ 前端開發',          ['react', 'vue', 'svelte', 'css', 'javascript', 'typescript', 'next.js', 'nextjs', 'tailwind', 'component', 'frontend', 'web dev', 'html', 'browser']),
-    ('⚙️ 行動開發',          ['ios', 'android', 'swift', 'flutter', 'react native', 'mobile app', 'xcode']),
-    ('⚙️ 系統設計',          ['architecture', 'distributed', 'scalability', 'latency', 'system design', 'microservices', 'event-driven', 'cap theorem', 'consistency']),
-    ('⚙️ 開發工具',          ['editor', 'vim', 'vscode', 'ide', 'debugger', 'profiler', 'build tool', 'webpack', 'vite', 'git', 'github', 'refactor', 'testing', 'unit test']),
-]
-
-
-def _section_title(theme: str, posts: list[ScoredPost]) -> str:
-    """Return display title for a section; engineering is dynamically derived."""
-    if theme != 'engineering' or not posts:
-        return SECTION_META[theme]
-    combined = ' '.join(
-        ((p.record.text or '') + ' ' + (p.record.summary or '')).lower()
-        for p in posts
-    )
-    scores = {label: sum(combined.count(kw) for kw in kws) for label, kws in _ENGINEERING_SUBTITLES}
-    best, best_score = max(scores.items(), key=lambda x: x[1])
-    return best if best_score >= 2 else SECTION_META['engineering']
+def _section_title(theme: str) -> str:
+    """Return the display title that matches the normalized category."""
+    return SECTION_META[theme]
 
 
 def _render_item(post: ScoredPost) -> str:
@@ -205,7 +188,7 @@ def _render_item(post: ScoredPost) -> str:
 def _render_section(theme: str, posts: list[ScoredPost]) -> str:
     if not posts:
         return ''
-    title = _section_title(theme, posts)
+    title = _section_title(theme)
     items = ''.join(_render_item(post) for post in posts)
     return (
         f'\n      <section class="section">'
@@ -220,7 +203,7 @@ def _render_section(theme: str, posts: list[ScoredPost]) -> str:
 
 
 def _build_hero_desc(grouped: dict[str, list[ScoredPost]], total: int) -> str:
-    active = [_section_title(t, grouped[t]) for t in SECTION_ORDER if grouped[t]]
+    active = [_section_title(t) for t in SECTION_ORDER if grouped[t]]
     if not active:
         return f'精選 {total} 則核心動態。'
     topic_str = '、'.join(active[:-1]) + (f' 與 {active[-1]}' if len(active) > 1 else active[0])
@@ -228,7 +211,7 @@ def _build_hero_desc(grouped: dict[str, list[ScoredPost]], total: int) -> str:
 
 
 def _build_summary_line(grouped: dict[str, list[ScoredPost]]) -> str:
-    active = [(_section_title(t, grouped[t]), len(grouped[t])) for t in SECTION_ORDER if grouped[t]]
+    active = [(_section_title(t), len(grouped[t])) for t in SECTION_ORDER if grouped[t]]
     if not active:
         return '今天沒有足夠的內容可生成摘要。'
     parts = '、'.join(f'{title}（{count} 則）' for title, count in active)
@@ -237,7 +220,7 @@ def _build_summary_line(grouped: dict[str, list[ScoredPost]]) -> str:
 
 def _build_tags(grouped: dict[str, list[ScoredPost]]) -> str:
     tags = [
-        f'<span class="tag">{_section_title(t, grouped[t])} {len(grouped[t])} 則</span>'
+        f'<span class="tag">{_section_title(t)} {len(grouped[t])} 則</span>'
         for t in SECTION_ORDER if grouped[t]
     ]
     return '\n            '.join(tags)
@@ -431,7 +414,7 @@ def render_summary_markdown(bundle: SummaryBundle, title: str = 'X 動態摘要'
         posts = grouped.get(theme, [])
         if not posts:
             continue
-        section_title = _section_title(theme, posts)
+        section_title = _section_title(theme)
         lines.append(f'## {section_title}')
         lines.append('')
         for post in posts:
@@ -504,4 +487,3 @@ def render_summary_html(bundle: SummaryBundle, title: str = 'X 動態摘要') ->
     </main>
   </body>
 </html>'''
-

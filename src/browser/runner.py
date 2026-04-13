@@ -2,12 +2,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, Protocol, runtime_checkable
+from typing import TYPE_CHECKING, Optional, Protocol, runtime_checkable
 
-from src.browser.cdp import CDPBrowserAdapter
 from src.browser.fetch_x import extract_posts_from_html, load_html_from_path
 from src.config import Settings
 from src.domain import PostRecord
+
+if TYPE_CHECKING:
+    from src.browser.cdp import CDPBrowserAdapter
 
 # Snapshot HTML every this many scroll steps to capture virtualized posts
 _SNAPSHOT_BATCH = 5
@@ -88,4 +90,3 @@ class BrowserRunner:
 
     def collect_home_cdp(self, adapter: CDPBrowserAdapter, html_source: str = 'x-home') -> list[PostRecord]:
         return self.collect_home(adapter, html_source=html_source)
-

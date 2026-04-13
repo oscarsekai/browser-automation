@@ -67,6 +67,7 @@ def load_env_file(path: Path) -> dict[str, str]:
 
 @dataclass(frozen=True)
 class Settings:
+    summarize_backend: str = 'acp'
     scroll_count: int = 80
     scroll_pause_seconds: float = 1.5
     summary_top_n: int = 50
@@ -81,6 +82,7 @@ class Settings:
     originality_weight: float = 0.10
     engagement_weight: float = 0.05
     duplicate_penalty: float = 0.25
+    frontend_boost_weight: float = 0.18
     output_dir: str = 'data/summaries'
     raw_dir: str = 'data/raw'
     x_home_url: str = 'https://x.com/'
@@ -92,7 +94,8 @@ class Settings:
     cdp_ws_url: Optional[str] = None
     openai_api_key: Optional[str] = None
     openai_base_url: str = 'https://api.openai.com/v1'
-    summarize_model: str = 'gpt-4o-mini'
+    summarize_model: str = 'gpt-5.4-mini'
+    summarize_reasoning_effort: str = 'low'
 
 
 def load_settings(base_dir: Optional[Path] = None, environ: Optional[dict[str, str]] = None) -> Settings:
@@ -101,6 +104,7 @@ def load_settings(base_dir: Optional[Path] = None, environ: Optional[dict[str, s
     file_values = load_env_file(base_dir / '.env.local')
     merged = {**file_values, **environ}
     return Settings(
+        summarize_backend=(merged.get('SUMMARIZE_BACKEND') or 'acp').strip().lower(),
         scroll_count=_parse_int(merged.get('SCROLL_COUNT'), 80),
         scroll_pause_seconds=_parse_float(merged.get('SCROLL_PAUSE_SECONDS'), 1.5),
         summary_top_n=_parse_int(merged.get('SUMMARY_TOP_N'), 50),
@@ -115,6 +119,7 @@ def load_settings(base_dir: Optional[Path] = None, environ: Optional[dict[str, s
         originality_weight=_parse_float(merged.get('ORIGINALITY_WEIGHT'), 0.10),
         engagement_weight=_parse_float(merged.get('ENGAGEMENT_WEIGHT'), 0.05),
         duplicate_penalty=_parse_float(merged.get('DUPLICATE_PENALTY'), 0.25),
+        frontend_boost_weight=_parse_float(merged.get('FRONTEND_BOOST_WEIGHT'), 0.18),
         output_dir=merged.get('OUTPUT_DIR', 'data/summaries'),
         raw_dir=merged.get('RAW_DIR', 'data/raw'),
         x_home_url=merged.get('X_HOME_URL', 'https://x.com/'),
@@ -126,5 +131,6 @@ def load_settings(base_dir: Optional[Path] = None, environ: Optional[dict[str, s
         cdp_ws_url=merged.get('CDP_WS_URL') or None,
         openai_api_key=merged.get('OPENAI_API_KEY') or None,
         openai_base_url=merged.get('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
-        summarize_model=merged.get('SUMMARIZE_MODEL', 'gpt-4o-mini'),
+        summarize_model=merged.get('SUMMARIZE_MODEL', 'gpt-5.4-mini'),
+        summarize_reasoning_effort=merged.get('SUMMARIZE_REASONING_EFFORT', 'low'),
     )

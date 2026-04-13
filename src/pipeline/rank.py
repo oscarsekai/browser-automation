@@ -11,6 +11,12 @@ from src.domain import PostRecord, ScoredPost
 
 
 WORD_RE = re.compile(r"[A-Za-z0-9']+")
+FRONTEND_KEYS = (
+    'react', 'vue', 'svelte', 'angular', 'next.js', 'nextjs', 'nuxt', 'astro',
+    'tailwind', 'css', 'frontend', 'front-end', 'ui', 'ux', 'design system',
+    'component', 'browser', 'web app', 'html', 'typescript', 'javascript', 'vite',
+    'shadcn', 'radix', 'storybook',
+)
 
 TRAFFIC_KEYS = (
     'views',
@@ -60,10 +66,17 @@ def freshness_score(post: PostRecord, now: datetime) -> float:
 def relevance_score(post: PostRecord, settings: Settings) -> float:
     text = post.text.lower()
     keywords = tuple(k.lower() for k in settings.focus_keywords if k.strip())
+    frontend_bonus = frontend_signal(post) * settings.frontend_boost_weight
     if keywords:
         hits = sum(1 for keyword in keywords if keyword in text)
-        return clamp(hits / max(len(keywords), 1))
-    return clamp(0.35 + min(len(text) / 350.0, 0.4))
+        return clamp((hits / max(len(keywords), 1)) + frontend_bonus)
+    return clamp(0.35 + min(len(text) / 350.0, 0.4) + frontend_bonus)
+
+
+def frontend_signal(post: PostRecord) -> float:
+    text = (post.text or '').lower()
+    hits = sum(1 for keyword in FRONTEND_KEYS if keyword in text)
+    return clamp(hits / 4.0)
 
 
 def density_score(post: PostRecord) -> float:
@@ -123,6 +136,7 @@ def score_post(post: PostRecord, settings: Settings, now: Optional[datetime] = N
     originality = originality_score(post)
     follower_engagement, traffic_engagement, engagement = engagement_components(post)
     dup = duplicate_penalty(post)
+    frontend_bias = frontend_signal(post)
     score = (
         tier_w
         + freshness * settings.freshness_weight
@@ -130,6 +144,7 @@ def score_post(post: PostRecord, settings: Settings, now: Optional[datetime] = N
         + density * settings.density_weight
         + originality * settings.originality_weight
         + engagement * settings.engagement_weight
+        + frontend_bias * settings.frontend_boost_weight
         - dup * settings.duplicate_penalty
     )
     reasons = []
@@ -143,6 +158,8 @@ def score_post(post: PostRecord, settings: Settings, now: Optional[datetime] = N
         reasons.append('dense')
     if originality > 0.5:
         reasons.append('original')
+    if frontend_bias > 0.4:
+        reasons.append('frontend-boost')
     if dup:
         reasons.append('duplicate-penalty')
     breakdown = {
@@ -154,6 +171,7 @@ def score_post(post: PostRecord, settings: Settings, now: Optional[datetime] = N
         'engagement': engagement,
         'follower_engagement': follower_engagement,
         'traffic_engagement': traffic_engagement,
+        'frontend_bias': frontend_bias,
         'duplicate_penalty': dup,
     }
     return ScoredPost(record=post, score=round(score, 6), tier=tier, reasons=tuple(reasons), breakdown=breakdown)

@@ -22,3 +22,12 @@ class ConfigTests(unittest.TestCase):
             settings = load_settings(root, environ={})
             self.assertEqual(settings.scroll_count, 12)
             self.assertTrue(settings.delete_raw_after_summary)
+
+    def test_load_settings_defaults_match_documented_runtime(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            settings = load_settings(root, environ={})
+            self.assertEqual(settings.scroll_count, 80)
+            self.assertEqual(settings.raw_retention_days, 3)
+            self.assertEqual(settings.summarize_backend, 'acp')
+            self.assertEqual(settings.summarize_model, 'gpt-5.4-mini')

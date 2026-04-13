@@ -9,8 +9,6 @@ import time
 from pathlib import Path
 from typing import Any, Optional
 
-from src.browser.cdp import CDPBrowserAdapter
-from src.browser.runner import BrowserRunner, StaticHtmlAdapter
 from src.config import load_settings
 from src.pipeline.filter import filter_posts
 from src.pipeline.rank import rank_posts
@@ -37,8 +35,10 @@ def _find_chrome_main_pid(port: int) -> Optional[int]:
     return None
 
 
-def restart_chrome(port: int, profile: str = '~/chrome-x-digest-profile') -> None:
+def restart_chrome(port: int, profile: str | None = None) -> None:
     """Kill existing Chrome on port, relaunch, wait for CDP to be ready."""
+    if profile is None:
+        profile = os.environ.get('CHROME_USER_DATA_DIR', '~/your-profile')
     profile_path = os.path.expanduser(profile)
     pid = _find_chrome_main_pid(port)
     if pid:
@@ -80,8 +80,13 @@ def _build_adapter(
     cdp_port: Optional[int] = None,
     cdp_target_url: Optional[str] = None,
 ):
+    from src.browser.runner import StaticHtmlAdapter
+
     if html_source_path is not None:
         return StaticHtmlAdapter.from_path(html_source_path), 'html'
+
+    from src.browser.cdp import CDPBrowserAdapter
+
     port = cdp_port if cdp_port is not None else settings.cdp_remote_debugging_port
     if port is None:
         raise ValueError('Provide --html-source for snapshot replay or set CDP_REMOTE_DEBUGGING_PORT to use live CDP')
@@ -90,28 +95,64 @@ def _build_adapter(
     return CDPBrowserAdapter.from_remote_debugging_port(host=host, port=port, target_url=target_url), 'cdp'
 
 
-def _git_commit_and_push(repo_root: Path, index_html: Path) -> None:
+def _summarize_git_output(output: str) -> str:
+    lines = [line.strip() for line in output.splitlines() if line.strip()]
+    if not lines:
+        return ''
+    for line in lines:
+        if 'Everything up-to-date' in line:
+            return 'Everything up-to-date'
+        if '->' in line or 'To ' in line or 'branch' in line.lower():
+            return line
+    return lines[-1]
+
+
+def _git_commit_and_push(repo_root: Path, index_html: Path) -> dict[str, str]:
     """Stage index.html + digest.md, commit with today's date, and push."""
     from datetime import datetime, timezone
     label = datetime.now(timezone.utc).strftime('%Y/%-m/%-d')
     msg = f'{label} summary'
     digest_md = repo_root / 'digest.md'
     try:
-        subprocess.run(['git', 'add', str(index_html)], cwd=repo_root, check=True, capture_output=True)
+        subprocess.run(['git', 'add', str(index_html)], cwd=repo_root, check=True, capture_output=True, text=True)
         if digest_md.exists():
-            subprocess.run(['git', 'add', str(digest_md)], cwd=repo_root, check=True, capture_output=True)
+            subprocess.run(['git', 'add', str(digest_md)], cwd=repo_root, check=True, capture_output=True, text=True)
         result = subprocess.run(
             ['git', 'diff', '--cached', '--quiet'],
-            cwd=repo_root, capture_output=True,
+            cwd=repo_root, capture_output=True, text=True,
         )
         if result.returncode == 0:
             print('[git] nothing changed, skipping commit')
-            return
-        subprocess.run(['git', 'commit', '-m', msg], cwd=repo_root, check=True, capture_output=True)
-        subprocess.run(['git', 'push'], cwd=repo_root, check=True, capture_output=True)
-        print(f'[git] pushed: {msg}')
+            return {'status': 'nothing-changed', 'message': 'nothing changed'}
+        commit_result = subprocess.run(
+            ['git', 'commit', '-m', msg],
+            cwd=repo_root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        push_result = subprocess.run(
+            ['git', 'push'],
+            cwd=repo_root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        push_summary = _summarize_git_output('\n'.join(filter(None, [push_result.stdout, push_result.stderr])))
+        if push_summary == 'Everything up-to-date':
+            print('[git] push completed: Everything up-to-date')
+            return {'status': 'up-to-date', 'message': push_summary}
+        commit_summary = _summarize_git_output(commit_result.stdout) or msg
+        if push_summary:
+            print(f'[git] push completed: {push_summary}')
+        else:
+            print(f'[git] push completed after commit: {commit_summary}')
+        return {'status': 'pushed', 'message': push_summary or commit_summary}
     except subprocess.CalledProcessError as e:
-        print(f'[git] warning: commit/push failed — {e}')
+        detail = _summarize_git_output('\n'.join(filter(None, [getattr(e, 'stdout', ''), getattr(e, 'stderr', '')])))
+        suffix = f' — {detail}' if detail else ''
+        print(f'[git] warning: commit/push failed{suffix}')
+        return {'status': 'failed', 'message': detail or str(e)}
 
 
 def _collect_phase(
@@ -123,10 +164,14 @@ def _collect_phase(
     cdp_target_url,
 ) -> tuple[Path, list]:
     """Run CDP scrape and persist raw posts. Returns (raw_dir, raw_posts)."""
+    from src.browser.runner import BrowserRunner
+
     runner = BrowserRunner(settings)
 
     if html_source_path is None:
         port = cdp_port if cdp_port is not None else settings.cdp_remote_debugging_port
+        if port is None:
+            raise ValueError('Provide --html-source for snapshot replay or set CDP_REMOTE_DEBUGGING_PORT to use live CDP')
         restart_chrome(port=port)
 
     adapter, source_mode = _build_adapter(
@@ -155,7 +200,7 @@ def _collect_phase(
 
 
 def _build_phase(workspace_root: Path, settings) -> dict[str, Any]:
-    """Merge today's raw posts, summarise, write index.html, git push."""
+    """Merge today's raw posts, summarise, write index.html/digest.md, git push."""
     all_posts = load_today_posts(workspace_root / settings.raw_dir)
     print(f'[build] merged {len(all_posts)} posts from today\'s runs')
 
@@ -166,20 +211,26 @@ def _build_phase(workspace_root: Path, settings) -> dict[str, Any]:
     bundle = build_summary_bundle(scored, settings, raw_count=len(all_posts))
     summary_paths = write_summary_bundle(workspace_root / settings.output_dir, bundle)
     root_index_html = workspace_root / 'index.html'
+    root_digest_md = workspace_root / 'digest.md'
     root_index_html.write_text(summary_paths['html'].read_text(encoding='utf-8'), encoding='utf-8')
+    root_digest_md.write_text(summary_paths['md'].read_text(encoding='utf-8'), encoding='utf-8')
 
     removed = cleanup_raw_runs(workspace_root / settings.raw_dir, settings.raw_retention_days)
     cleanup_summary_runs(workspace_root / settings.output_dir, settings.raw_retention_days)
 
-    _git_commit_and_push(workspace_root, root_index_html)
+    git_result = _git_commit_and_push(workspace_root, root_index_html)
 
     return {
         'summary_html': summary_paths['html'],
+        'summary_md': summary_paths['md'],
         'root_index_html': root_index_html,
+        'root_digest_md': root_digest_md,
         'latest_html': root_index_html,
+        'latest_md': root_digest_md,
         'summary_json': summary_paths['json'],
         'removed_raw_dirs': removed,
         'summary_bundle': bundle,
+        'git_result': git_result,
     }
 
 
@@ -190,9 +241,17 @@ def run_once(
     cdp_port: Optional[int] = None,
     cdp_target_url: Optional[str] = None,
     force_build: bool = False,
+    build_only: bool = False,
 ) -> dict[str, Any]:
     workspace_root = Path(workspace_root) if workspace_root is not None else Path.cwd()
     settings = load_settings(workspace_root)
+
+    if build_only:
+        build_result = _build_phase(workspace_root, settings)
+        return {
+            'source_mode': 'build-only',
+            **build_result,
+        }
 
     raw_dir, raw_posts = _collect_phase(
         workspace_root, settings, html_source_path, cdp_host, cdp_port, cdp_target_url,
@@ -238,6 +297,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     parser.add_argument('--cdp-port', type=int, help='Chrome remote debugging port')
     parser.add_argument('--cdp-target-url', help='Initial target URL for the live browser tab')
     parser.add_argument('--force-build', action='store_true', help='Skip counter check and build immediately after collecting')
+    parser.add_argument('--build-only', action='store_true', help='Build from existing raw data only; do not collect or launch Chrome')
     args = parser.parse_args(argv)
     result = run_once(
         args.workspace_root,
@@ -246,11 +306,19 @@ def main(argv: Optional[list[str]] = None) -> int:
         args.cdp_port,
         args.cdp_target_url,
         force_build=args.force_build,
+        build_only=args.build_only,
     )
     if result.get('build_skipped'):
         print(f"[done] collect #{result['collect_count']} saved — build pending next run")
     else:
-        print(result.get('summary_html', ''))
+        if result.get('latest_html'):
+            print(f"[output] html: {result['latest_html']}")
+        elif result.get('summary_html'):
+            print(f"[output] html: {result['summary_html']}")
+        if result.get('latest_md'):
+            print(f"[output] digest: {result['latest_md']}")
+        elif result.get('summary_md'):
+            print(f"[output] digest: {result['summary_md']}")
     return 0
 
 

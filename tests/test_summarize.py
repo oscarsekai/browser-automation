@@ -1,11 +1,13 @@
 
 import unittest
+import asyncio
 from datetime import datetime, timezone
+from unittest.mock import AsyncMock, patch
 
 from src.config import Settings
 from src.domain import PostRecord
 from src.pipeline.rank import score_post
-from src.pipeline.summarize import build_summary_bundle, build_summary_sentences, summarize_post_text
+from src.pipeline.summarize import build_summary_bundle, build_summary_sentences, llm_summarize_posts
 
 
 def _scored(pid: str, author: str, text: str, followers: int = 1000):
@@ -33,15 +35,19 @@ class SummaryTests(unittest.TestCase):
         self.assertLessEqual(len(sentences), 5)
         self.assertTrue(any('browser' in sentence.lower() for sentence in sentences))
 
-    def test_summary_text_is_concise_and_chinese(self):
-        summary = summarize_post_text(
-            'AI Edge @aiedge_ · 1h My all-time favorite Claude prompts. Simple inputs, yet they yield massive returns, Save on token usage, get deeper insights, kill AI slop, and more. I recommend saving these to a Notion or Obsidian database.'
-        )
-        self.assertTrue(summary.startswith('重點：'))
-        self.assertRegex(summary, r'[\u4e00-\u9fff]')
-        self.assertNotIn('AI Edge', summary)
-        self.assertNotIn('aiedge_', summary)
-        self.assertLess(len(summary), 90)
+    def test_summary_falls_back_to_source_text_when_llm_is_unavailable(self):
+        posts = [_scored('fallback', 'AI Edge', 'My favorite Claude prompts save token usage and get deeper insights for AI coding workflows.')]
+        settings = Settings(summarize_backend='acp')
+
+        with (
+            patch('src.pipeline.summarize._run_codex_acp', new=AsyncMock(return_value=None)),
+            patch('src.pipeline.summarize._run_codex_exec', return_value=None),
+            patch('src.pipeline.summarize._run_openai_prompt', return_value=None),
+        ):
+            asyncio.run(llm_summarize_posts(posts, settings))
+
+        self.assertIn('Claude prompts save token usage', posts[0].record.summary)
+        self.assertEqual(posts[0].record.category, 'other')
 
     def test_bundle(self):
         posts = [
@@ -51,3 +57,17 @@ class SummaryTests(unittest.TestCase):
         bundle = build_summary_bundle(posts, Settings())
         self.assertEqual(bundle.raw_count, 2)
         self.assertGreaterEqual(len(bundle.sentences), 3)
+
+    def test_missing_invalid_category_triggers_second_llm_classification(self):
+        posts = [_scored('1', 'Author', 'Unusual semiconductor sanctions update with no fallback keyword match')]
+        settings = Settings(summarize_backend='acp')
+
+        with (
+            patch('src.pipeline.summarize._run_codex_acp', new=AsyncMock(return_value='[{"id":"1","summary":"測試摘要","category":"weird"}]')),
+            patch('src.pipeline.summarize._run_codex_exec', return_value=None),
+            patch('src.pipeline.summarize._run_openai_prompt', return_value='[{"id":"1","category":"geopolitics"}]'),
+        ):
+            asyncio.run(llm_summarize_posts(posts, settings))
+
+        self.assertEqual(posts[0].record.summary, '測試摘要')
+        self.assertEqual(posts[0].record.category, 'geopolitics')
