@@ -45,7 +45,8 @@ browser-automation/
 │   │   ├── rank.py       # scoring / top-N selection
 │   │   └── summarize.py  # OpenAI batch summarisation + AI category
 │   ├── scheduler/
-│   │   └── run_once.py   # main entry point
+│   │   ├── loop.py       # self-scheduling daemon (collect → wait → collect → build)
+│   │   └── run_once.py   # single-shot entry point
 │   ├── storage/
 │   │   ├── raw_store.py      # write / cleanup raw captures
 │   │   └── summary_store.py  # write / cleanup summary archives
@@ -95,10 +96,12 @@ OPENAI_API_KEY=sk-...
 
 # Summariser backend + model
 SUMMARIZE_BACKEND=acp
-SUMMARIZE_MODEL=gpt-5.4-mini
+SUMMARIZE_CLI=copilot
+SUMMARIZE_MODEL=gpt-5-mini
 SUMMARIZE_REASONING_EFFORT=low
 
 # CDP connection — match the port you use when launching Chrome
+CHROME_USER_DATA_DIR=$HOME/chrome-hermes-profile
 CDP_REMOTE_DEBUGGING_PORT=9333
 ```
 
@@ -107,11 +110,11 @@ See [Configuration reference](#configuration-reference) for all options.
 ### 3. Launch a dedicated Chrome profile
 
 ```bash
-mkdir -p "$HOME/your-profile"
+mkdir -p "$HOME/chrome-hermes-profile"
 
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --remote-debugging-port=9333 \
-  --user-data-dir="$HOME/your-profile"
+  --user-data-dir="$HOME/chrome-hermes-profile"
 ```
 
 Log into X.com in that window (one-time setup).
@@ -153,7 +156,9 @@ All settings live in `.env.local`. Copy `.env.local.example` as a starting point
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `SUMMARIZE_BACKEND` | `acp` | Summariser transport: `acp`, `codex`, or `openai` |
-| `SUMMARIZE_MODEL` | `gpt-5.4-mini` | Default model used by ACP/direct Codex summarisation |
+| `SUMMARIZE_CLI` | `copilot` | CLI used by the ACP/direct CLI summariser path: `codex` or `copilot` |
+| `SUMMARIZE_CLI_PATH` | *(auto)* | Optional absolute path to the selected CLI binary |
+| `SUMMARIZE_MODEL` | `gpt-5-mini` | Default model used by ACP/direct CLI summarisation |
 | `SUMMARIZE_REASONING_EFFORT` | `low` | Reasoning level forwarded to Codex summarisation runs |
 | `SCROLL_COUNT` | `80` | Number of scroll steps on the feed page |
 | `SCROLL_PAUSE_SECONDS` | `1.5` | Seconds to wait between each scroll |
@@ -173,28 +178,60 @@ All settings live in `.env.local`. Copy `.env.local.example` as a starting point
 | `X_HOME_URL` | `https://x.com/` | Feed URL to scrape |
 | `FOCUS_KEYWORDS` | *(empty)* | Comma-separated keywords that boost relevance score |
 | `DELETE_RAW_AFTER_SUMMARY` | `false` | Delete raw run dir immediately after summarising |
+| `CHROME_USER_DATA_DIR` | `$HOME/chrome-hermes-profile` | Chrome user-data-dir used when the scheduler relaunches local Chrome |
 | `CDP_REMOTE_DEBUGGING_HOST` | `localhost` | Chrome CDP host |
 | `CDP_REMOTE_DEBUGGING_PORT` | `9333` | Chrome CDP port in the provided example config; runtime fallback is unset unless configured |
 | `CDP_TARGET_URL` | `about:blank` | Initial target tab URL for CDP attach |
+| `COLLECT_TARGET` | `3` | Daily collect count that triggers an automatic build (used by `loop.py`) |
+| `COLLECT_INTERVAL_SECONDS` | `18000` | Seconds between collect cycles in daemon mode — default 5 h (used by `loop.py`) |
 
 ---
 
-## Scheduling (cron)
+## Scheduling
 
-Each run always collects. The pipeline tracks a counter: the **third run of the day** automatically triggers the build (merge all data → write `index.html` and `digest.md` → attempt git push). No separate flags needed.
+### Option A — self-scheduling daemon (recommended)
+
+`loop.py` runs forever: collect → sleep → collect → sleep → … and automatically triggers a build + commit + push when the daily counter reaches `COLLECT_TARGET`.
+
+```bash
+source .venv/bin/activate
+python3 -m src.scheduler.loop          # collect every 5 h, build on 3rd daily collect
+```
+
+Override interval or target without editing `.env.local`:
+
+```bash
+python3 -m src.scheduler.loop --interval 3600 --target 2   # every 1 h, build on 2nd
+```
+
+Force an immediate build after the next collect:
+
+```bash
+python3 -m src.scheduler.loop --once --force-build
+```
+
+Collect exactly once and exit (same behaviour as the old `run_once`):
+
+```bash
+python3 -m src.scheduler.loop --once
+```
+
+Stop the daemon at any time with **Ctrl+C**.
+
+### Option B — external cron + `run_once`
+
+Each run always collects. The pipeline tracks a daily counter: the **third run** triggers an automatic build (merge all data → write `index.html` and `digest.md` → attempt git push). No separate flags needed.
 
 ```cron
 # Run 1 — morning collection
-0 10 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
+0 8  * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
 
 # Run 2 — afternoon collection
-0 16 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
+0 13 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
 
-# Run 3 — evening collection + auto build + git sync attempt (digest ready overnight)
-0 22 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
+# Run 3 — evening collection + auto build + git sync (digest ready overnight)
+0 18 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
 ```
-
-The digest is published at ~22:00 each night and available when you wake up.
 
 To force an immediate build without waiting for the counter:
 
@@ -210,7 +247,7 @@ source .venv/bin/activate
 python3 -m src.scheduler.run_once --build-only
 ```
 
-By default the summariser now uses the ACP Python SDK to spawn a small repo-local Codex bridge agent over stdio. The bridge is not a permanently running daemon: each summarisation call starts it, uses it, and then lets the process exit. It defaults to `gpt-5.4-mini` with `low` reasoning and can be overridden through `.env.local`.
+By default the summariser uses ACP with the default CLI bridge targeting `copilot`. You can switch to `codex` by setting `SUMMARIZE_CLI=codex`, and you can override the binary path with `SUMMARIZE_CLI_PATH`. Both paths use `SUMMARIZE_MODEL` and `SUMMARIZE_REASONING_EFFORT` from `.env.local`.
 
 ---
 
@@ -229,6 +266,56 @@ Posts are classified by the LLM into one of the following categories:
 | `other` | 📌 其他 |
 
 If the LLM returns an unrecognised category the post falls back to keyword matching, then `other`.
+
+---
+
+## Integrating with llm-wiki (Hermes Agent)
+
+Every build produces a `digest.md` in the project root — a clean, token-efficient Markdown summary of the day's top posts. This makes it a natural source document for [Karpathy's LLM Wiki](https://hermes-agent.nousresearch.com/docs/skills/) skill running inside [Hermes Agent](https://hermes-agent.nousresearch.com).
+
+### One-time setup
+
+```bash
+hermes skills install llm-wiki
+```
+
+### Manual ingest after a build
+
+```
+> ingest /path/to/browser-automation/digest.md into my llm wiki
+```
+
+Hermes reads the digest, compiles each topic into interlinked wiki pages under your `wiki/` folder, and updates `index.md` automatically — no copy-paste needed.
+
+### Scheduled auto-ingest with the daemon
+
+Because `src.scheduler.loop` already builds on a fixed schedule and commits `digest.md` to git, you can run a companion Hermes session that watches for new commits and ingests automatically:
+
+```
+> every time browser-automation/digest.md changes on git, ingest it into my llm wiki
+```
+
+Or simply ask Hermes once after each day's build:
+
+```
+> ingest today's digest from ~/project/HERNY/browser-automation/digest.md
+```
+
+### Set a fixed schedule inside Hermes (zero-touch)
+
+Configure a recurring task directly in Hermes so ingestion runs hands-free every day:
+
+```
+> every day at 18:30 automatically fetch ~/project/HERNY/browser-automation/digest.md and ingest it into my llm wiki
+```
+
+Hermes saves this schedule to your profile and fires it automatically — just align the time with your `loop.py` build window (default: every 5 h, build on 3rd collect, typically lands in the evening).
+
+Over time the wiki accumulates a structured, interlinked knowledge base of daily tech signals — queryable at any time:
+
+```
+> what have I learned about WebAssembly from my browser-automation digests?
+```
 
 ---
 

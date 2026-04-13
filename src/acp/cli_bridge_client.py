@@ -64,19 +64,38 @@ async def run_prompt_via_acp(
     cwd: Path,
     model_id: str,
     reasoning_effort: str,
+    cli_name: str = 'codex',
+    cli_path: str | None = None,
 ) -> str:
     client = _BufferingClient()
-    agent_module = "src.acp.codex_bridge_agent"
+    cli = (cli_name or 'codex').strip().lower()
+    if cli == 'copilot':
+        command = cli_path or 'copilot'
+        args = [
+            '--acp',
+            '--model', model_id,
+            '--reasoning-effort', reasoning_effort,
+            '--add-dir', str(cwd.resolve()),
+            '--no-custom-instructions',
+            '--disable-builtin-mcps',
+        ]
+        env = None
+    else:
+        command = sys.executable
+        args = ['-m', 'src.acp.cli_bridge_agent']
+        env = {
+            'ACP_CLI_MODEL': model_id,
+            'ACP_CLI_REASONING_EFFORT': reasoning_effort,
+        }
+        if cli_path:
+            env['ACP_CLI_BIN'] = cli_path
+
     async with spawn_agent_process(
         client,
-        sys.executable,
-        "-m",
-        agent_module,
+        command,
+        *args,
         cwd=cwd,
-        env={
-            "ACP_CODEX_MODEL": model_id,
-            "ACP_CODEX_REASONING_EFFORT": reasoning_effort,
-        },
+        env=env,
         use_unstable_protocol=True,
     ) as (conn, _proc):
         await conn.initialize(protocol_version=PROTOCOL_VERSION)

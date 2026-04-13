@@ -106,3 +106,18 @@ class RunOnceTests(unittest.TestCase):
                     run_once(root)
 
             restart_mock.assert_not_called()
+
+    def test_live_collect_uses_configured_chrome_user_data_dir(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / '.env.local').write_text(
+                'OUTPUT_DIR=data/summaries\nRAW_DIR=data/raw\nCDP_REMOTE_DEBUGGING_PORT=9333\nCHROME_USER_DATA_DIR=$HOME/chrome-hermes-profile\n',
+                encoding='utf-8',
+            )
+
+            with patch('src.scheduler.run_once.restart_chrome') as restart_mock, \
+                 patch('src.scheduler.run_once._build_adapter', side_effect=RuntimeError('stop-after-restart')):
+                with self.assertRaisesRegex(RuntimeError, 'stop-after-restart'):
+                    run_once(root)
+
+            restart_mock.assert_called_once_with(port=9333, profile='$HOME/chrome-hermes-profile')

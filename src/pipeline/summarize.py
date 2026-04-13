@@ -1,6 +1,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
 import os
 import re
@@ -28,6 +29,7 @@ STOPWORDS = {
 }
 
 CODEX_BIN_DEFAULT = os.path.expanduser('~/.superset/bin/codex')
+COPILOT_BIN_DEFAULT = 'copilot'
 SUMMARY_PREFIX_RE = re.compile(r'^(提到|稱|分享|整理|提醒|預測)\s*')
 
 
@@ -52,16 +54,107 @@ def join_phrases(items: list[str]) -> str:
     return '、'.join(items[:-1]) + f' 與 {items[-1]}'
 
 
-def _fallback_summary(text: str) -> str:
-    """Extract first meaningful sentence from text (no translation)."""
+def _extract_meaningful_sentence(text: str) -> str:
     if not text:
         return ''
     sentences = re.split(r'[.!?。！？\n]+', text)
-    for s in sentences:
-        s = normalize_whitespace(s)
-        if len(s) >= 15 and any(ch.isalpha() for ch in s):
-            return s[:120]
+    for sentence in sentences:
+        normalized = normalize_whitespace(sentence)
+        if len(normalized) >= 15 and any(ch.isalpha() for ch in normalized):
+            return normalized[:120]
     return normalize_whitespace(text)[:120]
+
+
+def _contains_cjk(text: str) -> bool:
+    return bool(re.search(r'[\u3400-\u9fff]', text))
+
+
+def _collect_fallback_topics(text: str) -> list[str]:
+    lowered = text.lower()
+    topics: list[str] = []
+
+    def add(topic: str) -> None:
+        if topic not in topics:
+            topics.append(topic)
+
+    if 'claude' in lowered and 'prompt' in lowered:
+        add('Claude prompts')
+    elif 'prompt' in lowered:
+        add('prompt 設計')
+
+    if 'react' in lowered:
+        add('React')
+    if 'next.js' in lowered or 'nextjs' in lowered:
+        add('Next.js')
+    if 'tailwind' in lowered:
+        add('Tailwind')
+    if 'typescript' in lowered:
+        add('TypeScript')
+
+    if 'ai' in lowered and ('coding workflow' in lowered or 'coding workflows' in lowered):
+        add('AI coding workflows')
+    elif 'agent' in lowered or 'agents' in lowered:
+        add('AI agents')
+    elif 'workflow' in lowered or 'workflows' in lowered:
+        add('工作流程')
+
+    return topics
+
+
+def _collect_fallback_benefits(text: str) -> list[str]:
+    lowered = text.lower()
+    benefits: list[str] = []
+
+    def add(benefit: str) -> None:
+        if benefit not in benefits:
+            benefits.append(benefit)
+
+    if 'save token' in lowered or 'token usage' in lowered:
+        add('可節省 token')
+    if 'deeper insight' in lowered or 'deeper insights' in lowered:
+        add('深化分析')
+    if 'faster' in lowered or 'speed up' in lowered:
+        add('加快處理速度')
+    if 'debug' in lowered or 'debugging' in lowered:
+        add('幫助除錯')
+
+    return benefits
+
+
+def _join_benefits(benefits: list[str]) -> str:
+    if not benefits:
+        return ''
+    if len(benefits) == 1:
+        return benefits[0]
+    separator = ' 並' if benefits[0][-1:].isascii() and benefits[0][-1:].isalnum() else '並'
+    if len(benefits) == 2:
+        return f'{benefits[0]}{separator}{benefits[1]}'
+    return '、'.join(benefits[:-1]) + f'，{separator}{benefits[-1]}'
+
+
+def _fallback_summary(text: str) -> str:
+    """Produce a Traditional Chinese fallback summary when LLM output is unavailable."""
+    if not text:
+        return ''
+
+    normalized = normalize_whitespace(text)
+    if _contains_cjk(normalized):
+        return _extract_meaningful_sentence(normalized)
+
+    topics = _collect_fallback_topics(normalized)
+    benefits = _collect_fallback_benefits(normalized)
+
+    if topics or benefits:
+        summary = '這則貼文'
+        if topics:
+            summary += f'聚焦 {join_phrases(topics)}'
+        else:
+            summary += '整理原文的重點脈絡'
+        if benefits:
+            summary += f'，強調{_join_benefits(benefits)}'
+        return summary + '。'
+
+    return '這則貼文整理了原文的主要觀點與關鍵脈絡。'
 
 
 def _load_codex_token() -> Optional[str]:
@@ -129,6 +222,20 @@ def _build_prompt(posts: list[ScoredPost]) -> str:
 
 
 VALID_CATEGORIES = {'ai', 'geopolitics', 'engineering', 'frontend', 'security', 'finance', 'other'}
+VALID_SUMMARIZE_CLIS = {'codex', 'copilot'}
+
+
+def _summarize_cli_name(settings: Settings) -> str:
+    cli = (settings.summarize_cli or 'copilot').strip().lower()
+    return cli if cli in VALID_SUMMARIZE_CLIS else 'copilot'
+
+
+def _resolve_cli_binary(settings: Settings, cli_name: str) -> str:
+    if settings.summarize_cli_path:
+        return settings.summarize_cli_path
+    if cli_name == 'copilot':
+        return shutil.which('copilot') or COPILOT_BIN_DEFAULT
+    return shutil.which('codex') or CODEX_BIN_DEFAULT
 
 
 def _extract_json_array(text: str) -> list[dict[str, object]]:
@@ -222,10 +329,11 @@ def _run_codex_exec(
     *,
     model: str,
     reasoning_effort: str,
+    cli_path: str | None = None,
     timeout: int = 120,
 ) -> Optional[str]:
     """Run codex exec non-interactively, return the last message text."""
-    codex = shutil.which('codex') or CODEX_BIN_DEFAULT
+    codex = cli_path or shutil.which('codex') or CODEX_BIN_DEFAULT
     if not os.path.isfile(codex):
         return None
 
@@ -267,9 +375,63 @@ def _run_codex_exec(
     return None
 
 
-async def _run_codex_acp(prompt: str, settings: Settings, timeout: int = 120) -> Optional[str]:
+def _run_copilot_exec(
+    prompt: str,
+    *,
+    model: str,
+    reasoning_effort: str,
+    cli_path: str | None,
+    timeout: int = 120,
+) -> Optional[str]:
+    copilot = cli_path or shutil.which('copilot') or COPILOT_BIN_DEFAULT
     try:
-        from src.acp.codex_bridge_client import run_prompt_via_acp
+        result = subprocess.run(
+            [
+                copilot,
+                '--model', model,
+                '--reasoning-effort', reasoning_effort,
+                '--no-custom-instructions',
+                '--disable-builtin-mcps',
+                '--no-ask-user',
+                '--stream', 'off',
+                '--output-format', 'text',
+                '-s',
+                '-p', prompt,
+            ],
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            check=False,
+        )
+        output = (result.stdout or '').strip()
+        return output or None
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError):
+        return None
+
+
+def _run_llm_cli_exec(prompt: str, settings: Settings, timeout: int) -> Optional[str]:
+    cli_name = _summarize_cli_name(settings)
+    cli_path = _resolve_cli_binary(settings, cli_name)
+    if cli_name == 'copilot':
+        return _run_copilot_exec(
+            prompt,
+            model=settings.summarize_model,
+            reasoning_effort=settings.summarize_reasoning_effort,
+            cli_path=cli_path,
+            timeout=timeout,
+        )
+    return _run_codex_exec(
+        prompt,
+        model=settings.summarize_model,
+        reasoning_effort=settings.summarize_reasoning_effort,
+        cli_path=cli_path,
+        timeout=timeout,
+    )
+
+
+async def _run_cli_acp(prompt: str, settings: Settings, timeout: int = 120) -> Optional[str]:
+    try:
+        from src.acp.cli_bridge_client import run_prompt_via_acp
 
         return await asyncio.wait_for(
             run_prompt_via_acp(
@@ -277,6 +439,8 @@ async def _run_codex_acp(prompt: str, settings: Settings, timeout: int = 120) ->
                 cwd=Path.cwd(),
                 model_id=settings.summarize_model,
                 reasoning_effort=settings.summarize_reasoning_effort,
+                cli_name=_summarize_cli_name(settings),
+                cli_path=_resolve_cli_binary(settings, _summarize_cli_name(settings)),
             ),
             timeout=timeout,
         )
@@ -323,14 +487,9 @@ async def _llm_classify_missing_categories(posts: list[ScoredPost], settings: Se
 
         raw: Optional[str] = None
         if settings.summarize_backend == 'acp':
-            raw = await _run_codex_acp(prompt, settings, timeout=90)
+            raw = await _run_cli_acp(prompt, settings, timeout=90)
         if not raw and settings.summarize_backend in {'acp', 'codex'}:
-            raw = _run_codex_exec(
-                prompt,
-                model=settings.summarize_model,
-                reasoning_effort=settings.summarize_reasoning_effort,
-                timeout=60,
-            )
+            raw = _run_llm_cli_exec(prompt, settings, timeout=60)
         if raw:
             category_map.update(_parse_category_map(raw))
 
@@ -357,14 +516,9 @@ async def llm_summarize_posts(posts: list[ScoredPost], settings: Settings) -> No
 
         raw: Optional[str] = None
         if settings.summarize_backend == 'acp':
-            raw = await _run_codex_acp(prompt, settings, timeout=120)
+            raw = await _run_cli_acp(prompt, settings, timeout=120)
         if not raw and settings.summarize_backend in {'acp', 'codex'}:
-            raw = _run_codex_exec(
-                prompt,
-                model=settings.summarize_model,
-                reasoning_effort=settings.summarize_reasoning_effort,
-                timeout=90,
-            )
+            raw = _run_llm_cli_exec(prompt, settings, timeout=90)
         if raw:
             s, c = _parse_summary_map(raw)
             summary_map.update(s)

@@ -45,7 +45,8 @@ browser-automation/
 │   │   ├── rank.py       # 評分 / Top-N 篩選
 │   │   └── summarize.py  # OpenAI 批次摘要 + AI 分類
 │   ├── scheduler/
-│   │   └── run_once.py   # 主要進入點
+│   │   ├── loop.py       # 自走 daemon（收集 → 等待 → 收集 → build）
+│   │   └── run_once.py   # 單次執行進入點
 │   ├── storage/
 │   │   ├── raw_store.py      # 寫入 / 清除原始捕捉
 │   │   └── summary_store.py  # 寫入 / 清除摘要封存
@@ -95,10 +96,12 @@ OPENAI_API_KEY=sk-...
 
 # 摘要模型後端與預設模型
 SUMMARIZE_BACKEND=acp
-SUMMARIZE_MODEL=gpt-5.4-mini
+SUMMARIZE_CLI=copilot
+SUMMARIZE_MODEL=gpt-5-mini
 SUMMARIZE_REASONING_EFFORT=low
 
 # CDP 連線 — 與啟動 Chrome 時使用的 port 一致
+CHROME_USER_DATA_DIR=$HOME/chrome-hermes-profile
 CDP_REMOTE_DEBUGGING_PORT=9333
 ```
 
@@ -107,11 +110,11 @@ CDP_REMOTE_DEBUGGING_PORT=9333
 ### 3. 啟動專用 Chrome 設定檔
 
 ```bash
-mkdir -p "$HOME/your-profile"
+mkdir -p "$HOME/chrome-hermes-profile"
 
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \
   --remote-debugging-port=9333 \
-  --user-data-dir="$HOME/your-profile"
+  --user-data-dir="$HOME/chrome-hermes-profile"
 ```
 
 在該視窗登入 X.com（只需設定一次）。
@@ -153,7 +156,9 @@ python3 -m src.scheduler.run_once --html-source path/to/snapshot.html
 | 變數 | 預設值 | 說明 |
 |-----|--------|------|
 | `SUMMARIZE_BACKEND` | `acp` | 摘要後端：`acp`、`codex` 或 `openai` |
-| `SUMMARIZE_MODEL` | `gpt-5.4-mini` | ACP / 直接 Codex 摘要時使用的預設模型 |
+| `SUMMARIZE_CLI` | `copilot` | ACP / 直接 CLI 摘要路徑要使用的 CLI：`codex` 或 `copilot` |
+| `SUMMARIZE_CLI_PATH` | （自動偵測） | 指定所選 CLI binary 的絕對路徑 |
+| `SUMMARIZE_MODEL` | `gpt-5-mini` | ACP / 直接 CLI 摘要時使用的預設模型 |
 | `SUMMARIZE_REASONING_EFFORT` | `low` | 傳給 Codex 摘要流程的 reasoning level |
 | `SCROLL_COUNT` | `80` | 在首頁捲動的次數 |
 | `SCROLL_PAUSE_SECONDS` | `1.5` | 每次捲動之間的等待秒數 |
@@ -173,28 +178,60 @@ python3 -m src.scheduler.run_once --html-source path/to/snapshot.html
 | `X_HOME_URL` | `https://x.com/` | 要爬取的動態頁面網址 |
 | `FOCUS_KEYWORDS` | （空）| 以逗號分隔的關鍵字，可提升相關性分數 |
 | `DELETE_RAW_AFTER_SUMMARY` | `false` | 摘要完成後立即刪除原始執行目錄 |
+| `CHROME_USER_DATA_DIR` | `$HOME/chrome-hermes-profile` | scheduler 重新啟動本機 Chrome 時使用的 user-data-dir |
 | `CDP_REMOTE_DEBUGGING_HOST` | `localhost` | Chrome CDP 主機 |
 | `CDP_REMOTE_DEBUGGING_PORT` | `9333` | 範例設定檔中的 Chrome CDP 埠號；若未設定，runtime 預設為未指定 |
 | `CDP_TARGET_URL` | `about:blank` | CDP 附接的初始分頁網址 |
+| `COLLECT_TARGET` | `3` | 每日收集次數達到此値時自動觸發 build（由 `loop.py` 使用） |
+| `COLLECT_INTERVAL_SECONDS` | `18000` | Daemon 模式中每次收集之間的等待秒數 — 預設 5 小時（由 `loop.py` 使用） |
 
 ---
 
-## 排程設定（cron）
+## 排程設定
 
-每次觸發都會進行資料收集。程式內部維護一個計數器，**當天第三次執行時自動 build**（合併當日所有資料 → 寫入 `index.html` 與 `digest.md` → 嘗試 git push），不需要額外的指令旗標。
+### 方案 A — 自走 daemon（建議）
+
+`loop.py` 持續執行：收集 → 等待 → 收集 → 等待 → … 當當日計數器達到 `COLLECT_TARGET` 時，自動觸發 build → commit → push。
+
+```bash
+source .venv/bin/activate
+python3 -m src.scheduler.loop          # 每 5 小時收集一次，第 3 次自動 build
+```
+
+不修改 `.env.local` 即可覆蓋間隔或目標次數：
+
+```bash
+python3 -m src.scheduler.loop --interval 3600 --target 2   # 每 1 小時，2 次後 build
+```
+
+下次收集完即強制 build：
+
+```bash
+python3 -m src.scheduler.loop --once --force-build
+```
+
+只跑一次就退出（等同舊版 `run_once`）：
+
+```bash
+python3 -m src.scheduler.loop --once
+```
+
+用 **Ctrl+C** 隨時停止 daemon。
+
+### 方案 B — 外部 cron + `run_once`
+
+每次觸發都會進行資料收集。程式內部維護一個計數器，**當天第三次執行時自動 build**（合併當日所有資料 → 寫入 `index.html` 與 `digest.md` → 嘗試 git push）。
 
 ```cron
 # 第 1 次 — 早上收集
-0 10 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
+0 8  * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
 
 # 第 2 次 — 下午收集
-0 16 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
+0 13 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
 
-# 第 3 次 — 晚上收集 + 自動 build + git 同步嘗試（摘要當晚發布）
-0 22 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
+# 第 3 次 — 晚上收集 + 自動 build + git 同步
+0 18 * * * cd /path/to/browser-automation && python3 -m src.scheduler.run_once >> logs/cron.log 2>&1
 ```
-
-每天晚上約 22:00 報告上線，早上起床即可查看前一天的摘要。
 
 如需立即強制 build（不等計數器）：
 
@@ -210,7 +247,7 @@ source .venv/bin/activate
 python3 -m src.scheduler.run_once --build-only
 ```
 
-目前摘要預設會透過 ACP Python SDK 在 stdio 上啟動 repo 內建的 Codex bridge agent；它不是常駐程序，而是每次摘要呼叫時啟動、完成後結束。該 bridge 預設使用 `gpt-5.4-mini` 與 `low` reasoning，可透過 `.env.local` 覆寫。
+目前摘要預設會使用 ACP 的預設 CLI bridge，目標 CLI 為 `copilot`。若要改回 `codex`，可將 `SUMMARIZE_CLI=codex`；若 binary 不在 PATH，也可用 `SUMMARIZE_CLI_PATH` 指定。兩種路徑都會吃 `.env.local` 的 `SUMMARIZE_MODEL` 與 `SUMMARIZE_REASONING_EFFORT`。
 
 ---
 
@@ -229,6 +266,56 @@ python3 -m src.scheduler.run_once --build-only
 | `other` | 📌 其他 |
 
 若 LLM 回傳無效的類別，該推文會退回關鍵字比對，最後回落到 `other`。
+
+---
+
+## 整合 llm-wiki（Hermes Agent）
+
+每次 build 都會在專案根目錄產生一份 `digest.md`——乾淨、省 token 的 Markdown 每日精選。這天生就是 [Hermes Agent](https://hermes-agent.nousresearch.com) 內建的 [llm-wiki](https://hermes-agent.nousresearch.com/docs/skills/) skill 的完美輸入來源。
+
+### 一次性安裝
+
+```bash
+hermes skills install llm-wiki
+```
+
+### 手動 build 後 ingest
+
+```
+> 把 /path/to/browser-automation/digest.md 加進我的 llm wiki
+```
+
+Hermes 會讀取 digest、把每個主題編譯成互相連結的 wiki 頁面放入 `wiki/` 資料夾，並自動更新 `index.md`——不需要任何複製貼上。
+
+### 搭配 daemon 自動排程 ingest
+
+`src.scheduler.loop` 已經按固定間隔 build 並把 `digest.md` commit 到 git，你可以開一個伴隨的 Hermes session，監聽新 commit 後自動 ingest：
+
+```
+> 每次 browser-automation/digest.md 在 git 有變動時，自動 ingest 進我的 llm wiki
+```
+
+或是每天 build 完後對 Hermes 說一次：
+
+```
+> 把今天的 digest 從 ~/project/HERNY/browser-automation/digest.md ingest 進去
+```
+
+### 在 Hermes 內設定固定排程（最省事）
+
+直接在 Hermes 內配置一個固定排程任務，之後完全不需要手動觸發：
+
+```
+> 每天 18:30 自動抓 ~/project/HERNY/browser-automation/digest.md 並 ingest 進我的 llm wiki
+```
+
+Hermes 會把這條排程存入 profile，之後每天定時自動執行，跟 `loop.py` 的 build 時間對齊即可（loop 預設每 5 小時一次、第 3 次 build，大約落在傍晚）。
+
+隨著時間累積，wiki 會自動形成一個結構化、互相連結的科技知識庫，隨時可以查詢：
+
+```
+> 我從 browser-automation 的 digest 裡學到哪些關於 WebAssembly 的東西？
+```
 
 ---
 

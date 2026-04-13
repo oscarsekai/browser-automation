@@ -41,13 +41,14 @@ from acp.schema import (
     SetSessionModeResponse,
 )
 
-CODEX_BIN_DEFAULT = os.path.expanduser("~/.superset/bin/codex")
-DEFAULT_MODEL = os.environ.get("ACP_CODEX_MODEL", "gpt-5.4-mini")
-DEFAULT_REASONING_EFFORT = os.environ.get("ACP_CODEX_REASONING_EFFORT", "low")
+DEFAULT_CLI_BIN = os.environ.get("ACP_CLI_BIN") or os.path.expanduser("~/.superset/bin/codex")
+DEFAULT_MODEL = os.environ.get("ACP_CLI_MODEL", "gpt-5.4-mini")
+DEFAULT_REASONING_EFFORT = os.environ.get("ACP_CLI_REASONING_EFFORT", "low")
 SUPPORTED_MODELS = (
     ("gpt-5.4-mini", "GPT-5.4-Mini", "Smaller frontier agentic coding model."),
-    ("gpt-5.4", "gpt-5.4", "Most capable default Codex model."),
-    ("gpt-5.1-codex-mini", "gpt-5.1-codex-mini", "Cheaper, faster Codex model."),
+    ("gpt-5.4", "gpt-5.4", "Most capable default coding model."),
+    ("gpt-5.1-codex-mini", "gpt-5.1-codex-mini", "Cheaper, faster coding model."),
+    ("gpt-5-mini", "gpt-5-mini", "Compact GPT-5 model for GitHub Copilot CLI."),
 )
 
 
@@ -58,18 +59,18 @@ class _SessionState:
     updated_at: datetime
 
 
-class CodexBridgeAgent(Agent):
+class CliBridgeAgent(Agent):
     def __init__(
         self,
         *,
         default_model: str = DEFAULT_MODEL,
         reasoning_effort: str = DEFAULT_REASONING_EFFORT,
-        codex_bin: str | None = None,
+        cli_bin: str | None = None,
     ) -> None:
         self._client: Client | None = None
         self._default_model = default_model if default_model in {m[0] for m in SUPPORTED_MODELS} else DEFAULT_MODEL
         self._reasoning_effort = reasoning_effort
-        self._codex_bin = codex_bin or shutil.which("codex") or CODEX_BIN_DEFAULT
+        self._cli_bin = cli_bin or shutil.which("codex") or DEFAULT_CLI_BIN
         self._sessions: dict[str, _SessionState] = {}
 
     def on_connect(self, conn: Client) -> None:
@@ -86,8 +87,8 @@ class CodexBridgeAgent(Agent):
             protocol_version=min(protocol_version, PROTOCOL_VERSION),
             agent_capabilities=AgentCapabilities(),
             agent_info=Implementation(
-                name="browser-automation-codex-acp",
-                title="Browser Automation Codex ACP Bridge",
+                name="browser-automation-cli-acp",
+                title="Browser Automation CLI ACP Bridge",
                 version="0.1.0",
             ),
         )
@@ -118,7 +119,7 @@ class CodexBridgeAgent(Agent):
             SessionInfo(
                 cwd=state.cwd,
                 session_id=session_id,
-                title="Codex ACP summarizer",
+                title="CLI ACP summarizer",
                 updated_at=state.updated_at.isoformat(),
             )
             for session_id, state in self._sessions.items()
@@ -149,7 +150,7 @@ class CodexBridgeAgent(Agent):
         state = self._require_session(session_id)
         prompt_text = self._prompt_to_text(prompt)
         output = await asyncio.to_thread(
-            self._run_codex_exec,
+            self._run_cli_exec,
             prompt_text,
             state.cwd,
             state.current_model_id,
@@ -236,13 +237,13 @@ class CodexBridgeAgent(Agent):
                     parts.append(str(text))
         return "\n\n".join(parts).strip()
 
-    def _run_codex_exec(self, prompt: str, cwd: str, model: str) -> str:
-        codex = self._codex_bin
-        if not os.path.isfile(codex):
-            raise RuntimeError(f"codex binary not found: {codex}")
+    def _run_cli_exec(self, prompt: str, cwd: str, model: str) -> str:
+        cli_bin = self._cli_bin
+        if not os.path.isfile(cli_bin):
+            raise RuntimeError(f"CLI binary not found: {cli_bin}")
 
         env = {**os.environ}
-        env["PATH"] = f"{os.path.dirname(codex)}:{env.get('PATH', '')}"
+        env["PATH"] = f"{os.path.dirname(cli_bin)}:{env.get('PATH', '')}"
 
         tmp = tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False)
         tmp_path = tmp.name
@@ -251,7 +252,7 @@ class CodexBridgeAgent(Agent):
         try:
             subprocess.run(
                 [
-                    codex,
+                    cli_bin,
                     "exec",
                     "--ephemeral",
                     "--skip-git-repo-check",
@@ -279,7 +280,7 @@ class CodexBridgeAgent(Agent):
 
 
 async def main() -> None:
-    await run_agent(CodexBridgeAgent(), use_unstable_protocol=True)
+    await run_agent(CliBridgeAgent(), use_unstable_protocol=True)
 
 
 if __name__ == "__main__":

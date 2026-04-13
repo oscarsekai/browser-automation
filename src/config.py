@@ -68,6 +68,9 @@ def load_env_file(path: Path) -> dict[str, str]:
 @dataclass(frozen=True)
 class Settings:
     summarize_backend: str = 'acp'
+    summarize_cli: str = 'copilot'
+    summarize_cli_path: Optional[str] = None
+    chrome_user_data_dir: str = '$HOME/chrome-hermes-profile'
     scroll_count: int = 80
     scroll_pause_seconds: float = 1.5
     summary_top_n: int = 50
@@ -94,8 +97,10 @@ class Settings:
     cdp_ws_url: Optional[str] = None
     openai_api_key: Optional[str] = None
     openai_base_url: str = 'https://api.openai.com/v1'
-    summarize_model: str = 'gpt-5.4-mini'
+    summarize_model: str = 'gpt-5-mini'
     summarize_reasoning_effort: str = 'low'
+    collect_target: int = 3
+    collect_interval_seconds: int = 18000
 
 
 def load_settings(base_dir: Optional[Path] = None, environ: Optional[dict[str, str]] = None) -> Settings:
@@ -105,6 +110,9 @@ def load_settings(base_dir: Optional[Path] = None, environ: Optional[dict[str, s
     merged = {**file_values, **environ}
     return Settings(
         summarize_backend=(merged.get('SUMMARIZE_BACKEND') or 'acp').strip().lower(),
+        summarize_cli=(merged.get('SUMMARIZE_CLI') or 'copilot').strip().lower(),
+        summarize_cli_path=merged.get('SUMMARIZE_CLI_PATH') or None,
+        chrome_user_data_dir=merged.get('CHROME_USER_DATA_DIR', '$HOME/chrome-hermes-profile'),
         scroll_count=_parse_int(merged.get('SCROLL_COUNT'), 80),
         scroll_pause_seconds=_parse_float(merged.get('SCROLL_PAUSE_SECONDS'), 1.5),
         summary_top_n=_parse_int(merged.get('SUMMARY_TOP_N'), 50),
@@ -131,6 +139,8 @@ def load_settings(base_dir: Optional[Path] = None, environ: Optional[dict[str, s
         cdp_ws_url=merged.get('CDP_WS_URL') or None,
         openai_api_key=merged.get('OPENAI_API_KEY') or None,
         openai_base_url=merged.get('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
-        summarize_model=merged.get('SUMMARIZE_MODEL', 'gpt-5.4-mini'),
+        summarize_model=merged.get('SUMMARIZE_MODEL', 'gpt-5-mini'),
         summarize_reasoning_effort=merged.get('SUMMARIZE_REASONING_EFFORT', 'low'),
+        collect_target=_parse_int(merged.get('COLLECT_TARGET'), 3),
+        collect_interval_seconds=_parse_int(merged.get('COLLECT_INTERVAL_SECONDS'), 18000),
     )

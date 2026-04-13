@@ -38,8 +38,8 @@ def _find_chrome_main_pid(port: int) -> Optional[int]:
 def restart_chrome(port: int, profile: str | None = None) -> None:
     """Kill existing Chrome on port, relaunch, wait for CDP to be ready."""
     if profile is None:
-        profile = os.environ.get('CHROME_USER_DATA_DIR', '~/your-profile')
-    profile_path = os.path.expanduser(profile)
+        profile = os.environ.get('CHROME_USER_DATA_DIR', '$HOME/chrome-hermes-profile')
+    profile_path = os.path.expanduser(os.path.expandvars(profile))
     pid = _find_chrome_main_pid(port)
     if pid:
         print(f'[chrome] killing PID {pid} on port {port}...')
@@ -172,7 +172,7 @@ def _collect_phase(
         port = cdp_port if cdp_port is not None else settings.cdp_remote_debugging_port
         if port is None:
             raise ValueError('Provide --html-source for snapshot replay or set CDP_REMOTE_DEBUGGING_PORT to use live CDP')
-        restart_chrome(port=port)
+        restart_chrome(port=port, profile=settings.chrome_user_data_dir)
 
     adapter, source_mode = _build_adapter(
         workspace_root,
