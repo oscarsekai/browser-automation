@@ -77,9 +77,9 @@ class RunOnceTests(unittest.TestCase):
             self.assertEqual(result['source_mode'], 'build-only')
             self.assertTrue(result['latest_html'].exists())
             self.assertTrue(result['latest_md'].exists())
-            self.assertTrue((root / 'digest.md').exists())
-            self.assertEqual(result['latest_md'], root / 'digest.md')
-            self.assertEqual((root / 'digest.md').read_text(encoding='utf-8'), result['summary_md'].read_text(encoding='utf-8'))
+            self.assertTrue((root / 'output' / 'digest.md').exists())
+            self.assertEqual(result['latest_md'], root / 'output' / 'digest.md')
+            self.assertEqual((root / 'output' / 'digest.md').read_text(encoding='utf-8'), result['summary_md'].read_text(encoding='utf-8'))
 
     def test_main_prints_html_and_digest_paths_after_build(self):
         stdout = io.StringIO()

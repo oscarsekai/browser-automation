@@ -1,5 +1,6 @@
 import json
 import unittest
+from unittest.mock import patch
 
 from src.browser.cdp import CDPBrowserAdapter
 from src.browser.runner import BrowserRunner
@@ -47,7 +48,8 @@ class CdpAdapterTests(unittest.TestCase):
         )
         runner = BrowserRunner(Settings(scroll_count=1, scroll_pause_seconds=0.0, x_home_url='https://x.com/'))
 
-        posts = runner.collect_home_cdp(adapter)
+        with patch('src.browser.runner.time.sleep'):
+            posts = runner.collect_home_cdp(adapter)
 
         self.assertEqual(len(posts), 1)
         self.assertEqual(posts[0].author, 'Ada')

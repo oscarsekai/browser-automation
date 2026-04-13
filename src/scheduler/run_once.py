@@ -112,7 +112,7 @@ def _git_commit_and_push(repo_root: Path, index_html: Path) -> dict[str, str]:
     from datetime import datetime, timezone
     label = datetime.now(timezone.utc).strftime('%Y/%-m/%-d')
     msg = f'{label} summary'
-    digest_md = repo_root / 'digest.md'
+    digest_md = index_html.parent / 'digest.md'
     try:
         subprocess.run(['git', 'add', str(index_html)], cwd=repo_root, check=True, capture_output=True, text=True)
         if digest_md.exists():
@@ -210,8 +210,10 @@ def _build_phase(workspace_root: Path, settings) -> dict[str, Any]:
     asyncio.run(llm_summarize_posts(scored, settings))
     bundle = build_summary_bundle(scored, settings, raw_count=len(all_posts))
     summary_paths = write_summary_bundle(workspace_root / settings.output_dir, bundle)
-    root_index_html = workspace_root / 'index.html'
-    root_digest_md = workspace_root / 'digest.md'
+    publish_dir = workspace_root / 'output'
+    publish_dir.mkdir(parents=True, exist_ok=True)
+    root_index_html = publish_dir / 'index.html'
+    root_digest_md = publish_dir / 'digest.md'
     root_index_html.write_text(summary_paths['html'].read_text(encoding='utf-8'), encoding='utf-8')
     root_digest_md.write_text(summary_paths['md'].read_text(encoding='utf-8'), encoding='utf-8')
 

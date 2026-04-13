@@ -33,6 +33,7 @@ def loop(
     target: Optional[int] = None,
     run_once: bool = False,
     force_build: bool = False,
+    html_source_path: Optional[Path] = None,
 ) -> None:
     """Run the collect→build daemon loop indefinitely.
 
@@ -67,7 +68,7 @@ def loop(
             _raw_dir, _raw_posts = _collect_phase(
                 workspace_root,
                 settings,
-                html_source_path=None,
+                html_source_path=html_source_path,
                 cdp_host=None,
                 cdp_port=None,
                 cdp_target_url=None,
@@ -134,6 +135,12 @@ def main(argv: Optional[list[str]] = None) -> int:
         action='store_true',
         help='Build immediately after this collect, regardless of the daily counter',
     )
+    parser.add_argument(
+        '--html-source',
+        default=None,
+        metavar='PATH',
+        help='Use a saved HTML snapshot instead of live CDP (for testing / offline use)',
+    )
     args = parser.parse_args(argv)
 
     try:
@@ -143,6 +150,7 @@ def main(argv: Optional[list[str]] = None) -> int:
             target=args.target,
             run_once=args.once,
             force_build=args.force_build,
+            html_source_path=Path(args.html_source) if args.html_source else None,
         )
     except KeyboardInterrupt:
         print('\n[loop] interrupted by user — stopping')

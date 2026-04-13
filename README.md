@@ -12,9 +12,9 @@ A Chinese version of this document is available at [README.zh-TW.md](./README.zh
 - **Smart ranking** — combines follower tier, freshness, keyword relevance, content density, originality, and engagement into a single score; configurable per-weight
 - **AI summarisation + classification** — calls the OpenAI Codex API in batches of 10; each post gets a one-sentence Traditional Chinese summary and an auto-assigned category (`ai`, `geopolitics`, `engineering`, `frontend`, `security`, `finance`, `other`)
 - **Static HTML output** — generates a self-contained `index.html` with categorised sections, post counts, and direct post links; ready for GitHub Pages or any static host
-- **Markdown digest** — also writes `digest.md` alongside `index.html`; token-efficient plain Markdown for AI agents to consume directly (e.g., `GET /digest.md`)
+- **Markdown digest** — also writes `output/digest.md` alongside `output/index.html`; token-efficient plain Markdown for AI agents to consume directly (e.g., `GET /digest.md`)
 - **Automatic cleanup** — on build runs, deletes raw capture directories and summary archives older than 3 days by default
-- **Git sync attempt** — after writing `index.html` and `digest.md`, stages both, commits with a datestamped message (`2026/4/13 summary`), and attempts to push to the configured upstream while printing the actual git result
+- **Git sync attempt** — after writing `output/index.html` and `output/digest.md`, stages both, commits with a datestamped message (`2026/4/13 summary`), and attempts to push to the configured upstream while printing the actual git result
 - **Snapshot replay** — pass a saved HTML file instead of a live CDP session for offline testing
 
 ---
@@ -57,8 +57,9 @@ browser-automation/
 ├── data/                 # runtime output (git-ignored)
 │   ├── raw/              # per-run raw captures (3-day default retention)
 │   └── summaries/        # per-run HTML + JSON archives (3-day default retention)
-├── index.html            # latest digest — committed and deployed
-├── digest.md             # same digest as plain Markdown — for AI agents
+├── output/               # published digest — committed and deployed to GitHub Pages
+│   ├── index.html        # latest digest HTML
+│   └── digest.md         # same digest as plain Markdown — for AI agents
 ├── .env.local            # local config (copy from .env.local.example)
 ├── .env.local.example
 └── requirements.txt
@@ -137,9 +138,9 @@ The script will:
 2. Navigate to `X_HOME_URL`
 3. Scroll `SCROLL_COUNT` times (default 80), pausing `SCROLL_PAUSE_SECONDS` between scrolls
 4. Collect, filter, rank, and summarise posts
-5. Write `index.html` and `digest.md` to the project root
+5. Write `output/index.html` and `output/digest.md`
 6. On build runs, clean up data older than `RAW_RETENTION_DAYS` days
-7. Attempt `git add index.html digest.md && git commit -m "YYYY/M/D summary" && git push`, then print the actual git outcome
+7. Attempt `git add output/index.html output/digest.md && git commit -m "YYYY/M/D summary" && git push`, then print the actual git outcome
 
 ### 5. Replay from a saved snapshot (offline / CI)
 
@@ -220,7 +221,7 @@ Stop the daemon at any time with **Ctrl+C**.
 
 ### Option B — external cron + `run_once`
 
-Each run always collects. The pipeline tracks a daily counter: the **third run** triggers an automatic build (merge all data → write `index.html` and `digest.md` → attempt git push). No separate flags needed.
+Each run always collects. The pipeline tracks a daily counter: the **third run** triggers an automatic build (merge all data → write `output/index.html` and `output/digest.md` → attempt git push). No separate flags needed.
 
 ```cron
 # Run 1 — morning collection
@@ -271,7 +272,7 @@ If the LLM returns an unrecognised category the post falls back to keyword match
 
 ## Integrating with llm-wiki (Hermes Agent)
 
-Every build produces a `digest.md` in the project root — a clean, token-efficient Markdown summary of the day's top posts. This makes it a natural source document for [Karpathy's LLM Wiki](https://hermes-agent.nousresearch.com/docs/skills/) skill running inside [Hermes Agent](https://hermes-agent.nousresearch.com).
+Every build produces `output/digest.md` — a clean, token-efficient Markdown summary of the day's top posts. This makes it a natural source document for [Karpathy's LLM Wiki](https://hermes-agent.nousresearch.com/docs/skills/) skill running inside [Hermes Agent](https://hermes-agent.nousresearch.com).
 
 ### One-time setup
 
@@ -282,23 +283,23 @@ hermes skills install llm-wiki
 ### Manual ingest after a build
 
 ```
-> ingest /path/to/browser-automation/digest.md into my llm wiki
+> ingest /path/to/browser-automation/output/digest.md into my llm wiki
 ```
 
 Hermes reads the digest, compiles each topic into interlinked wiki pages under your `wiki/` folder, and updates `index.md` automatically — no copy-paste needed.
 
 ### Scheduled auto-ingest with the daemon
 
-Because `src.scheduler.loop` already builds on a fixed schedule and commits `digest.md` to git, you can run a companion Hermes session that watches for new commits and ingests automatically:
+Because `src.scheduler.loop` already builds on a fixed schedule and commits `output/digest.md` to git, you can run a companion Hermes session that watches for new commits and ingests automatically:
 
 ```
-> every time browser-automation/digest.md changes on git, ingest it into my llm wiki
+> every time browser-automation/output/digest.md changes on git, ingest it into my llm wiki
 ```
 
 Or simply ask Hermes once after each day's build:
 
 ```
-> ingest today's digest from ~/project/HERNY/browser-automation/digest.md
+> ingest today's digest from ~/project/HERNY/browser-automation/output/digest.md
 ```
 
 ### Set a fixed schedule inside Hermes (zero-touch)
@@ -306,7 +307,7 @@ Or simply ask Hermes once after each day's build:
 Configure a recurring task directly in Hermes so ingestion runs hands-free every day:
 
 ```
-> every day at 18:30 automatically fetch ~/project/HERNY/browser-automation/digest.md and ingest it into my llm wiki
+> every day at 18:30 automatically fetch ~/project/HERNY/browser-automation/output/digest.md and ingest it into my llm wiki
 ```
 
 Hermes saves this schedule to your profile and fires it automatically — just align the time with your `loop.py` build window (default: every 5 h, build on 3rd collect, typically lands in the evening).
@@ -321,8 +322,8 @@ Over time the wiki accumulates a structured, interlinked knowledge base of daily
 
 ## Notes
 
-- `index.html` is committed to git and served as the public digest page
-- `digest.md` is committed alongside `index.html` — AI agents can fetch it directly at `https://your-domain/digest.md` for token-efficient consumption
+- `output/index.html` is committed to git and served as the public digest page (GitHub Pages root)
+- `output/digest.md` is committed alongside `index.html` — AI agents can fetch it directly at `https://your-domain/digest.md` for token-efficient consumption
 - `data/` is git-ignored; all runtime artifacts stay local
 - Chrome profile persists login sessions between runs; no re-authentication needed after first login
 - If CDP is unavailable the pipeline exits early with a clear error — no partial writes

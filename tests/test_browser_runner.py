@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 
 from src.browser.fetch_x import extract_posts_from_html
 from src.browser.runner import BrowserRunner, StaticHtmlAdapter
@@ -42,7 +43,8 @@ class BrowserRunnerTests(unittest.TestCase):
         settings = Settings(scroll_count=3, scroll_pause_seconds=0.0)
         runner = BrowserRunner(settings)
         adapter = StaticHtmlAdapter(SAMPLE_HTML)
-        posts = runner.collect_home(adapter)
+        with patch('src.browser.runner.time.sleep'):
+            posts = runner.collect_home(adapter)
         self.assertEqual(len(posts), 2)
         self.assertEqual(adapter.current_url, 'https://x.com/')
         self.assertEqual(adapter.scrolled, 3)

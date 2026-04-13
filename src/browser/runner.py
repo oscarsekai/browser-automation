@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import TYPE_CHECKING, Optional, Protocol, runtime_checkable
@@ -52,6 +53,9 @@ class BrowserRunner:
 
     def collect_home(self, adapter: BrowserAdapter, html_source: str = 'x-home') -> list[PostRecord]:
         adapter.goto(self.settings.x_home_url)
+
+        # Wait for page to finish loading before interacting
+        time.sleep(1.5)
 
         # X.com uses a virtualised list — posts leave the DOM as you scroll.
         # We must snapshot incrementally and deduplicate across batches.
