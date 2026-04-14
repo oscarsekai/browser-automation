@@ -203,11 +203,11 @@ def _render_section(theme: str, posts: list[ScoredPost]) -> str:
 
 
 def _build_hero_desc(grouped: dict[str, list[ScoredPost]], total: int) -> str:
-    active = [_section_title(t) for t in SECTION_ORDER if grouped[t]]
-    if not active:
-        return f'精選 {total} 則核心動態。'
-    topic_str = '、'.join(active[:-1]) + (f' 與 {active[-1]}' if len(active) > 1 else active[0])
-    return f'今日話題涵蓋 {topic_str}，精選 {total} 則核心動態。'
+    # Previously this built a hero sentence like:
+    # "今日話題涵蓋 ...，精選 N 則核心動態。"
+    # Remove generation of that summary here — keep hero description empty
+    # so rendering layers (HTML/MD) won't show the aggregate sentence.
+    return ''
 
 
 def _build_summary_line(grouped: dict[str, list[ScoredPost]]) -> str:
@@ -407,8 +407,9 @@ def render_summary_markdown(bundle: SummaryBundle, title: str = 'X 動態摘要'
     lines.append('')
 
     hero_desc = _build_hero_desc(grouped, total_selected)
-    lines.append(hero_desc)
-    lines.append('')
+    if hero_desc:
+        lines.append(hero_desc)
+        lines.append('')
 
     for theme in SECTION_ORDER:
         posts = grouped.get(theme, [])
@@ -462,11 +463,11 @@ def render_summary_html(bundle: SummaryBundle, title: str = 'X 動態摘要') ->
   </head>
   <body>
     <main class="page">
-      <section class="hero">
-        <div class="hero-badge">{date_str}</div>
-        <h1>{escape(title)}</h1>
-        <p class="hero-desc">{escape(hero_desc)}</p>
-      </section>
+            <section class="hero">
+                <div class="hero-badge">{date_str}</div>
+                <h1>{escape(title)}</h1>
+                {f'<p class="hero-desc">{escape(hero_desc)}</p>' if hero_desc else ''}
+            </section>
 
       {topic_sections}
 
