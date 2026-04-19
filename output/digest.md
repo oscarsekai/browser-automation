@@ -1,71 +1,70 @@
 # X 動態摘要
-📅 2026 年 4 月 18 日 ｜ 最後更新：11:46 UTC
+📅 2026 年 4 月 19 日 ｜ 最後更新：13:05 UTC
 
 ## 🤖 AI 模型與工具
 
-- Anthropic 與 Figma 密切合作，邀請 Figma 共同創辦人擔任 CPO，其後該董事悄然辭職並推出「Claude Design」，市場使 Figma 下跌 7%。 [↗](https://x.com/DataChaz/status/2045208448204206295)
-- Grok 4.3 beta 原生支援多模態，可上傳網站截圖並即時生成複製該網站的前端程式碼與 UI。 [↗](https://x.com/XFreeze/status/2045265210429108578)
-- 史丹佛一小時講座《Decision Making Under Uncertainty》說明 AI 交易機器人實作原理，能教出多數開發者多年建構才學到的內容。 [↗](https://x.com/DeRonin_/status/2045108976036012104)
-- 為 agent 建置掃描 harness，但作者指出它完全沒用，所有功能都可用 Claude Code 或 Skills 完成。 [↗](https://x.com/IceSolst/status/2045234234596487306)
-- HeyGen 開源 HyperFrames 框架，讓你用 Claude Code 建影片、支援 HTML 轉 MP4，並透過 npx skills add heygen-com/hyperframes 安裝。 [↗](https://x.com/yanhua1010/status/2045005746530816227)
-- Claude 推出適合 iOS 應用設計的新功能，作者擷取程式碼與 skill 並製成可由任何 agent 使用的 skill，且 Codex 內建註解與網頁預覽可同樣運作。 [↗](https://x.com/rileybrown/status/2045227039075316114)
-- Vitest 提供 Agent reporter，僅將失敗測試與摘要傳給 agent 以節省 tokens，自 Vitest 4.1 偵測到 agent 時預設啟用。 [↗](https://x.com/voidzerodev/status/2044860844807221751)
-- Jensen Huang 表示 Nvidia 低估建造前沿 AI 實驗室所需，OpenAI 與 Anthropic 需要數十億美元與大量算力，他不會再犯同樣錯誤。 [↗](https://x.com/haider1/status/2045150287514476955)
-- 與 Anthropic 合作推出 Opus 4.7，4/21–4/28 舉辦全球虛擬黑客松，獎項為 $100k Claude API。 [↗](https://x.com/cerebral_valley/status/2045249129950097535)
-- Opus 4.7 移除了 temperature 與 top_p 控制，並將模糊提示的成本直接反映在 token 開銷上。 [↗](https://x.com/alphabatcher/status/2045182631545856125)
-- 2026 年最有價值的 AI 產品將由具深厚領域專長且會自動化流程的人打造，Claude Skills 可將專業知識變成即插即用資產。 [↗](https://x.com/alphabatcher/status/2045102700531171443)
-- Claude Code 為 Opus 4.7 舉辦一週黑客松，邀請全球開發者參加，獎池為 $100K API credits，週日截止申請。 [↗](https://x.com/claudeai/status/2045248224659644654)
-- @coroot_com 推出 AI 驅動的 Root Cause Analyses，宣稱無需 instrumentation 即可加速問題排解。 [↗](https://x.com/PeterZaitsev/status/1950306615808139547/analytics)
-- ZooClaw 推出為大眾打造的 OpenClaw 版本，支援 Research、Writing、Companion 與 Presentation agents，並提到三重安全審計與 SOC 2。 [↗](https://x.com/dr_cintas/status/2045342980001718551)
-- 以 Evals 與 hill climbing 演算法做資料驅動的 agent 設計，並用 Trace Data 找錯誤與調整 agent harness。 [↗](https://x.com/Vtrivedy10/status/2045230994656305485)
-- 發現 Opus 4.7 表現頑抗，拒絕執行要求的推理（例如比較 X 與 Y 的理由），作者表示不想與付費 AI 爭辯。 [↗](https://x.com/GergelyOrosz/status/2045108661819711782)
-- 寫手寫學習心得的時代似乎結束，因為可用 Claude 指令產出深度研究與 HTML 報告，手寫部落格似乎在消失。 [↗](https://x.com/ahmetb/status/2045166818604797992)
-- 這則貼文聚焦 AI agents。 [↗](https://x.com/samecrowder/status/2044830559206314381)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/elliotarledge/status/2045140225387630663)
-- 這則貼文聚焦 prompt 設計 與 AI agents。 [↗](https://x.com/HeyGen/status/2045174824012849199)
+- 為 Codex（Swift 應用）構建遠端控制器，可完全控制應用，介面對話式、預設危險地略過權限，內建瀏覽器可在手機開啟預覽連結。 [↗](https://x.com/rileybrown/status/2045763507107635473)
+- 自 v2.1.113 起，Claude Code npm 套件改以原生二進位檔取代 JavaScript 構建，安裝相同且 CLI 不再需要 Node.js。 [↗](https://x.com/ClaudeDevs/status/2045267790018543736)
+- Opus 4.7 因舊版安全提示誤判而拒絕一般程式碼編輯並顯示「this might be malware」警告；建議執行 claude update 或重啟應用。 [↗](https://x.com/ClaudeDevs/status/2045238786339299431)
+- 由建構 ChatGPT 的 OpenAI 研究員在史丹佛講授的 1 小時課程，說明 LLM 如何思考與回應，建議花一小時觀看。 [↗](https://x.com/RohOnChain/status/2045549202030379314)
+- 調查顯示 97% 的主管表示已部署 AI agents，29% 的員工承認破壞它們；新文章《The Quiet Mutiny》探討此現象。 [↗](https://x.com/gothburz/status/2045691458427007072)
+- 人們想到軟體工程師時，傾向認為是在科技公司打造應用程式，但這已不是思考軟體的方式；AI agents [↗](https://x.com/levie/status/2045616837787070695)
+- 描述需求後，Claude 建立第一版，可透過對話、註解或自訂滑桿精修，並匯出到 @canva、PDF 或 PPTX，或交給 Claude Code [↗](https://x.com/claudeai/status/2045156269271429451)
+- 使用 Hyperframe 與 Claude Code，安裝指令為 npx skills add heygen-com/hyperframes，作者稱結果令人驚訝，測試為完整影片簡報 [↗](https://x.com/dani_avila7/status/2045696248179568853)
+- Cisco 團隊的 Renuka Kumar 與 Prashanth Ramagopal 建構了以 LangSmith 與 LangGraph 為基礎的多代理協作框架，表現如真實軟體團隊 [↗](https://x.com/LangChain/status/2045240475402301710)
+- 試用了 Loopndroll for Codex，基於新的 hooks 機制，功能有趣且有好點子 [↗](https://x.com/thsottiaux/status/2045632626787271167)
+- Anthropic 發布 33 頁指南，說明如何為 Claude 建立 Skills [↗](https://x.com/CodeByPoonam/status/2045784116503998656)
+- 發現名為 "elephant-alpha" 的 100B 模型在 OpenRouter 熱門榜第1，測試對 agent 與程式碼表現良好 [↗](https://x.com/itsPaulAi/status/2045479526990328227)
+- 一名被裁員者用 Claude Code 建立 AI 求職系統，評估 740+ 職缺後獲得 Head of Applied AI，並開源為 career-ops [↗](https://x.com/sukh_saroy/status/2045573969970147542)
+- Gemini Personal Intelligence 存取多項資料並能擷取細節，但仍有時表現不足 [↗](https://x.com/ai_for_success/status/2045536907590058449)
+- 《How to Build a Team of AI Agents That Work Together (Full Course)》主張 agent 團隊勝過單一 agent，並說單一 AI agent 可研究、寫作、分析或編碼但無法同時 [↗](https://x.com/eng_khairallah1/status/2045430911257432225)
+- 一名前 OpenAI 員工指控 Sam Altman 用人工智慧建造通道並召喚外星人，通道據稱位於美國與中國，中東新增一處。 [↗](https://x.com/ShadowofEzra/status/2045692248201802017)
+- 發文者詢問在 TypeScript 堆疊使用 LangChain / LangGraph 整合 Langmem 的問題，並提到選項包括以 sidecar 模式遠端執行 Python 服務。 [↗](https://x.com/ml_yearzero/status/2045308028409536657)
+- 正在開發 athas-tui：一個可切換多個 CLI agents、執行多個終端程序、檢視 git log/status/stashes 並管理 worktrees 的 TUI 實驗。 [↗](https://x.com/athasdev/status/2045469556731220366)
+- 設計團隊合約十二月結束未續約，作者說過去做一頁要十天，但 Claude Code 能在一下午獨自完成，並指出若護城河是別人工具就不算護城河。 [↗](https://x.com/TheGeorgePu/status/2045159412508119442)
+- 我為 @opencode 建了 Session Graph 外掛，顯示聊天分支如何連接並標示分叉來源與返回路徑。 [↗](https://x.com/ansonox/status/2045518907293700520)
 
 ## 🌐 地緣政治
 
-- 中國修建的道路使瓦努阿圖 Pentecost 島學生上學時間從三小時步行縮短為 20 分鐘車程，消息來自中國駐瓦努阿圖大使李明剛。 [↗](https://x.com/China_says/status/2019574777644740676/analytics)
+- IRGC Navy 表示川普關於霍爾木茲海峽的說法「沒有有效性」，並指示艦艇僅遵循 IRGC 指導。 [↗](https://x.com/Polymarket/status/2045588357221175543)
+- 貼文指出霍爾木茲再次關閉，並觀察到大規模美軍集結前往中東，暗示美國可能強烈回應。 [↗](https://x.com/MilkRoadMacro/status/2045608418636148892)
 
 ## ⚙️ 軟體工程
 
-- Omarchy 內建名為 fip 的 SSH 轉發器，可將遠端三個 Web 服務的埠轉到本地 localhost 以安全存取，方便遠端開發。 [↗](https://x.com/dhh/status/2045163950128468408)
-- 新的 Login Widget 可快速授權用戶，並要求電話號碼與 Telegram 訊息權限，整合註冊、登入與電話驗證，完全免費。 [↗](https://x.com/durov/status/2045310023698350270)
-- 在 Replit 發佈首集（共5集）系列影片，示範建立完整旅行規劃應用。 [↗](https://x.com/sarahli/status/2045186512510464410)
-- 推出 itui，讓 iMessage 現在可在 Linux 上使用。 [↗](https://x.com/ryanvogel/status/2045158124206625127)
-- 北京 E-Town 人形機器人半馬 2026-04-19 舉行，限雙足，300 多台來自 76 隊，約 40% 完全自主，身高限 2 ft 6 in 至 5 ft 11 in。 [↗](https://x.com/TheHumanoidHub/status/2045417862236618755)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/ExaAILabs/status/2045186213729169626)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/immanuel_vibe/status/2045358672981692522)
-- 這則貼文聚焦 AI agents。 [↗](https://x.com/sregg/status/2045231628369191075)
-- 我認為 Ubiquitous Language、Bounded Contexts、ADR 是好的；Entities、Value Objects、Aggregates、Domain Events 是不好的，應以 DDD 文件化應用而非規定其形 [↗](https://x.com/mattpocockuk/status/2045090172451057985)
-- 我發現貼近協定與管線的抽象不利於追求的優秀 UX，WebSocket 偶爾適合作為實作細節，需更高層級的抽象。 [↗](https://x.com/rauchg/status/2045237574810436057)
+- 以 Rust 寫成的原生 TypeScript 編譯器，透過 SWC 解析並用 LLVM 直接編譯為可執行檔，支援 macOS/Windows/Linux/iOS/Android，含原生 UI。 [↗](https://x.com/azu_re/status/2045741429620986231)
+- eBPF 是內核中的安全小虛擬機，sched_ext 可在 userspace 寫 Linux CPU scheduler 並替換 CFS [↗](https://x.com/immanuel_vibe/status/2045764463228321993)
+- 比喻當代 vibe coders 如工業革命的裝配工，需將強大子系統以半標準介面接合 [↗](https://x.com/Grady_Booch/status/2045616677099098216)
+- 宣布將 OpenCode Desktop 重新以 Electron 重建，並停止發佈 Tauri 版本 [↗](https://x.com/brendonovich/status/2045725889422610602)
+- 用 opencode 幫我寫了插件，讓在閒置時透過 PulseAudio 播放聲音，因此即使在遠端機也能運作，並表示 Linux 音訊表現良好。 [↗](https://x.com/thdxr/status/2045537488035250190)
+- 下一版 Bun 將 glibc 最低版本從 2.26 降到 2.17（14 年前發布），解鎖可在 RHEL 7 與 Amazon Linux 1 使用 Bun 的公司。 [↗](https://x.com/bunjavascript/status/2045746538719383974)
+- 貼文說 OpenAI 工程師 Ryan Lopopolo 禁止團隊碰編輯器，主張「code is free」，並以情境、護欄與回饋迴路為護城河；作者寫了 8,000 字說明建立該 harness。 [↗](https://x.com/rohit4verse/status/2045569399990501413)
+- DuckLake 被視為 Apache Iceberg 的替代方案，但需以 PostgreSQL、SQLite 或 DuckDB 作為目錄存放目的地被視為缺點。 [↗](https://x.com/matsuu/status/2045685332302234105)
 
 ## 🖥️ 前端開發
 
-- Kiyotaka 重新打造 v4.0，進行完整改版，包含主要 UI/UX 優化、新搜尋、新圖表類型、更快效能與新色彩，且仍 100% 免費。 [↗](https://x.com/kiyotaka_ai/status/2045109127639437326)
-- Angular 文件新增 NG01002 錯誤說明、三篇 Signal Forms 指南與 Devtools Router tree 檢視指南。 [↗](https://x.com/GeromeDEV/status/2044737682010497358)
-- vue-clamp 新增 <RichLineClamp> 元件，可對多行富文本進行折疊。 [↗](https://x.com/_justineo/status/2045397350487838977)
-- Three.js 新範例展示東京 3D tile display，雲層效果特別驚豔，且完全用 JavaScript 實現。 [↗](https://x.com/clockmaker/status/2045275123490656736)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/wsl8297/status/2045110293240664275)
-- @ starting-style 定義出現在 DOM 的元素初始狀態，讓它們能順暢地過渡到最終樣式。 [↗](https://x.com/vponamariov/status/2045055521955467329)
-- 在 Claude Opus 4.7 發佈前的基準測試顯示其在 React Native 應用表現比 4.6 差且成本高 30%。 [↗](https://x.com/thymikee/status/2045138362198106570)
-
-## 🔐 資安
-
-- @sama 說「Our goal is to make World ID be this new proof of human for the internet.」，並指出 AI 泛濫的世界需要隱私保護的人類驗證，且 @worldnetwo [↗](https://x.com/a16zcrypto/status/2045257890404106429)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/liran_tal/status/2045240136762265793)
+- Claude 讀取程式碼庫與設計檔，建立團隊的 Design System 並自動套用以維持專案品牌一致性。 [↗](https://x.com/claudeai/status/2045156271251218897)
+- Claude Design 建議搭配 Design Systems 使用，作為品牌指南，並建議用 Claude Cowork 建構框架。 [↗](https://x.com/jerrod_lew/status/2045569165252055550)
+- React 在配合強健量測層下能處理超大差異（200k+）與龐大對話，採用自訂虛擬化與 Shiki 同步分詞實現順暢語法高亮。 [↗](https://x.com/adrianmg/status/2045797125834125339)
+- 因為想設計更好的使用者體驗，他投入 JS 與前端工程，並以 Sketch 畫板設計 first 𝚗𝚘𝚠 CLI 與 𝚗𝚎𝚡𝚝 𝚍𝚎𝚟 [↗](https://x.com/rauchg/status/2045593022163996937)
+- tiks 是網頁音效函式庫，使用 Web Audio API 在執行時合成聲音，不需載入音檔，gzip 後僅 2KB [↗](https://x.com/geekbb/status/2045416196313612391)
+- 啟動 Futuristic Interfaces 系列，用 AI 工具實驗非常規 UI；首個示範設計 Nano Banana 2，程式碼為 Gemini 3.1 Pro [↗](https://x.com/DilumSanjaya/status/2045545685899153440)
+- 表示 RSC 是未來，並討論 tanstack 與 Next.js 的取捨，偏好簡約宣告式 use directives [↗](https://x.com/garyfung/status/2045338883467149368)
+- 去年發布 Petri Dish NCA，把神經網路當作在模擬中學習的生物；今天發布 Digital Ecosystems，一款基於瀏覽器的作品。 [↗](https://x.com/SakanaAILabs/status/2045532808995905764)
 
 ## 💰 財經
 
-- 該影片以務實方式解釋 STRC 與 MSTR 及其風險，並指出 Strategy 不是龐氏騙局。 [↗](https://x.com/AdamBLiv/status/2045094922643227130)
-- Strategy 建議將 $STRC 股息由每月改為半月發放，年化股息金額與利率不變，旨在穩定價格並提高流動性與需求。 [↗](https://x.com/Strategy/status/2045232546779209983)
+- 下週市場極度波動：週一 日本貿易收支；週二 聯準會流動性注入 ($7.58B)；週三 美國石油庫存；週四 初請失業救濟；週五 日本 CPI [↗](https://x.com/CryptoNobler/status/2045759834335908302)
+- 指出 labs 持續有偏見，認為能從革命中取得大量金融價值，但實際只會抓到極小百分比 [↗](https://x.com/tszzl/status/2045553743974867405)
+- 在舊金山兜售 SPV 讓作者想起紐約鑽石區街頭買賣手錶的影片，但這次結尾作者帶走的是 Anthropic。 [↗](https://x.com/bubbleboi/status/2045280720378372242)
+- 我購買 Nvidia GPU 申報為資本支出以抵稅，計劃按小時出租算力並從中獲利。 [↗](https://x.com/bubbleboi/status/2045282930659066142)
 
 ## 📌 其他
 
-- CNET 的 Bridget Carey 使用 MacBook Neo 一個月後發現 8GB 記憶體在 Safari 開太多分頁時有缺點，並探討分頁數與記憶體耗盡的關係。 [↗](https://x.com/CNET/status/2045159095552925757)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/JanJekielek/status/2044874341469360458)
-- 未來機器人會製造大量機器人，供給將飽和人類需求，商品與服務極為豐富，甚至難以想到要向機器人要求什麼。 [↗](https://x.com/cb_doge/status/2045124879939477736)
+- Carl Sagan 描述書是由樹做成的平面物體，上面印有許多有趣的黑色符號，一看便能進入他人的思想，可能是已逝千年的某人。 [↗](https://x.com/AlexAndBooks_/status/2045497400416969022)
+- X 將那些帳號從創作者收益中移除，作者不確定是否會改善，且因認識 socap 團隊在其徵才時留言 [↗](https://x.com/adxtyahq/status/2045334764828446821)
+- 無法證明他人有意識，只能基於與自己行為相似性假定，而該假定因錯誤的社會代價極高而成立 [↗](https://x.com/dylanmallman/status/2045539827882320290)
+- Julian Casablancas 說他想拿筆電播放那些被下架的 Iran LEGO 影片，並稱它們比地方新聞更有事實。 [↗](https://x.com/Buenozaf/status/2045767285688730027)
+- 貼文對比社會對飛行員與駕駛人的看法：飛行員被視為高智商且以安全為重；駕駛人則被視為16 歲莽撞青年，事故常見。 [↗](https://x.com/Boenau/status/2045110026541662221)
 
 ---
-📊 採集 289 條，精選 50 則 ｜ 來源：X ｜ 更新：11:46 UTC
+📊 採集 396 條，精選 50 則 ｜ 來源：X ｜ 更新：13:05 UTC
