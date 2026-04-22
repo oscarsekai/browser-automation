@@ -1,71 +1,67 @@
 # X 動態摘要
-📅 2026 年 4 月 21 日 ｜ 最後更新：10:26 UTC
+📅 2026 年 4 月 22 日 ｜ 最後更新：11:44 UTC
 
 ## 🤖 AI 模型與工具
 
-- 知道 K2.6 實力強，但懷疑會開源；以建 HTML ASCII roguelike 分三步演進做標準測試。 [↗](https://x.com/teortaxesTex/status/2046362677304258841)
-- Anthropic 執行長表示 50% 的科技職位、初階律師、顧問與金融從業者在未來 1–5 年內會被完全取代。 [↗](https://x.com/eng_khairallah1/status/2046198776407433677)
-- Kimi 2.6 Code 為 Kimi K2.6 打造的 Claude Code 終端體驗，標榜成為強大的開源編碼 agent；帶上 API key 並 /login。 [↗](https://x.com/skirano/status/2046318389245972770)
-- 一名男子刪除 Figma，連續 30 天僅用 Claude 設計，出貨量從每月 2 件增至 12 件，並採用給定的設計 brief 框架。 [↗](https://x.com/alphabatcher/status/2045834840625316076)
-- Hermes agent 提供逐步設定說明，具備內建記憶、40+ 工具，可在手機與終端機上運行，並與 openclaw 作比較。 [↗](https://x.com/gregisenberg/status/2046310954351358378)
-- OpenAI 工程師舉行 Build Hour 討論 agent 記憶，指出「Context is a finite resource whose effectiveness diminishes with repeated use」，並解 [↗](https://x.com/rohit4verse/status/2046295072417911256)
-- 進行 Qwen3.5 27B vs Gemma4 31B 的 dense 比較，使用相同 4 個 HTML canvas 挑戰、無 MoE，量化器 Unsloth Q6_K_XL，皆在 RTX 5090、單一 HTML 檔案、無外部函式庫運 [↗](https://x.com/stevibe/status/2046171858991821092)
-- 使用 @strapijs、@tan_stack、@ollama 與 Gemma 4 建置 local-first 知識庫，欲更強可改用 Claude 並暴露工具。 [↗](https://x.com/codingthirty/status/2046357991461474803)
-- MCPorter 0.9.0 發布，可由 TypeScript 或 CLI 呼叫 MCPs，新增 per-server 工具過濾、Windows OAuth 引號修正與 schema 字串強制。 [↗](https://x.com/steipete/status/2046192869497622529)
-- @coroot_com 推出 AI Powered Root Cause Analyses，zero instrumentation 即可更快排解問題。 [↗](https://x.com/PeterZaitsev/status/1950306615808139547/analytics)
-- Claude Opus 4.7 現可自動幫你找工作；有工具會掃描職缺、自動填表並為每個職位重寫履歷。 [↗](https://x.com/TimJayas/status/2046135224984338478)
-- Gemma 4 的 E2B 與 E4B 可透過 Locally AI 或 Google AI Edge Gallery 在 iPhone 完全離線運行，下載約 1.5GB 量化模型，推論使用 Apple Neural Engine。 [↗](https://x.com/rohanpaul_ai/status/2045960485154300407)
-- 每天用 Claude 認為懂 agents，遇到撰寫《Building Effective Agents》的 Anthropic 工程師後，該工程師在 15 分鐘內說明 agents 的實際架構與工作流程。 [↗](https://x.com/kirillk_web3/status/2046119926679892250)
-- Seedance 2.0 可用一張參考照片生成整個場景，完全使用 AI，並宣稱不需剪輯技巧。 [↗](https://x.com/CodeByPoonam/status/2046208678416843206)
-- AI agents 正在製造數百萬 TikTok 觀看；Oliver Henry 的 agent Larry 為 Snugly 帶來成效，Matt Welter 的自動頁面讓 Postiz 兩個月內 MRR 從 20k 增至 81k。 [↗](https://x.com/alphabatcher/status/2046315950811578864)
+- 談到 openai sora 與 google veo 推動更好的影片片段，且新趨勢是影片會持續、會隨操作反應並發生變化。 [↗](https://x.com/adxtyahq/status/2046688513526206644)
+- Anthropic 團隊展示如何正確使用 Claude Code，提供一場 25 分鐘的免費工作坊並附指南。 [↗](https://x.com/eng_khairallah1/status/2046609447334629807)
+- 發表新論文：在委派 LLM 編輯文件的情境下，LLM 可能在完成任務時導入錯誤，影響對委派工作的信任。 [↗](https://x.com/PhilippeLaban/status/2046615120332124450)
+- Kimi K2.6 被稱為 Opus 4.7 的開源版，可於 2026 年在兩台 512GB Mac Studio 上運行，並稱未來是開源。 [↗](https://x.com/VadimStrizheus/status/2046637966555058324)
+- herdr 0.5.0 推出，支援 detachable，可讓代理持續運行並可從手機透過 SSH 重新連回同一會話，無需專屬應用。 [↗](https://x.com/lumendriada/status/2046653599321661925)
+- 使用單一 API 提供 Seedream 圖像與 Seedance 視頻生成功能，並由可擴展雲端支援，快速將 AI 帶入產品。 [↗](https://x.com/BytePlusGlobal/status/2044401580791812270/analytics)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/intheworldofai/status/2046761385359536274)
 
 ## 🌐 地緣政治
 
-- 在 Civil Services Day 強調國家服務是「Developed India」的基礎，呼籲將站在最後一排的人接入主流發展，以建設更有能力、繁榮且有同理心的印度。 [↗](https://x.com/narendramodi/status/2046430275480244669)
-- 內政部長 Burgum 作證發現部分 NGO 收入 100% 來自納稅人，CEO 薪資為 $650K，支付遊說者 $400K。 [↗](https://x.com/nicksortor/status/2046336627497181589)
+- 伊朗前駐委內瑞拉大使之子被拍到搭私人噴射機前往伊比薩、提著 Louis Vuitton 包；同時超過 30% 伊朗人處於貧困線以下，政權內圈生活迥異。 [↗](https://x.com/MarioNawfal/status/2046867099906179499)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/nicksortor/status/2046583118765740394)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/elonmusk/status/2046845343220773294)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/KanekoaTheGreat/status/2046723825774289375)
+- Spencer Pratt 指稱太平洋帕里塞德空地最大買家是中國，並表示購地並非直接購買而且相當祕密。 [↗](https://x.com/WallStreetApes/status/2046405592760398099)
+- 有位女性走上講台五秒裝重要卻無所作為，作者認為這很具代表性地呈現卡馬拉·哈里斯的競選。 [↗](https://x.com/PubWanghaf/status/2046595678458311021)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/narendramodi/status/2046770966685163989)
 
 ## ⚙️ 軟體工程
 
-- 從零開始打造名為 Slopwatch 的應用並錄影全過程，首要步驟是在 Rust/Go 與 Node/Bun 間選語言。 [↗](https://x.com/mattpocockuk/status/2046178010538078444)
-- 採訪圖靈獎得主 Mike Stonebraker，討論 Postgres 背後故事與建置時最困難的技術挑戰。 [↗](https://x.com/ryanlpeterman/status/2046214803815911898)
-- Supabase 正在招募超過 30 個職缺，涵蓋工程、業務、客服、行銷、合作等職務，歡迎各類背景應徵並查看職涯頁面。 [↗](https://x.com/dshukertjr/status/2046212790214402235)
-- 已加入 @conductor_build 負責 developer experience，向多位同事致謝，歡迎以 DM 或郵件提供產品回饋。 [↗](https://x.com/mattyp/status/2046370061305467350)
-- @Cloudflare 新站為基準，acceptmarkdown.com 檢查 Markdown 回應正確性（Vary、q-values、406、Link rel=alternate），並追蹤採用的 AI agents 與整合指南。 [↗](https://x.com/retlehs/status/2046214298880344552)
-- Vitalik 表示以太坊不是為了與高頻交易平台競爭或成為最快的鏈，而是要成為安全且去中心化的可依賴鏈。 [↗](https://x.com/cryptorover/status/2046211252209262729)
+- 開源 Cube Sandbox：以 RustVMM 與 KVM 建構的 AI Agent 輕量沙箱，宣稱 sub-60ms 冷啟動且每實例記憶體開銷低於 5MB。 [↗](https://x.com/TencentAI_News/status/2046511216907157678)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/joeroganhq/status/2046607388560740604)
+- 這則貼文聚焦 工作流程。 [↗](https://x.com/orcdev/status/2046579140443140328)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/zhenthebuilder/status/2046277159770284252)
+- steipete 表示已加入 CLI 支援，但在 Hacker News 仍被封鎖，繞過只需重新命名，他不願這麼做，處於懸置。 [↗](https://x.com/steipete/status/2046685973233189375)
+- josefbender 指出 @tan_stack 的中介軟體可在伺服器函式前後於客戶端與伺服器端執行程式碼，並示範呼叫順序。 [↗](https://x.com/josefbender_/status/2046524360714854454)
+- 在 Postgres 使用單一 schema 管理多租戶通常比多個隔離 schema 更容易操作與擴展，即使表有十億筆紀錄。 [↗](https://x.com/BenjDicken/status/2046653318286688558)
+- 一名原本幾乎無法行走的女子在廣交會試穿中國外骨骼後能穩步行走，朋友當場痛哭，並稱機器人將改變生活。 [↗](https://x.com/minchoi/status/2046801370330656841)
+- 邊緣推理的瓶頸正轉向能量而非記憶體，文中提到閃存卸載與碳塗矽陽極可能再增約 20% 能量密度。 [↗](https://x.com/vin_sachi/status/2046415145845268514)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/GergelyOrosz/status/2046705305778618613)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/Table4Airports/status/2039706082466267275/analytics)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/ClaudeCodeLog/status/2046745562507071790)
 
 ## 🖥️ 前端開發
 
-- 正在用 TanStack Start 建立 Shopify 驅動的網站，速度快、輕量，且與 hydrogren-react 套件相容。 [↗](https://x.com/tannerlinsley/status/2046304713298342359)
-- 讚賞其迅速、透明與配合公開調查，但批評其 UX/UI 需要改進。 [↗](https://x.com/talondragon000/status/2046221490442719636)
-- 推出 dialectcn，一個 @shadcn 預設的活化程式庫，貼上程式碼並執行 init 即可為相同元件產生各方言的 feed，網站 dialectcn[.]xyz。 [↗](https://x.com/kapish_dima/status/2046268426335797479)
-- 以 Three.js 建立完整遊戲引擎，含編輯器、ECS、物理、粒子、自訂著色器、動畫、腳本與建置流程，可在 144fps 處理數萬物件，將公開並徵求早期存取。 [↗](https://x.com/heygeorgekal/status/2046169187022758392)
-- Kimi K2.6 agent 用一個 prompt 生成電影風格的 video hero，含原生 GLSL/WGSL WebGL shader、liquid metal、caustics、raymarching，支援真實後端與 GSAP、 [↗](https://x.com/Kimi_Moonshot/status/2046265960383033825)
+- 向 @antirez 表示尊敬，並對 2026 年前端開發（含 coding agents 世界）提出不同看法，提到 Angular 和 React。 [↗](https://x.com/leerob/status/2046788389937000576)
+- 使用 Seedance 2.0 將 GPT Image 2 生成的 ARPG《Golden Lotus》轉為動態版本，並處理 UI 互動與場景轉場。 [↗](https://x.com/op7418/status/2046854932620525750)
+- 這則貼文聚焦 React。 [↗](https://x.com/kentcdodds/status/2046254817794764986)
 
 ## 🔐 資安
 
-- Google 發布 1MB 的 AI 模型 Magika，為開源檔案偵測系統，透過讀取內文而非副檔名來抓出偽裝成 PDF 的惡意程式。 [↗](https://x.com/AlphaSignalAI/status/2046197566287532262)
+- 這則貼文聚焦 AI agents。 [↗](https://x.com/Replit/status/2046652451550613648)
 
 ## 💰 財經
 
-- 'Trump insider' 開了 9200 萬美元的以太坊空頭，使用 20x 槓桿，清算價設為 1,392 美元。 [↗](https://x.com/Wuming_Mr_/status/2046374943559229529)
-- 美國今日開始退還 $175,000,000,000.00 的關稅收入，並稱 Trump 會償還所有關稅收益，指出此事為過去 50 年最大的流動性排出之一，對市場極為不利。 [↗](https://x.com/DefiWimar/status/2046238944770072812)
-- 一位鯨魚以 20x 槓桿開立價值 $90,900,000 的 ETH 多單，清算價 $1,392，近月獲利 $16,600,000。 [↗](https://x.com/GordonGekko/status/2046128754833981683)
-- 巴菲特在 CNBC 討論 Apple，指出 Berkshire 在 AAPL 獲利超過 $100B 並仍持有 $60B+，並說「我賣得太早，但買得更早」。 [↗](https://x.com/TrungTPhan/status/2046407575349109004)
-- 一位自稱 100% 勝率的鯨魚以 20x 槓桿開立價值 $92M 的 ETH 空單，清算價 $1,392。 [↗](https://x.com/philarekt/status/2046272878383902741)
-- 一名標示為特朗普內部人士的人在美市開盤前下單$25,000,000做多石油，並宣稱勝率100%且預期油價飆升。 [↗](https://x.com/CryptoNobler/status/2045909865667666018)
-- 本週三次資金注入：聯準會在開盤前注入$5,058,000,000，財政部透過TGA釋出$90,000,000,000，並進行有史以來最大$15,000,000,000國債回購。 [↗](https://x.com/MerlijnTrader/status/2046197192944153083)
-- 想到Tim Cook卸任令人動容；他將Apple從2011年的$108bn成長到去年的$416bn營收，裝置數從250m增至2.5bn。 [↗](https://x.com/ecommerceshares/status/2046352914222866652)
-- 一小時 MIT 講座「option price & probability duality」宣稱比華爾街兩個月對沖基金實習更能教選擇權交易。 [↗](https://x.com/Dipper_pol/status/2046312493870698964)
-- 在喬布斯逝世前數週成為 Apple 執行長，為首位公開出櫃的財富500強執行長；他將 Apple 市值從 $350 billion 提升到 $4 trillion，年營收從 $108 billion 增至 $416。 [↗](https://x.com/chakravartiiin/status/2046439148819755326)
-- CNBC 一場辯論使 NYSE 停止交易 23 分鐘，Brad Katsuyama 對 BATS 總裁說「I believe the markets are rigged, and I also think you're part of t [↗](https://x.com/carm1nee/status/2046341116618850628)
+- 該 BTC 機器人在 Polymarket 的 15 分鐘價差套利賺得 +$715K；作者解析 2,800 筆交易並建自學代理複現，kingofcoinflips 每筆 $9K。 [↗](https://x.com/hanakoxbt/status/2046658142763700369)
+- 把 $10,000 交給 Claude 交易，六週實驗結果為虧損（非毀滅性），作者因此在開券商 App 時難以停止算帳。 [↗](https://x.com/lorden_eth/status/2046549618398212554)
+- 用 Claude 找出被錯價的 Polymarket 市場與套利錢包並複製其行為，從 $2K 增至 $12K 一晚，掃描 1,000+ 錢包後篩選出真實優勢。 [↗](https://x.com/0x_Discover/status/2046542100078989575)
+- 內部人士在美伊和平協議前開始買入除石油外資產；563 筆買入、0 賣出，成交量 $18.7 billion。 [↗](https://x.com/CryptoNobler/status/2046913616822100042)
+- BlackRock 在美國市場開盤前大量買入比特幣，五分鐘內買入超過 2.5 億美元，且持續買入。 [↗](https://x.com/CryptoNobler/status/2046841683711496590)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/AlexMasonCrypto/status/2046636791134888262)
 
 ## 📌 其他
 
-- 藍鯨的乳汁濃稠如流動奶油，適合幼鯨在水中餵食而不會擴散。 [↗](https://x.com/mindfulheal/status/2046366538752774473)
-- 主張淘汰單調矩形的機場抵離港顯示板，採用 MegaTable 重塑機場體驗，以服務全球每年數十億旅客。 [↗](https://x.com/Table4Airports/status/2039706082466267275/analytics)
-- 我不相信人類現在或曾經建造過這個，要不是模擬出錯就是從另一個模擬帶來的。 [↗](https://x.com/wakenminds/status/2046340166332166630)
-- 在1947年21歲生日，伊莉莎白二世宣誓將一生奉獻給人民，並持續履行公務。 [↗](https://x.com/RoyalFamily/status/2046198080626622619)
-- 日本警告人民7.7地震可能是預熱，氣象廳稱未來一週8.0以上地震風險升高，7.7已引發岩手沿岸海嘯。 [↗](https://x.com/MarioNawfal/status/2046514282821714281)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/RealEmirHan/status/2046675906069221573)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/PeakThinkers_/status/2046562439266009564)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/Dailymeoww1/status/2046701613297901782)
+- 莫迪在阿迪·香卡拉查里亞誕辰向該靈性大師致敬，稱其教導與不二論哲學持續指引全球，強調和諧與紀律。 [↗](https://x.com/narendramodi/status/2046474509159723368)
+- Kanye West 在 2022 年對 Lex Fridman 說他希望被遺忘，並舉例誰設計人行道、水池與交通標誌等日常事物。 [↗](https://x.com/ks_kulk/status/2046641764690440534)
 
 ---
-📊 採集 258 條，精選 50 則 ｜ 來源：X ｜ 更新：10:26 UTC
+📊 採集 238 條，精選 50 則 ｜ 來源：X ｜ 更新：11:44 UTC
