@@ -1,70 +1,76 @@
 # X 動態摘要
-📅 2026 年 4 月 24 日 ｜ 最後更新：14:18 UTC
+📅 2026 年 4 月 25 日 ｜ 最後更新：10:32 UTC
 
 ## 🤖 AI 模型與工具
 
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/phosphenq/status/2047346402435518627)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/neil_xbt/status/2047512855155528054)
-- Open Generative UI 讓 agents 即時生成並串流互動式 UI 到聊天室，啟用設為 openGenerativeUI: true，且完全開源。 [↗](https://x.com/CopilotKit/status/2047341882603454937)
-- 用 GPT-Image2×Seedance2 在一小時內製作 MV：圖片 GPT-Image2、影片 Seedance2.0、音樂 Suno5.5、剪輯 CapCut。 [↗](https://x.com/hibi_ai__/status/2047335333042569411)
-- Fleet 推出的 presentation viewer 讓 Fleet agents 在應用內設計並直接展示投影片。 [↗](https://x.com/BraceSproul/status/2047417882423022034)
-- Eric Schmidt（前 Google 執行長）說，要賺錢就創立 agentic AI 公司，現在是 agentic AI 時代，代理人將相互競爭。 [↗](https://x.com/rohanpaul_ai/status/2047331157931425970)
-- OpenAI 發布 GPT 5.5，是能跨 Slack、GitHub 與瀏覽器自動操作的全自動代理人，並在 agentic 基準擊敗 Claude Opus 4.7 與 Gemini 3.1 Pro。 [↗](https://x.com/alphabatcher/status/2047518789005086810)
-- GPT 5.5 xhigh in codex 一擊生成帶風效的物理網站，包含物理、UI 與互動。 [↗](https://x.com/chetaslua/status/2047393912122486845)
-- Aurora Borealis Opus 執行 38.4s/41.7s；27B 為 104.6s（RTX 5080、50tok/s）；Claude Opus 4.5 同 prompt 未產出乾淨畫布。 [↗](https://x.com/leftcurvedev_/status/2047652263204725005)
-- 使用 GPT-5.5 一個 prompt 即使物理與動畫運作，GPT-image-2 生成背景，幾次跟進後誕生 Mochipuff [↗](https://x.com/ctatedev/status/2047586442633711752)
+- Rust 開發者推出 Obscura，為 AI agent 與爬蟲打造的開源 headless 瀏覽器，宣稱記憶體、檔案大小、載入與啟動均優於 Headless Chrome [↗](https://x.com/ChrisLaubAI/status/2047628152139366766)
+- 建立 deepagents-sandbox，Linux 原生 Deep Agents 沙箱後端（無 Docker/VM），提供可寫 /workspace、預設封鎖網路、記憶體/PID 限制與逾時，使用 bubblewrap 與 cgroup [↗](https://x.com/nu_b_kh/status/2047775326412136574)
+- @CivilRights 與 @DOJCivil 介入訴訟，阻止科羅拉多要求 AI 公司修改演算法以推動 CO 的 woke DEI 目標。 [↗](https://x.com/AAGDhillon/status/2047792830924378313)
+- OpenClaw 4.23 發佈並內建 GPT-5.5；測試示例：1 分鐘建立 Pomodoro 應用、生成寫實影像、及構建中修改程式碼加入 CSV 匯出與 streak。 [↗](https://x.com/AntoineRSX/status/2047876305908384008)
+- Auto-review 為新模式，讓 Codex 在較少審核下持續執行測試與建置，並由獨立 agent 在執行前檢查高風險步驟。 [↗](https://x.com/OpenAIDevs/status/2047436655863464011)
+- SpaceX 與 AI 程式碼編輯器 "Cursor" 簽署交易，包含 $60 billion 的收購選項或未成則付 $10 billion 的違約金。 [↗](https://x.com/Kaito___AI/status/2047280706074636336)
+- 我們在 Paper 嘗試 OpenAI Image Gen 2，可探索想法、產生 mood boards，並結合 agents 製作 UI，文字準確，已在 Paper 提供。 [↗](https://x.com/stephenhaney/status/2047405166572535808)
+- 文章說明 A2A 與 MCP 的五種整合模式，用以建構多代理人系統，強調跨團隊與跨語言代理人的發現價值。 [↗](https://x.com/GoogleCloudTech/status/2047567704807346675)
+- Universal Commerce Protocol 擴大 Tech Council，加入 Amazon、Meta、Microsoft、Salesforce 與 Stripe，推進 agentic commerce。 [↗](https://x.com/VidsSrinivasan/status/2047696562256834824)
+- 在 Las Vegas 的 Google Cloud Next 中，NVIDIA 與 Google Cloud 合作推動 AI 生態在雲端的建置、部署與創新。 [↗](https://x.com/nvidia/status/2047800209468518851)
+- Kimi 在 2023 北京以 128k context 推出，文中指出 OpenAI 仍為 4k，開發者一夜轉向並擴展到 1,000,000 tokens，末尾出現 36 million。 [↗](https://x.com/k1rallik/status/2047694538299347135)
+- Claude 被描述為狀態改變且辱罵無效，仍需 @OpenAI 批准；先前退化後又轉向 Codex，作者斷定該創辦人是 M。 [↗](https://x.com/zkgoudan/status/2047511911928131768)
+- 使用 Seedance 2.0 的提示生成古印度 Surasena 王國的高速電影感 FPV 影片，從高空俯衝越過茂密的 Yamuna 開始。 [↗](https://x.com/shushant_l/status/2047329806937911456)
+- 智慧是系統層級對環境作出湧現性協調行動的描述，且不需要任何「具身的自我」。 [↗](https://x.com/Andercot/status/2047787631640277427)
+- 他說把連結貼到 @Hypescribe，數秒內可得到完整逐字稿、重點摘要與行動項目，支援影音、YouTube、IG、Zoom與100+種語言。 [↗](https://x.com/DataChaz/status/2047764467002524025)
 
 ## 🌐 地緣政治
 
-- 約旦成為第 63 個簽署 NASA Artemis Accords 的國家，簽署國承諾和平、透明與負責任的太空探索原則。 [↗](https://x.com/NASA/status/2047375716690321663)
-- 2015 年中國從也門撤僑時，一名中國女官兵牽著四歲女孩登船的畫面引人注目；該任務撤離 621 名中國公民與 279 名來自 15 國的外國公民。 [↗](https://x.com/Sinical_C/status/2047301722847285320/photo/1)
+- NITI Aayog 成為印度政策制定的重要支柱，促進合作聯邦主義、推動改革並提升 'Ease of Living'，作為跨部門創新與長期策略平台。 [↗](https://x.com/narendramodi/status/2047974680322339087)
+- 川普說我們在日本駐有45,000名部隊、在南韓45,000名、在德國50,000名，並詢問這些國家是否有掃雷艦，對方問是否可以不參與。 [↗](https://x.com/Bitcoin_Teddy/status/2047843534066360674)
 
 ## ⚙️ 軟體工程
 
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/freeCodeCamp/status/2047526207470616800)
-- 以兩個點（..）開頭請求 IDE 功能，例如 ..constructor 產生建構子參數或預設建構子，..bean 注入 Spring 元件，..ai 在編輯器裡發問。 [↗](https://x.com/intellijidea/status/2047616613692608663)
-- Bruno v3.3.0 新增 OAuth 1.0、GraphQL query builder、PAC 上傳與 gRPC 代理、重製 Collection Runner（含計時與篩選）、可自訂鍵盤綁定及腳本直接存取 cookie。 [↗](https://x.com/use_bruno/status/2047056956356268208)
-- 可以用 3D 列印電路佈局再覆銅葉片，且能運作。 [↗](https://x.com/heskelbalas/status/2047559614246330378)
-- JavaScript 現在原生支援集合運算 union(), intersection(), difference(), symmetricDifference()，不用再用手動迴圈。 [↗](https://x.com/MozDevNet/status/2047571289775525976)
-- 蜘蛛人的特技替身是一台機器人，Disney Imagineers 製作的機器人能發射到空中。 [↗](https://x.com/pascal_bornet/status/2047541313630015599)
-- 軟體開發大量是為尚不存在的事物找到合適描述，找對名詞與動詞就能建系統，LLM 很有幫助。 [↗](https://x.com/mattpocockuk/status/2047252417025032318)
-- 可從 CLI 或 Routines UI 的 Schedule→Once Trigger 排程一次性任務，例：/schedule cleanup 一週後、/schedule 兩天後產出啟動報告 [↗](https://x.com/noahzweben/status/2047364243310416044)
-- FluentCleaner 學會辨識 bloatware，詢問是否改名為 FCleaner，並附上 GitHub 連結與 #Windows11 #WinUI3 #WindowsDev 標籤 [↗](https://x.com/builtbybel/status/2047364015735632144)
-- 互動指南說明 CRDT 與 sync engine 如何以 fractional indexing 維持多人即時列表排序，該系統用於 Figma 與 Liveblocks [↗](https://x.com/liveblocks/status/2047353976744730737)
-- 列出高效後端開發者習慣：讀日誌、在地重現問題、使用分析工具、自動化重複工作、寫清楚提交訊息、批判性審查、理解系統流程、深入資料庫 [↗](https://x.com/ashoKumar89/status/2047567443539976647)
-- 互動文章說明一般陣列在多人協作會互相覆寫，應改用 fractional indexing 的同步引擎處理即時列表 [↗](https://x.com/ctnicholasdev/status/2047354184044052912)
+- 中國公司 KargoBot 開發出全自動無駕駛座卡車，計畫今年量產，採模組化設計、WLTC 週期 800 公里續航與 1,026 kWh CATL 可換電池 [↗](https://x.com/niccruzpatane/status/2047874971456659501)
+- Fei-Fei Li 將機器人定義為必須在物理三維空間感知、理解並行動的「具身機器」。 [↗](https://x.com/rohanpaul_ai/status/2047784719027433650)
+- 推出 GitHub Quick Review (ghqr)，一款免費開源 CLI，可掃描 GitHub 組織與倉庫並產生完整守備報告。 [↗](https://x.com/cmendibl3/status/2047610932096872520)
+- Codex CLI 0.125.0 發布，新增 app-server Unix socket、resume/fork 分頁、權限設定於 TUI/MCP/app-server 回傳及遠端外掛安裝與市集升級。 [↗](https://x.com/Codex_Changelog/status/2047742124666626248)
+- GITAI 開發協助建造月球基地的機器人，2023 年 3 月在模擬月球環境以 robotic rovers 與 inchworm arms 示範採礦與安裝太陽能板。 [↗](https://x.com/spaceandtech_/status/2047681800521298292)
+- 他表示常被問如何成為更有影響力的開發/工程領導者，並推薦 @Lethain 的文章與連結作為最佳建議來源。 [↗](https://x.com/GergelyOrosz/status/2047746243296686217)
 
 ## 🖥️ 前端開發
 
-- 這則貼文聚焦 React。 [↗](https://x.com/swmansion/status/2047331033972867513)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/voidzerodev/status/2047659991440519391)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/intheworldofai/status/2047449136832659804)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/dayujabif/status/2047369017015292075)
-- 這則貼文聚焦 prompt 設計。 [↗](https://x.com/fMinZhou/status/2047214663721681288)
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/Akryum/status/2047220951469744524)
-- @alexdotgs（Bitter_Brains 技術教育負責人）將在 #FEN2026 擔任講者，可免費報名觀看。 [↗](https://x.com/frontendnation/status/2047621007305822319)
-- 可用一小段預設程式碼產生完整 shadcn 主題，作者對預設編碼/解碼的創意潛力感到興奮。 [↗](https://x.com/MorganFeeney/status/2047564004319490145)
-- /autobrowse skill 讓代理在網頁執行任務，使用 @browserbase CLI 探索頁面、學習失敗原因並迭代到可靠流程。 [↗](https://x.com/shreypandya/status/2047100550446280792)
+- Comark Playground 改版上線，執行時渲染 Markdown，支援 Vue、React、Svelte 元件與 json-render [↗](https://x.com/Atinux/status/2047426125559939099)
+- 要求標註者自行搜尋，並附上舊推文與 ui.shadcn 的按鈕文件連結 [↗](https://x.com/shadcn/status/2047898339471970733)
+- TanStack AI 統一多家 AI 音訊 SDK（含 Gemini Lyria、fal MiniMax、Stable Audio），用相同串流呼叫並提供 Typed、tree-shakeable 與 React/Solid/Vue/Sv [↗](https://x.com/tan_stack/status/2047760960421531785)
+- 用 TeaVM 將 Warsmash（基於 LibGDX 的 Warcraft III 引擎重寫）交叉編譯為 JavaScript，讓遊戲在瀏覽器執行，地圖檔由 OPFS 提供 [↗](https://x.com/ErikSombroek/status/2047734181149450626)
+- Vuetify v4 已發佈，v0 alpha 上線，整合 MCP，安全計畫畢業，生態系有 10+ 專案，呼籲贊助 [↗](https://x.com/vuetifyjs/status/2047702032761377009)
+- 用 Claude Code 在一個週末打造在 Google Earth 上運作的瀏覽器 GTA 風格遊戲，可在真實城市街道駕駛並遭警方追逐、射擊與逮捕 [↗](https://x.com/om_patel5/status/2047849798162682260)
+- 在 Superapp 上開發健身 iOS 應用，記錄蛋白質與熱量攝取、體重、訓練紀錄與次數，正在打造個人 v1 [↗](https://x.com/adxtyahq/status/2047682848858239415)
+- 在 Wookash Podcast 直播中實作 File Pilot 功能，新增空白 meta 欄以便右鍵背景資料夾或開始矩形選取。 [↗](https://x.com/vkrajacic/status/2047782059741999586)
+- 可以更改 @shadcn/create 的 Preview components (1, 2)。 [↗](https://x.com/iamncdai/status/2047587213589061666)
+- 與 @yjaaidi 的直播討論 Angular 測試，內容包括 Younes 稱 unit tests 為 narrow tests、良好測試策略與測試的防護作用。 [↗](https://x.com/Armandotrue/status/2047286528565531066)
+- 有人開源名為 SuperSplat 的 100% 瀏覽器執行 3D Gaussian Splat 編輯器，可檢視、編輯、優化並發布寫實 3D 場景，免安裝且完全開源。 [↗](https://x.com/HowToAI_/status/2047728492616581484)
+- 為加速 Conductor，團隊將 React Router 換成 TanStack Router，因 React Router 的 hooks 不穩定導致大量不必要重渲染。 [↗](https://x.com/jacksondecampos/status/2047402086967763256)
+- 測試 GPT 5.5，發現其實作 HTML-in-Canvas 規範，對 WebGL 與 WebGPU 即用，並以 PixiJS + GSAP 做了示範。 [↗](https://x.com/PixiJS/status/2047737475175686256)
+- vue3-context-menu 是一個易用的選單元件。 [↗](https://x.com/MadeWithVueJS/status/2047713755774042382)
 
 ## 🔐 資安
 
-- alert(1) 無法顯示真實影響，建議透過竊取 cookies 升級 XSS，並提供更佳升級流程連結 [↗](https://x.com/Bugcrowd/status/2047435904587809207)
+- 在法國政府禁用 Windows 並改用 Linux 後，活動人士呼籲放棄 Windows 10、改用 Linux 而非付費升級到 Windows 11，並以隱私疑慮為由。 [↗](https://x.com/IntCyberDigest/status/2047779076333576460)
+- 看似一宗 CEO 詐騙，詐騙者冒充高層誘使轉帳，並推測可能使用了 Ossan.fm 的音訊。 [↗](https://x.com/matsuu/status/2047685108887605504)
+- 人們開始注意到監控、追蹤與資料蒐集，大家厭倦被當作商品，主張不要被全天候追蹤並喊 'United Against Flock!'。 [↗](https://x.com/JasonBassler1/status/2047843786059862481)
 
 ## 💰 財經
 
-- Intel 股價在財報後從 $65.8 跳升到 $83.5；Hyperliquid 在傳統市場收盤時吃掉所有成交量。 [↗](https://x.com/Havochl_/status/2047586591338607073)
-- 大型加密資產展現韌性，受監管資金流動改善，交易所流動性比預期緊，但真正訊號是資本品質。 [↗](https://x.com/Crypto_Ciara/status/2047628931726282984/analytics)
-- 多數大轉折常見淨利由負轉正；Intel 自 Q3 2025 ER 開始出現該轉變，Meta 自 80 漲到 700、市值增逾 1 兆。 [↗](https://x.com/Glassesman88/status/2047540192173519266)
-- 一位億萬富翁市場內幕者稱目前為「累積階段」，BlackRock、Tesla、Apple 與 NVIDIA 正悄然布局，尚非拉抬階段。 [↗](https://x.com/cryptofergani/status/2047323636340584868)
-- 作者宣稱 $ETH 將劇烈上漲，表示 ETH 強勢會帶動流動性輪動至山寨幣，並主張持有 [↗](https://x.com/cryptofergani/status/2047431173563945173)
+- 我們在未花行銷費下募得 3,000 萬美元、估值 5 億美元，4 百萬人選擇 ComfyUI 作為開發平台。 [↗](https://x.com/yoland_yan/status/2047731043000627263)
+- 推薦一堂 MIT 世代財富講座，建議花一小時學習金錢、複利與構建可傳承的資產，並稱勝過對沖基金或投行 20 年。 [↗](https://x.com/cyrilXBT/status/2047528171201823056)
+- 作者與妻子一同出席 @Resend 在納斯達克的亮相，並指出創業時家人也承受長夜與艱難決策，通常在幕後支持。 [↗](https://x.com/zenorocha/status/2047673929548906682)
+- 列出22個技術分析主題，包括 Fibonacci Retracements、Breakouts、Elliott Wave、Fair Value Gap、Candlesticks 等。 [↗](https://x.com/sunilgurjar01/status/2047714684988772518)
+- 眾人看漲且多頭倉位達最高，作者質疑流動性仍在上方，認為最大痛點不是新底而是新高（ATH）。 [↗](https://x.com/MaxCrypto/status/2047609759097086135)
 
 ## 📌 其他
 
-- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/mathemetica/status/2047402125278199846)
-- 喬治亞曾有座紀念碑以八種語言說明如何在未知末日後重建社會，並兼作羅盤、日曆與時鐘，於 2022 年遭破壞。 [↗](https://x.com/valormental/status/2047451953576526308)
-- 前 Apple 員工挖出史蒂夫·喬布斯 1999 年 7 月在 Apple 總部的演講片段，內容談及回歸兩年後公司瀕危與 iBook 成功。 [↗](https://x.com/TrungTPhan/status/2047497115283378259)
-- Windows、Mac、Linux 任一系統都可，但別只擁有其中一個卻聲稱它是唯一正確的選擇。 [↗](https://x.com/shimarin/status/2047562406956761172)
-- 《The Office》編劇被要求為該集設計最瘋狂的開場以留住超級盃後觀眾，原構想為 Jim 在撲克局輸掉 Pam。 [↗](https://x.com/RealEmirHan/status/2047466062053015710)
+- Steve Jobs 離開 Apple 後的 60 分鐘演講，內容充滿關於打造公司的見解，值得一看。 [↗](https://x.com/VermaAakash3/status/2047633251943223694)
+- 前 Google 執行長 Eric Schmidt 表示人類史上最大的技術轉變正在發生，幾乎沒人在討論。 [↗](https://x.com/realBigBrainAI/status/2047699692461666356)
+- 美國海軍部長 Hung Cao 說有人叫他白人至上主義者，並要求如果給他兜帽要有小縫以便看得更清楚。 [↗](https://x.com/Rightanglenews/status/2047660669554569526)
+- 每次搭這家航空都延誤但不取消，延誤保險延誤給150、超過6小時賠300，但他認為實際上不划算。 [↗](https://x.com/joakja/status/2047312958699786624)
+- 陳平安向 @bcgame 呼喚他的寶劍，宣稱此劍能移山斷河、翻海覆天、降魔鎮鬼、斷星碎城、裂天。 [↗](https://x.com/btc_cai/status/2047506935596171601)
 
 ---
-📊 採集 294 條，精選 50 則 ｜ 來源：X ｜ 更新：14:18 UTC
+📊 採集 271 條，精選 50 則 ｜ 來源：X ｜ 更新：10:32 UTC
