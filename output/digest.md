@@ -1,76 +1,67 @@
 # X 動態摘要
-📅 2026 年 4 月 26 日 ｜ 最後更新：11:47 UTC
+📅 2026 年 5 月 4 日 ｜ 最後更新：13:38 UTC
 
 ## 🤖 AI 模型與工具
 
-- Anthropic 的 applied AI 團隊展示如何正確提示 agents，30 分鐘免費工作坊並提到 40 個範本，作者建立一個可套用這些範本的 skill。 [↗](https://x.com/Av1dlive/status/2048347980009537784)
-- Anthropic Agents 團隊展示一個四層框架，說明可在真實世界運作的生產級多 agent 系統，影片約 30 分鐘。 [↗](https://x.com/cyrilXBT/status/2048262079925154192)
-- Mercury 在 GitHub 突破 1,000+ stars，並在打造具有實際控制的個人 AI agents。 [↗](https://x.com/mercury__agent/status/2048107523526533230)
-- DeepAgents Sandbox 是輕量原生 Linux 沙箱，為執行 LLM/agent 產生的程式碼提供完全隔離，無需 Docker、VM 或雲端，並附 LangChain 式適配器。 [↗](https://x.com/nu_b_kh/status/2047776279152546043)
-- 這場兩小時的 Stanford 講座表示能教你關於 ChatGPT 與 Claude 的構建，比多數頂尖 AI 公司從業者整個職涯學到的還多。 [↗](https://x.com/HeyAmit_/status/2047939325103686100)
-- 加拿大最大 AI 新創收購德國一家 AI 新創，媒體稱「AI powerhouse」，雙方被形容為求生合併且遠落後於 Anthropic 與 OpenAI。 [↗](https://x.com/TheGeorgePu/status/2048102787204989378)
-- 使用 GPT-5.5 與 Codex 製作 Terraria 風格遊戲，並用 GPT Image 2 產生視覺遊戲資產。 [↗](https://x.com/intheworldofai/status/2048227177062158717)
-- Cursor 現在以 async subagents 與改良的 worktrees 簡化同時執行多個 agents，並可跨多個 repo（例如 frontend 與 backend）執行。 [↗](https://x.com/leerob/status/2047766830832316491)
-- @kentcdodds 建立能與現實互動的 AI 助手，例如根據太陽位置、溫度與眩光控制家中窗簾，並提到 MCP。 [↗](https://x.com/pragmaticaifm/status/2047677363836600765)
-- Summarize 0.14.0 推出，新增 GPT-5.5 Fast 模式 (--fast)、瀏覽器外掛的 Reddit 線程擷取、本地 PDF (--extract) 及自動模型設定與 Meta 網站相容性修正。 [↗](https://x.com/steipete/status/2048275589224628677)
-- 非常沉迷由 GPT Image 2 製作的 UI，為 Seedance 2 花了很多點數，並表示需要 1080p 無限制生成平台。 [↗](https://x.com/0xInk_/status/2047933629829992800)
-- 推出 Claude Code Hook — Context Timeline；安裝指令 npx claude-code-templates@latest --hook monitoring/context-timeline，開發原因為難以追 [↗](https://x.com/dani_avila7/status/2048249455426539571)
-- OpenClaw 2026.4.24：語音通話可觸及完整 agent DeepSeek V4，Flash 與 Pro 加入，瀏覽器自動化新增座標點擊與回復，並修正 Telegram、Slack、MCP 與 TTS。 [↗](https://x.com/openclaw/status/2048124737918751035)
-- Telegram 指出任何人可用 AI 機器人無需程式碼就能開發、上線並管理自己的機器人。 [↗](https://x.com/telegram/status/2048098691391852966)
-- Anthropic 的 Claude Code 團隊示範用 Claude Code SDK 在 30 分鐘內免費自動化工程工作流程。 [↗](https://x.com/codewithimanshu/status/2047875091174981780)
-- Agent Operator 這個新職務將在未來五年主導，並出現在幾乎每個組織內。 [↗](https://x.com/ZabihullahAtal/status/2048049033718223196)
-- Grok Voice Think Fast 1.0 以 67.3% 表現獲得第一名，實際通話處理銷售與客服，Starlink 在使用。 [↗](https://x.com/MarioNawfal/status/2048038176649036262)
-- 一名 14 歲中國學生以 13 美元在 AliExpress 買到 Pi Zero、電池與 3.5 吋螢幕，自己焊接、安裝 Ollama 並載入可離線運行的 Gemma 2b。 [↗](https://x.com/Sprytixl/status/2048296783051096092)
+- PyFlue 是受 Flue 啟發的 Python 原生 agent harness 框架；Flue 由 Fred Schott 發布，具 Markdown 驅動的 skills 與 headless 特性。 [↗](https://x.com/Shashikant86/status/2050954133272768739)
+- Google 釋出免費桌面應用 Gemma Chat，可在 Wi‑Fi 關閉時構建完整的 web 應用。 [↗](https://x.com/JulianGoldieSEO/status/2050941682125074792)
+- Codex 可在不開瀏覽器的情況下建立 Google Slides，團隊可即時查看進度，並以迭代方式建構投影片。 [↗](https://x.com/gabrielchua/status/2051113129317408925)
+- GoogleAIStudio 的 Build 新增右上角 edit 工具，提供比左下 Annotate 更簡單的點選並描述變更的 UX。 [↗](https://x.com/DynamicWebPaige/status/2051043597705982360)
+- FlowAI 的 Team Details 頁面顯示 35 名成員、213 個工作流程、今日 4,210 次 AI 執行、98.6% 成功率與 $94.40/月。 [↗](https://x.com/Tanjim38/status/2050997556956573761)
+- 新增 Agent-to-UI (A2UI) 支援，讓自訂 agent 在 Gemini Enterprise 內直接產生互動視覺化與結構化表單。 [↗](https://x.com/googlecloud/status/2051013926347780242)
+- 已發佈 Waza v3.12.0，新增 Claude Desktop ZIP 安裝、Claude Code 外掛安裝與較輕量的 /health，並列出 AI 編碼 agent 的技能。 [↗](https://x.com/HiTw93/status/2051149478560948473)
+- 因為沒時間撰稿、準備視覺、產生語音、做字幕與渲染，我們在 @NousResearch 的 Hermes Agent 之上建立了 Noustiny。 [↗](https://x.com/UfukDegen/status/2051088239579345329)
+- 有人把 Claude Code 接到 Shopify，讓 Claude 撰寫商品描述、建立 SEO 欄位、整理分類並更新目錄，將原始商品變成實體頁面。 [↗](https://x.com/gippp69/status/2050984438709010574)
+- 官方文件為入門好起點，若需更有結構的學習可使用 100% 免費的 LangChain Academy。 [↗](https://x.com/masondrxy/status/2051024752970445229)
+- Hermes Workspace 推出 HermesWorld，多人 3D RPG 支援自由漫遊、互動任務、內建聊天與 6 個世界，使用 Hermes skills 與 swarm of agents。 [↗](https://x.com/outsource_/status/2051163047436132451)
+- 作者認為 Anthropic 的重要性被低估，並指出 Google Cloud 收入因 Anthropic 飆升，Meta 正用 Opus 大量產生 traces。 [↗](https://x.com/petergostev/status/2051275237681975342)
+- 先用 GPT-2.0 生成指定服裝的影像，再以 Seedance 2.0（Higgsfield、ByteDance 或 Pollo AI）生成影片；提示包含獎典舞台與聚光燈場景。 [↗](https://x.com/CodeByPoonam/status/2051224156721889301)
+- 建議今晚花一小時觀看 Claude AI 全課程，課程教如何建構與自動化各種事務，觀看者可學到新技能。 [↗](https://x.com/Ai_Tech_tool/status/2050976266850115946)
+- 建議規劃用 GPT 5.5、應用用 GPT 5.3 Codex，並指出 5.3 Codex 有 400k 窗口，對任務連貫性更穩定。 [↗](https://x.com/FitzGPT/status/2051051589448892559)
+- 作者稱這是為 OpenClaw 建的最有用工具，開源、在 Codex 上運行，可 fork 並用於任一倉庫，適合處理大量 issue 與 PR 的 OSS 開發者。 [↗](https://x.com/steipete/status/2051020548335874369)
+- BenjaminBadejo 說 AGI 已到來，列出 GPT-5.5 xhigh、OpenClaw、Codex 'goal' 與多代理通訊。 [↗](https://x.com/BenjaminBadejo/status/2050665228564652144)
+- intheworldofai 說 將 DeepSeek V4 與 Claude Code 組合成廉價 AI 程式工作流程；Claude Code 提供終端與檔案編輯等，DeepSeek V4 提供執行層。 [↗](https://x.com/intheworldofai/status/2051207296957530319)
+- Andrew_Blumson 說 他與兄弟打造一個持續運作的 AI brain，具記憶、情緒、驅動、目標、世界模型、睡眠週期，且能改寫自身提示。 [↗](https://x.com/Andrew_Blumson/status/2051019646929702964)
+- Muskanjain0401 說 將加入 smallest_AI 領導內容系列，表示 smallest 在構建語音層，採用小型專用且高速的模型。 [↗](https://x.com/Muskanjain0401/status/2050830273080906117)
 
 ## 🌐 地緣政治
 
-- 作者稱中國讓矽谷整個 AI 產業看起來像騙局，指出美國政府花 3 年阻止中國競爭性 AI，昨日中國新創 DeepSeek 釋出新 AI 模型。 [↗](https://x.com/Ric_RTP/status/2048026064228638964)
-- 一則歸屬於 viajandocomoluiz 的 Instagram 影片顯示 Tabatinga 安裝數十個 Starlink 天線並以光纖轉發訊號。 [↗](https://x.com/BassonBrain/status/2048155516245832023)
-- Pizza Index 在多處飆升；一個休眠錢包在 Hormuz 停閉賭注投入 $100К+，潛在賠付 $120,000+。 [↗](https://x.com/PolymarketStory/status/2048192534606688614)
+- CENTCOM 宣布美國海軍今晨在「Project Freedom」下護送兩艘掛美旗油輪通過霍爾木茲海峽。 [↗](https://x.com/Polymarket/status/2051275950961123365)
 
 ## ⚙️ 軟體工程
 
-- 以 $128,000 可購 Jetson ONE，能從自家庭院起飛且不需飛行執照；Part 103 空重上限 254 磅，Jetson 為 189 磅。 [↗](https://x.com/aakashgupta/status/2048192417535582369)
-- 現在非常想手動學習 Zig、Rust、Go，原因是過程很有趣，而非它們在 2026 更好。 [↗](https://x.com/BenjDicken/status/2048176878444499147)
-- 已將稽核日誌功能加入 evlog，提供完整動作歷史、內建使用者歸屬、不可變紀錄與企業級支援。 [↗](https://x.com/hugorcd/status/2047716544013361401)
-- OpenCode/OpenTUI 透過查詢 OSC 10/11 的前景/背景顏色判斷終端的 light 或 dark 模式，並啟用 DEC。 [↗](https://x.com/kmdrfx/status/2048069864196014237)
-- CNC 加工以小數毫米等級精度切削金屬，形成複雜且平衡的零件，運動阻力極低。 [↗](https://x.com/mechanical_4u/status/2047967834282803229)
-- Iterator helpers（.map、.filter、.take、.drop）在任何可疊代物件上延遲執行，無須中間陣列即可有效處理資料。 [↗](https://x.com/MozDevNet/status/2047782738393235809)
-- 下一版 Bun 與 Safari 中，JavaScriptCore 的 ES module loader 修正數個 top-level await 與 ECMAScript 相容性 bug，感謝 @heimskr64。 [↗](https://x.com/bunjavascript/status/2048249609311637736)
+- Atom 的作者以 Rust 重寫的編輯器 Zed 已達 1.0，據稱放棄 Chromium、為 Windows、Mac 與 Linux 建構原生 UI。 [↗](https://x.com/shimarin/status/2050681679728320617)
+- 建議 AWS 推出僅提供 API 的“github protocol”（git + social），讓他人建立前端，並稱 AWS 的 uptime 無可匹敵。 [↗](https://x.com/peer_rich/status/2050870298753294816)
+- Crabbox 0.4.0 提供在 macOS、Linux 與 Windows 快速建立臨時機器供 agent 使用，支援 AWS spot、Hetzner 與 useblacksmith。 [↗](https://x.com/steipete/status/2051025056306790833)
+- Lobsters 採用「邀請樹」制度防機器人，所有操作需由人擔保，若邀請大量機器人整個樹會被封鎖。 [↗](https://x.com/birch_js/status/2051115405998219649)
+- 今天在 Replit 同時工作約 12 小時，繼續建置 GenAIPI 主網站、修 bug、上新內容，並為 Moon Command 建 18 個任務戰役。 [↗](https://x.com/cheneypiano/status/2050797485443129610)
+- Replit full throttle 帶給作者他形容為有史以來最強的生產力提升，讓他非常振奮。 [↗](https://x.com/ShaunWMusic/status/2050636263837880631)
+- M2Fauzaan 說 他做了 Mac 原生小應用，按空白鍵可即時預覽 Markdown，並可觀看 AI agent 寫作。 [↗](https://x.com/M2Fauzaan/status/2050790005543760336)
+- 在朋友餐桌上 72 小時內打造 Jarvis，成為可與物件互動的動態投影表面，並做出 decomposer 以操作物件內部。 [↗](https://x.com/shubhampatilsd/status/2050879494513455248)
+- T3 Code 的核心架構仍是一個 websocket 伺服器，可將裝置網格化以從任一機器存取 agent，減少對 cloud runners 的需求。 [↗](https://x.com/jullerino/status/2050800249892110378)
 
 ## 🖥️ 前端開發
 
-- 自訂 scrollbar 元件在沒有任何 JavaScript 下建構，使用 scroll-driven animations、anchor positioning 與 determination。 [↗](https://x.com/gkurttech/status/2048135347838623748)
-- HeroUI Pro 提供 64 個元件與 398 個 React/React Native 範例，含 DataGrid、Kanban 與原生日期時間組件。 [↗](https://x.com/hero_ui/status/2048042367937052833)
-- 是時候來一批新的 Nuxt UI / shadcn 儀表板。 [↗](https://x.com/DennisAdriaans/status/2047707136809992316)
-- Happy Hues 在真實網站範例中展示策劃色板靈感，讓設計師即時看到顏色搭配效果。 [↗](https://x.com/Abmankendrick/status/2047973391592812858)
-- UI TripleD 提供 production-ready 區塊與完整頁面、可拖放的 Landing Page Builder 與帶 auroras 及 animated shaders 的 Background Builder。 [↗](https://x.com/ErickSky/status/2048221462650142905)
-- Shimmer From Structure 是結構感知的 skeleton loader，能在執行時鏡像已渲染的 UI，並提供 Vue 適配器。 [↗](https://x.com/MadeWithVueJS/status/2047992780278923610)
-- GPT-5.5 已能直接處理 WebGPU 與 WebGL 的渲染邏輯，作者呼籲 Web 動畫工程師與 Web 遊戲開發者提升應對能力。 [↗](https://x.com/billtheinvestor/status/2048075167969181997)
-- React Hook Form v7.74.0 發布，新增 setValues，修正 useController 名稱變更時保留值、nested unregister 的 null parent、以及將 NaN 視為空值。 [↗](https://x.com/HookForm/status/2048170922910298142)
-- @acolombiadev 在 React Native 應用整合 Copilot SDK，用來生成 AI 驅動的 issue 摘要，並包含漸進降級的生產模式。 [↗](https://x.com/github/status/2048100990721654803)
-- ChatGPT Image 2.0 產生設計，Codex GPT 5.5 將該設計轉成完整 Expo React Native 應用，從資產生成到音樂邏輯皆由 ChatGPT 處理，只用參考設計圖。 [↗](https://x.com/thebuggeddev/status/2047884456422465703)
-- 主張淘汰單調矩形航班看板，改以 MegaTable 改造每年為數十億旅客的機場體驗。 [↗](https://x.com/Table4Airports/status/2039706082466267275/analytics)
-
-## 🔐 資安
-
-- 開源工具 Sherlock 在 GitHub，可輸入 username 快速定位 400+ 社群平台的可能相符帳號。 [↗](https://x.com/wsl8297/status/2048040097761898799)
-- 有人宣稱用公開量子硬體破解了一個 15-bit ECC 金鑰的比特幣地址，並指出約有 6.9 百萬 BTC 存在公開暴露公鑰的地址。 [↗](https://x.com/DefiWimar/status/2048009911192170874)
+- mapcn 讓在 React 應用加入地圖非常簡單，提供零設定、一命令安裝、原生 Tailwind 與 shadcn/ui，並以 MapLibre GL 支援標記、路線與彈出視窗。 [↗](https://x.com/NainsiDwiv50980/status/2050869939440083267)
+- TypeScript 是有型別的 JavaScript；React 有元件；Next.js 為 React 的框架；Node.js 在瀏覽器外執行。 [↗](https://x.com/Dhanush_Nehru/status/2051172469029896280)
+- 瀏覽器的 autofill 會覆寫輸入欄樣式導致介面異常，當使用者有儲存密碼時會發生，貼文提供 .input:-webkit-autofill 的 CSS 範例。 [↗](https://x.com/alicalimli_dev/status/2051179835905716448)
+- 在 Replit 的 10yr Buildathon 以 24 小時免費時段為 UniAmico 編寫首個 landing page 與行動應用。 [↗](https://x.com/TeresaMelvinart/status/2050822080405409936)
+- 在 shadcn/ui 使用 D 鍵，因為用滑鼠或觸控板偵錯或檢查時左手較容易切換。 [↗](https://x.com/shadcn/status/2051208540228825517)
+- jullerino 說 處理 UI 最佳的模型 Opus 也是最慢，5.5 雖快但做不好 UI。 [↗](https://x.com/jullerino/status/2051092785844167100)
+- shimarin 說 從頭寫 UI 可能難處理 IM，但測試後支持日文輸入，畫面更新會凍結。 [↗](https://x.com/shimarin/status/2050682576361411015)
+- 展示可隨指標移動的 Fluid Gradient Text，安裝指令 npx shadcn add @ncdai/fluid-gradient-text。 [↗](https://x.com/iamncdai/status/2050643584345673806)
 
 ## 💰 財經
 
-- 25 歲 Michael Truell 創立被稱史上成長最快的軟體公司、零行銷支出，SpaceX 提出 $60 billion 收購；他 11 歲寫程式、18 歲在 Google 實習並從 MIT 輟學。 [↗](https://x.com/EvanLuthra/status/2048097088391840177)
-- 2025 年的 altseason 未發生，2026 年將是比 2021 更大的山寨幣行情，並提到 AI 即將到來。 [↗](https://x.com/cryptogems555/status/2048128165084570029)
-- $79K 已被觸及，牛市陷阱結束，比特幣正進入形成循環底部的階段，每次觸及上方阻力都被拋售。 [↗](https://x.com/AlexMasonCrypto/status/2048117766066987243)
-- 該圖表宣稱已精準預測所有比特幣走勢，並預測下週 BTC 會遭阻力拒絕並跌至約 50,000 美元。 [↗](https://x.com/0xLofty/status/2048126932525469970)
+- 2016 年 Jane Street 面試要我為胡蘿蔔定價 6 個月遠期，於是從頭建立期貨模型，包含季節收成、USDA 需求彈性與冷藏衰退率，後被交易員就儲存成本函數打斷。 [↗](https://x.com/This_Liss/status/2050577470382911882)
 
 ## 📌 其他
 
-- 四足機器人已加入消防隊，協助滅火並評估危險或難以到達的區域。 [↗](https://x.com/Rainmaker1973/status/2048041841430237649)
-- 一名中國卡車司機把家人搬上卡車，妻子取得商用駕照，夫妻輪流開車，孩子在公路上長大。 [↗](https://x.com/MarioNawfal/status/2048082861031309643)
-- 暖手包內含醋酸鈉溶液，按金屬片會結晶放熱，煮沸可使結晶溶回液態以重複使用。 [↗](https://x.com/wonderofscience/status/2048175897770180976)
-- 美國檢察官 Jeanine Pirro 表示，31 歲加州教師 Cole Allen 因白宮記者晚宴槍擊案被控兩罪：暴力犯罪期間使用火器及以危險武器攻擊聯邦官員。 [↗](https://x.com/disclosetv/status/2048240396019335325)
-- 我今天介紹 Cift，已在 App Store 上架，表示產品用心打造，並邀請在回覆查看連結與想法。 [↗](https://x.com/rsuyoy/status/2048130809710649687)
+- 一名健身房的女孩花45分鐘架攝影機拍一次深蹲，看到我走過鏡頭生氣說「You're ruining my content」。 [↗](https://x.com/shazcodes/status/2051141367087444471)
+- 關於阿爾巴尼亞人起源的論文今天發表於 Nature Human Behaviour，並附上全文連結。 [↗](https://x.com/AlbanianDNA/status/2051233871983984658)
+- Maryam 今晚帶作者到 UC Berkeley 的 Greek Theater 看 Joy Crookes 與 Louis Capaldi，兩場都很棒。 [↗](https://x.com/Scobleizer/status/2051179239584735363)
+- disclosetv 報導 疑似漢他病毒的郵輪 MV Hondius 停泊在佛得角 Praia 港外，乘客不得下船，醫療團隊登船。 [↗](https://x.com/disclosetv/status/2051234228134711601)
+- Malay4Product 說 GalaxEye（2021 年由 IIT Madras 工程師在班加羅爾創立）以 SpaceX Falcon 9 發射 Mission Drishti，衛星重 190 kg。 [↗](https://x.com/Malay4Product/status/2050969810423734730)
 
 ---
-📊 採集 246 條，精選 50 則 ｜ 來源：X ｜ 更新：11:47 UTC
+📊 採集 365 條，精選 50 則 ｜ 來源：X ｜ 更新：13:38 UTC
