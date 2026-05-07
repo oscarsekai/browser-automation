@@ -1,59 +1,68 @@
 # X 動態摘要
-📅 2026 年 5 月 6 日 ｜ 最後更新：17:37 UTC
+📅 2026 年 5 月 7 日 ｜ 最後更新：13:54 UTC
 
 ## 🤖 AI 模型與工具
 
-- Claude Code 現可加入即時瀏覽器，點擊元素即可取得精準 selector、元件與程式碼位置並編輯。 [↗](https://x.com/dr_cintas/status/2052076166526230945)
-- 他們的 agent 工具堆疊包含 agent-device（裝置互動與 QA）、agent-react-devtools（React 層級檢視）與 agent-cdp（更深的分析與偵錯）。 [↗](https://x.com/callstackio/status/2051620169257038203)
-- 有人製作 Dflash Gemma 4，宣稱比 Google 版快 6 倍，並指出 Gemma 4 是可在舊筆電與手機運行的優化開源本地 AI。 [↗](https://x.com/meta_alchemist/status/2051947620726382660)
-- Claude 資料顯示全球 AI 競賽中新加坡名列第 1、馬來西亞第 68，馬來西亞使用指數僅 0.71，主要用於基礎網頁除錯。 [↗](https://x.com/pukerrainbrow/status/2051905879432470725)
-- Brian 在 Y Combinator 董事會，說上一批有175家公司、僅16家非企業型，並指 ChatGPT 出現後有人擔心會毀掉生意。 [↗](https://x.com/patrick_oshag/status/2051791984478814652)
-- 開放權重 LLM 在 agent 任務上進步很多，但包裝的 harness 與驅動介面同樣重要，開發者工作流程很個人化。 [↗](https://x.com/masondrxy/status/2051714091924828480)
-
-## 🌐 地緣政治
-
-- 最高法院以 9-0 拒絕重新審理 Callais 案，維持對路易西安納種族傾斜選區的裁定。 [↗](https://x.com/EricLDaugh/status/2052059842580283451)
-- 伊朗外長 Abbas Araghchi 表示正在審查美方 14 點和平協議，巴基斯坦消息稱該協議可能在 48 小時內通過。 [↗](https://x.com/DeFiTracer/status/2051968436889084276)
-- Rubio 擔任新聞發言人時表現非常出色，連續回答記者提問，並在被問及「對美國的期望」時給出完美答覆。 [↗](https://x.com/TheStormRedux/status/2051758208922890666)
-- 美伊戰爭幾近結束，備忘錄包含停止伊朗核計畫與解封 $120B 伊朗資產，白宮內部人士說須48小時內完成。 [↗](https://x.com/ardizor/status/2051992543466840077)
+- AI Studio Vibe Coding 推出 edit mode，可選取元件快速編輯、以筆在 UI 上註記，並用 Nano Banana 選取或上傳影像資產。 [↗](https://x.com/OfficialLoganK/status/2051698665652412919)
+- 有人用檯燈打造 Moonside Halo AI 監控板，燈光會依 Claude Code 的運行狀態（Thinking/Writing/Done/Error）即時變色。 [↗](https://x.com/neil_xbt/status/2052257367845454002)
+- 《How to Build a Team of AI Agents That Replace Your First 3 Hires》課程，說明獨立創業者面臨工作量超出一人且難以負擔三名年薪 6 萬美元員工。 [↗](https://x.com/eng_khairallah1/status/2051596186851914019)
+- 未來幾天將在 Colossus 上擴增 Claude 推理能力，感謝與 SpaceX 合作，表示需要快速移動大量原子以應付 AI 需求（地球上或離地）。 [↗](https://x.com/nottombrown/status/2052062566126649448)
+- Anthropic 發佈一場 24 分鐘 workshop，由建立團隊示範如何提示 Claude，免費且無需註冊。 [↗](https://x.com/heygurisingh/status/2052268510890614808)
+- 用手機當 AI agent 指揮中心：可即時下達任務、選擇執行機器並即時追蹤進度，作者用 TRAE SOLO 用手機建 t-shirt 設計應用。 [↗](https://x.com/CodeByPoonam/status/2051688652477227037)
+- OfficialLoganK 表示為擴展印度業務正在為 DevX 招募，尋找協助在印度讓開發者充分利用 Gemini 的人選，請透過 DM 或 email 聯絡。 [↗](https://x.com/OfficialLoganK/status/2052199234607182077)
+- 用兩張 RTX 3090 搭配 qwen3.6:27B 模型，幾分鐘內完成一個第三個第一人稱森林攀岩遊戲的原型。 [↗](https://x.com/micheltamanda/status/2052250585596883298)
+- QVAC 宣稱是一個 local-first 引擎，設計可在無網路環境下運行，並稱完全自主且開源。 [↗](https://x.com/qvac/status/2052307117764165688)
+- 2026 年多數我認識的資深工程師不再寫程式，而是設計系統，AI 會寫程式，能與不能的人正在分化產業。 [↗](https://x.com/jsmasterypro/status/2052261558328111510)
+- Code with Claude 現正舉行：9:00AM Keynote、10:30 What's new in Claude Code、11:15 Building on Claude at GitHub scale、12:00 Get [↗](https://x.com/ClaudeDevs/status/2052055459272761661)
+- 感謝 @amasad，我 2024 年在 Replit 開始自學並持續在上面開發，現在因他而在 AI/Crypto 前沿工作，感謝 @Replit。 [↗](https://x.com/FDRONX/status/2051769648052400416)
+- Anthropic 擴展 managed agents 平台，新增 Dreaming（記憶）與 Outcomes（評分規則） [↗](https://x.com/RichNwan/status/2052085746526216601)
+- 兩天內達到約 60% 的 Claude Code/Codex/Open Code 能力，模型完成大部分工作，並以 DurableStreams 與 TanStack DB 構建應用 [↗](https://x.com/kylemathews/status/2052145469988680012)
+- 團隊沉潛一年後推出 GENE-26.5，宣稱為首款朝向人類級能力邁進的機器人腦 [↗](https://x.com/gs_ai_/status/2052050956272230577)
+- Cursor 現在更易偵錯上下文使用，採用「動態上下文」避免一開始載入所有 MCP 工具以降低 token 使用 [↗](https://x.com/leerob/status/2052062405107265878)
+- 取消 Audible、Kindle Unlimited 與 Apple Books，不再付每月 $45；Claude 把筆電變成會朗讀、摘要並測驗的個人圖書館 [↗](https://x.com/heygurisingh/status/2052069881139630338)
+- AI Agents 也需要通訊用 API，並宣傳即將由 @messagebird 發布的產品，邀請分享代理會構建什麼 [↗](https://x.com/RobertDVis/status/2052222529998090418)
+- 面試時給候選人使用約 2B 參數的弱 LLM、開著螢幕並要求實作，以分辨能思考除錯與只靠提示者。 [↗](https://x.com/adxtyahq/status/2051365343407509520)
+- 今日熱門倉庫：DeepSeek-TUI，在終端運行的 DeepSeek 模型程式代理；過去 24 小時 6,175、累計 16,625。 [↗](https://x.com/trending_repos/status/2052311918065725577)
 
 ## ⚙️ 軟體工程
 
-- TypeScript 團隊對 Go 的轉變被形容為宣告「以 JavaScript 編寫網路工具時代」的終結。 [↗](https://x.com/makulas1913/status/2051614102573985795)
-- 作者為 Agent Device 建立 VS Code 與 Cursor 擴充，讓 IDE 內撰寫、執行與檢視 .ad 測試腳本並支援報告。 [↗](https://x.com/azizbechaa/status/2051970044138062290)
-- 開發 httpmon 終端 TUI HTTP 偵錯代理，具 Vim 式過濾、JavaScript 攔截腳本、gRPC-Web 偵錯、HAR 匯出與供 AI 模型存取的 MCP 伺服器。 [↗](https://x.com/gr1m0/status/2051641768530047256)
-- 說明多年自動化少數步驟後仍被複雜性擊敗、核心人員回到本該自動的工作，並宣布推出 Akai 以解決此問題，先為自己而非客戶。 [↗](https://x.com/Bouazizalex/status/2052020605776515470)
-- 作者的日常工作是 Gemini CLI，過去約八個月交付功能、制定路線並協助幕後組織事務。 [↗](https://x.com/LyalinDotCom/status/2051822638964617487)
-- 有開發者用基準測試證明蘋果在每次新 iPhone 推出時透過更新讓舊機變慢。 [↗](https://x.com/k1rallik/status/2052072848546562538)
-- 雲端網路速覽：VPC 如牆，預設不互通需自行接通，內部再切分子網，公私由路由表的一條路由決定。 [↗](https://x.com/immanuel_vibe/status/2051526294072902108)
+- Devin Review 每日運行數十萬次，從今日可在 Windsurf 編輯器直接執行，提供錯誤與上下文整合，並推出由 SWE-check 支援、偵測快 10 倍的 Quick Review。 [↗](https://x.com/windsurf/status/2052100133173829656)
+- TRAE SOLO Mobile 上線，作者從手機（無筆電、無桌面）建立 t-shirt 設計應用並分享完整說明。 [↗](https://x.com/CodeByPoonam/status/2051688587239039371)
+- Teodor Podobnik 在 iximiuz Labs 發表一系列 hands-on eBPF 教學，聚焦網路並從基礎示範小型實作程式。 [↗](https://x.com/iximiuz/status/2052337358234661323)
+- 為下一版 Perry 開發 100% TypeScript 原生 MySQL 擴充，無外部相依，部分基準勝過 bun 與 nodejs 的 mysql2，與 Perry 相容。 [↗](https://x.com/realamlug/status/2052373110972641626)
+- 我仍避免使用 TypeScript，偏好 Ruby 的動態型別，覺得 TypeScript 在小型專案過於繁複，但理解其在大型專案的價值。 [↗](https://x.com/BilalBudhani/status/2051935036522508705)
+- 我建立了 pktz，一個以 eBPF 驅動的逐程序、逐連線網路流量監控工具，並提供 GitHub 連結。 [↗](https://x.com/immanuel_vibe/status/2052379455834804615)
+- Replit 讓開發者將 webhook、GitHub、Slack 等外部服務安全連接到私有應用，支援 Slack 更新與 Stripe 收款，保持組織私有。 [↗](https://x.com/Replit/status/2052175144349848033)
+- @mmkalmmkal 問 @mattpocockuk：evalite 是否仍在維護？六個月無更新，是否改用 @sentry 的 vitest-evals？ [↗](https://x.com/mmkalmmkal/status/2052348765634212336)
 
 ## 🖥️ 前端開發
 
-- Nuxt 社群近十年透過貢獻、回饋與 PR 建設專案，現已更新 Nuxters 評分以更細緻辨認 PR 貢獻。 [↗](https://x.com/nuxt_js/status/2052034406198682045)
-- 將公開基於數十次訪談的未發表資料，說明大型公司如何在大規模使用 React Native，六月在紐約見。 [↗](https://x.com/thymikee/status/2051644960101777549)
-- 使用 AI agents 在夜間針對 iOS React Native TextInput 的渲染錯誤迭代修復，透過 @callstack agent-device 與 RN Tester 當測試迴圈。 [↗](https://x.com/janicduplessis/status/2052062481804050814)
-- 推薦 react-native-screen-transitions，能在 React Native 建構進階手勢驅動的導航動畫，並附上示範如何使用的部落格文章。 [↗](https://x.com/reactnavigation/status/2051669394149818768)
+- VoidZero 發布 4 月號《Tales from the Void》，介紹供應鏈安全、基於 Oxc 的 Angular 編譯器（快 20 倍）、Vite lazyPlugin 與 Vitest 瀏覽器 trace 檢視器。 [↗](https://x.com/voidzerodev/status/2051912179511611815)
+- Anything 正在招多個前端職位，地點為舊金山或遠端，開放全職與合約，提供具競爭力的薪資，鼓勵有作品者回覆。 [↗](https://x.com/DataChaz/status/2052315002904736071)
+- Rolldown 1.0 發布：以 Rust 實作的高效 JavaScript 打包器，速度比 Rollup 快 10–30 倍，兼容 Rollup 與 Vite 插件，為 Vite 8 的底層打包器。 [↗](https://x.com/voidzerodev/status/2052323217109377443)
+- Frontend Nation 宣布邀請 AWS 的 ErikCH 參與 FEN2026，並鼓勵大家報名參加與留言猜測他的議題。 [↗](https://x.com/frontendnation/status/2052003328096076267)
+- 用幾行 CSS 即可建立捲動進度條，無需 JavaScript，並可用 animation-timeline 實作原生捲動動畫。 [↗](https://x.com/vponamariov/status/2052044407986401583)
+- 用一個 prompt，Gemini 將我的 3D Planet Explorer 網站變成 3D Voxel Planet Explorer，複製相同貼圖、動畫與效果，使用 @GoogleAIStudio 與 @threejs。 [↗](https://x.com/thebuggeddev/status/2052257940850315598)
+- 新增檔案目標別名支援，例如使用別名 `@ ui` 或 `@ components`，CLI 會為本地專案解析，也可安裝子目錄檔案。 [↗](https://x.com/shadcn/status/2051652930680361195)
+- OpenTUI Keymap 是為 DOM 應用的跨主機鍵/命令引擎，支援按鍵語法解析、命令解析與自適應派發。 [↗](https://x.com/kmdrfx/status/2051840415024681049)
 
 ## 🔐 資安
 
-- 工業成為網路犯罪主要目標之一，近半數重大攻擊已為定向行動。 [↗](https://x.com/Securizame/status/2051946318507962521)
+- Replit 現在允許所有建置者（免費與付費）發布私有應用，僅讓指定人員存取以提升應用安全。 [↗](https://x.com/Replit/status/2052162465123942818)
 
 ## 💰 財經
 
-- 引用 a16z Crypto 的 Guy Wuollet 指出加密市場投機者變得更聰明，投機從分散轉為集中，並提到 Hyperliquid 與 RWA perps 的顯著成長。 [↗](https://x.com/Jackkk/status/2051795945826996477)
-- 南希·佩洛西被指一週內從股市賺了 $3 MILLION，帖文列出 +47%、39 年任職、年薪 $168K、淨資產 $280M。 [↗](https://x.com/leshka_eth/status/2051946747610734841)
-- 美國公債殖利率在數分鐘內三度從 3.9% 跳升至 4.3%，貼文並指有人大量拋售。 [↗](https://x.com/CryptoNobler/status/2051663450938462581)
-- 該 Polymarket 交易者有 2,668 筆交易且 99% 勝率，主要做天氣市場，使用 ECMWF 與 GFS 預報比較。 [↗](https://x.com/0x_Discover/status/2052049042922754282)
-- BlackRock 在美國開盤前 10 分鐘內買入超過 335 百萬美元的比特幣，並持續買入。 [↗](https://x.com/CryptoNobler/status/2051627995962425619)
-- 川普經濟顧問 Kevin Hassett 表示信用卡消費「高到爆」，指出汽油每加侖 4.54 美元，美國人把其餘花費刷卡因儲蓄耗盡。 [↗](https://x.com/allenanalysis/status/2052046391837380972)
+- Wyoming 訂定數位資產標準，要求加密公司有 living will 並有高於社區銀行的 BSA 與資本要求 [↗](https://x.com/SenLummis/status/2052183753762480304)
+- 多數 fintech 起於矽谷並向外擴張；我們則在墨爾本咖啡店開始，從各方面都是局外人。 [↗](https://x.com/awxjack/status/2052025679554990257)
+- Ken Griffin 於 1987 在哈佛宿舍以親友籌得 265,000 美元創立 Citadel，並架設衛星碟取得即時股價。 [↗](https://x.com/MilkRoadMacro/status/2052174320974106862)
 
 ## 📌 其他
 
-- 大型郵輪（含 Carnival 與 Royal Caribbean）狀況混亂，作者表示不會再去，聽說小型豪華郵輪較好。 [↗](https://x.com/WallStreetMav/status/2052021178894622929)
-- 作者建議在 2026-11-19 前的 6.5 個月跑道賺 GTA VI，首條路線是建立預告解析、地圖與角色等媒體頁面。 [↗](https://x.com/alphabatcher/status/2052038341114139044)
-- Zuckerberg 在喬治亞建大型資料中心，鄰近住家出現水壓崩潰、洗手槽無水、馬桶無法回水與常停電。 [↗](https://x.com/MatrixMysteries/status/2051715799446958328)
-- 科學家在三月將果蠅的整個大腦上傳到電腦，模擬後出現移動行為。 [↗](https://x.com/damianplayer/status/2051823620310110685)
-- 描述千禧世代：畢業時遇上衰退、入門職缺要求多年經驗、養老金被 401k 取代、升職僅加 2% 薪水但責任大增，穩定後遇疫情與高通膨。 [↗](https://x.com/jeremyct/status/2051953038332441069)
+- Scott Galloway 在 92nd Street Y 表示婚姻成為奢侈品：80% 高收入者結婚，底層男性僅 1/5，歷史上 80% 女性生育但僅 40% 男性。 [↗](https://x.com/newstart_2024/status/2052137046693519749)
+- WHO 表示公共風險低，確認 8 起郵輪病例中 5 起為 Andes Hantavirus、3 起為疑似病例，並指出潛伏期可達 6 週，可能會有更多通報。 [↗](https://x.com/disclosetv/status/2052379743392063607)
+- 昨天 @xincctnnq 說頭痛可能是眼睛或眼鏡，今天決定不戴眼鏡出門，世界一片模糊，處方剛超過100度。 [↗](https://x.com/connectfarm1/status/2052221986823393548)
+- 我的創辦人在一次 Manali 旅行中建立印度最大的創作者平台，創辦人為 Dinesh Singh（DS），IIT Bombay 冶金 '12。 [↗](https://x.com/nush_1320/status/2052284125978259687)
+- 政府準備公開關於外星/跨維度生物的文件；耶穌基督教會稱有 80,000 名傳教士在全球傳播此事並邀請接納 [↗](https://x.com/ryanflorence/status/2052192863686115817)
 
 ---
-📊 採集 250 條，精選 50 則 ｜ 來源：X ｜ 更新：17:37 UTC
+📊 採集 392 條，精選 50 則 ｜ 來源：X ｜ 更新：13:54 UTC
