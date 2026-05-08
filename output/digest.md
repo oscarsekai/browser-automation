@@ -1,68 +1,69 @@
 # X 動態摘要
-📅 2026 年 5 月 7 日 ｜ 最後更新：13:54 UTC
+📅 2026 年 5 月 8 日 ｜ 最後更新：15:17 UTC
 
 ## 🤖 AI 模型與工具
 
-- AI Studio Vibe Coding 推出 edit mode，可選取元件快速編輯、以筆在 UI 上註記，並用 Nano Banana 選取或上傳影像資產。 [↗](https://x.com/OfficialLoganK/status/2051698665652412919)
-- 有人用檯燈打造 Moonside Halo AI 監控板，燈光會依 Claude Code 的運行狀態（Thinking/Writing/Done/Error）即時變色。 [↗](https://x.com/neil_xbt/status/2052257367845454002)
-- 《How to Build a Team of AI Agents That Replace Your First 3 Hires》課程，說明獨立創業者面臨工作量超出一人且難以負擔三名年薪 6 萬美元員工。 [↗](https://x.com/eng_khairallah1/status/2051596186851914019)
-- 未來幾天將在 Colossus 上擴增 Claude 推理能力，感謝與 SpaceX 合作，表示需要快速移動大量原子以應付 AI 需求（地球上或離地）。 [↗](https://x.com/nottombrown/status/2052062566126649448)
-- Anthropic 發佈一場 24 分鐘 workshop，由建立團隊示範如何提示 Claude，免費且無需註冊。 [↗](https://x.com/heygurisingh/status/2052268510890614808)
-- 用手機當 AI agent 指揮中心：可即時下達任務、選擇執行機器並即時追蹤進度，作者用 TRAE SOLO 用手機建 t-shirt 設計應用。 [↗](https://x.com/CodeByPoonam/status/2051688652477227037)
-- OfficialLoganK 表示為擴展印度業務正在為 DevX 招募，尋找協助在印度讓開發者充分利用 Gemini 的人選，請透過 DM 或 email 聯絡。 [↗](https://x.com/OfficialLoganK/status/2052199234607182077)
-- 用兩張 RTX 3090 搭配 qwen3.6:27B 模型，幾分鐘內完成一個第三個第一人稱森林攀岩遊戲的原型。 [↗](https://x.com/micheltamanda/status/2052250585596883298)
-- QVAC 宣稱是一個 local-first 引擎，設計可在無網路環境下運行，並稱完全自主且開源。 [↗](https://x.com/qvac/status/2052307117764165688)
-- 2026 年多數我認識的資深工程師不再寫程式，而是設計系統，AI 會寫程式，能與不能的人正在分化產業。 [↗](https://x.com/jsmasterypro/status/2052261558328111510)
-- Code with Claude 現正舉行：9:00AM Keynote、10:30 What's new in Claude Code、11:15 Building on Claude at GitHub scale、12:00 Get [↗](https://x.com/ClaudeDevs/status/2052055459272761661)
-- 感謝 @amasad，我 2024 年在 Replit 開始自學並持續在上面開發，現在因他而在 AI/Crypto 前沿工作，感謝 @Replit。 [↗](https://x.com/FDRONX/status/2051769648052400416)
-- Anthropic 擴展 managed agents 平台，新增 Dreaming（記憶）與 Outcomes（評分規則） [↗](https://x.com/RichNwan/status/2052085746526216601)
-- 兩天內達到約 60% 的 Claude Code/Codex/Open Code 能力，模型完成大部分工作，並以 DurableStreams 與 TanStack DB 構建應用 [↗](https://x.com/kylemathews/status/2052145469988680012)
-- 團隊沉潛一年後推出 GENE-26.5，宣稱為首款朝向人類級能力邁進的機器人腦 [↗](https://x.com/gs_ai_/status/2052050956272230577)
-- Cursor 現在更易偵錯上下文使用，採用「動態上下文」避免一開始載入所有 MCP 工具以降低 token 使用 [↗](https://x.com/leerob/status/2052062405107265878)
-- 取消 Audible、Kindle Unlimited 與 Apple Books，不再付每月 $45；Claude 把筆電變成會朗讀、摘要並測驗的個人圖書館 [↗](https://x.com/heygurisingh/status/2052069881139630338)
-- AI Agents 也需要通訊用 API，並宣傳即將由 @messagebird 發布的產品，邀請分享代理會構建什麼 [↗](https://x.com/RobertDVis/status/2052222529998090418)
-- 面試時給候選人使用約 2B 參數的弱 LLM、開著螢幕並要求實作，以分辨能思考除錯與只靠提示者。 [↗](https://x.com/adxtyahq/status/2051365343407509520)
-- 今日熱門倉庫：DeepSeek-TUI，在終端運行的 DeepSeek 模型程式代理；過去 24 小時 6,175、累計 16,625。 [↗](https://x.com/trending_repos/status/2052311918065725577)
+- Grok Build 將於 macOS、Windows、Linux 發行，支援 planning mode、Plugins、Skills 與 MCPs，能操作 Git tree、啟動 dev servers 並內建瀏覽器。 [↗](https://x.com/testingcatalog/status/2052532305990672670)
+- 首次公開 Grok Build，將在 MacOS、Windows 與 Linux 提供，目前尚未全面推出但很快會推出。 [↗](https://x.com/blankspeaker/status/2052502606245945670)
+- Hermes Agent 用 Autobrowse 改善瀏覽器技能，HN 範例中 2 次迭代把 102s→35s、23 轉→8、$1.46→$0.28，改以在頁面 eval JS 並存為 skill。 [↗](https://x.com/kylejeong/status/2052497318017208470)
+- Grok Build 是完整的編碼 agent，可規劃、撰寫與偵錯，最多同時執行 8 個 agents，支援應用、網站與完整 repo，Arena Mode 選最佳輸出，本地 CLI 保持程式碼私有。 [↗](https://x.com/MarioNawfal/status/2052618245707047409)
+- 與 Cerebras 合作提供免費 Windsurf 計畫，SWE-1.6 Fast Mode 速度可達 1000 tok/s，Fast Mode 採用 Cerebras 推論以提升規劃與開發速度。 [↗](https://x.com/windsurf/status/2052453191883591849)
+- 這則貼文聚焦 工作流程。 [↗](https://x.com/rohit4verse/status/2052425764826661335)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/OpenAI/status/2052480800004956323)
+- 這則貼文聚焦 AI agents。 [↗](https://x.com/adxtyahq/status/2052464535018365228)
+- 這則貼文聚焦 AI agents。 [↗](https://x.com/jakebroekhuizen/status/2052058987580051566)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/kimmonismus/status/2052727053091475863)
+- 這則貼文聚焦 AI agents。 [↗](https://x.com/michael_chomsky/status/2052109070501544386)
+- 這則貼文聚焦 工作流程。 [↗](https://x.com/nateherk/status/2052567911328301222)
+- 主張押注推理、改良工具、本地模型、量化與 AI 基礎設施，並指出 Gemma 4 在本地搭配 MTP 技術跑得快 1.5 倍，下一波 AI 會更快、更便宜、更易取得。 [↗](https://x.com/adxtyahq/status/2052697937118191823)
+- 當 @sama 觸及 AI 內容時，98% 會引發連鎖反應，造成深度討論並在 X 廣泛傳播；這將收錄於即將推出的新 @digg。 [↗](https://x.com/kevinrose/status/2052423288878735744)
+- Codex 追求某目標 14 小時後見效，每 MiB 工作量減少 70%，落實六項改進並拒絕數十項未通過的改動。 [↗](https://x.com/aarondfrancis/status/2052415939111481836)
 
 ## ⚙️ 軟體工程
 
-- Devin Review 每日運行數十萬次，從今日可在 Windsurf 編輯器直接執行，提供錯誤與上下文整合，並推出由 SWE-check 支援、偵測快 10 倍的 Quick Review。 [↗](https://x.com/windsurf/status/2052100133173829656)
-- TRAE SOLO Mobile 上線，作者從手機（無筆電、無桌面）建立 t-shirt 設計應用並分享完整說明。 [↗](https://x.com/CodeByPoonam/status/2051688587239039371)
-- Teodor Podobnik 在 iximiuz Labs 發表一系列 hands-on eBPF 教學，聚焦網路並從基礎示範小型實作程式。 [↗](https://x.com/iximiuz/status/2052337358234661323)
-- 為下一版 Perry 開發 100% TypeScript 原生 MySQL 擴充，無外部相依，部分基準勝過 bun 與 nodejs 的 mysql2，與 Perry 相容。 [↗](https://x.com/realamlug/status/2052373110972641626)
-- 我仍避免使用 TypeScript，偏好 Ruby 的動態型別，覺得 TypeScript 在小型專案過於繁複，但理解其在大型專案的價值。 [↗](https://x.com/BilalBudhani/status/2051935036522508705)
-- 我建立了 pktz，一個以 eBPF 驅動的逐程序、逐連線網路流量監控工具，並提供 GitHub 連結。 [↗](https://x.com/immanuel_vibe/status/2052379455834804615)
-- Replit 讓開發者將 webhook、GitHub、Slack 等外部服務安全連接到私有應用，支援 Slack 更新與 Stripe 收款，保持組織私有。 [↗](https://x.com/Replit/status/2052175144349848033)
-- @mmkalmmkal 問 @mattpocockuk：evalite 是否仍在維護？六個月無更新，是否改用 @sentry 的 vitest-evals？ [↗](https://x.com/mmkalmmkal/status/2052348765634212336)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/Boenau/status/2052338534644629728)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/RenderATL/status/2052508954563956812)
+- 這則貼文聚焦 AI agents。 [↗](https://x.com/thdxr/status/2052159982418686343)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/temporalio/status/2052433378129932495)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/thdxr/status/2052433628605427849)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/elonmusk/status/2052463759860576415)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/typecraft_dev/status/2052416099560374604)
+- Mark Zuckerberg 表示早期用 85 美元伺服器建立 Facebook，並拒絕花超出資金的錢。 [↗](https://x.com/jaynitx/status/2052516151104868718)
+- otelMiddleware() 可將每次聊天、迭代與工具呼叫送到 OTel 後端，含完整 GenAI semconv 屬性，已在 tan_stack ai 發佈。 [↗](https://x.com/tan_stack/status/2052732639342129549)
+- Axiom 發佈 axiomhq/tanstack-start 的首個公開預覽，提供給 @tan_stack start 的 observability helpers。 [↗](https://x.com/GabrielElpidio/status/2052129773594325363)
+- 他說 cursor design mode 與 remotion 組合很強，因 remotion 全以程式碼，可在影片上直接註解並即時更新游標，並分享 15 分鐘改進 agent swarm 的影片。 [↗](https://x.com/ericzakariasson/status/2052711995737260214)
+- Neuralink 表示正在打造能觸及任一腦區的手術機器人。 [↗](https://x.com/Cointelegraph/status/2052712812221211046)
 
 ## 🖥️ 前端開發
 
-- VoidZero 發布 4 月號《Tales from the Void》，介紹供應鏈安全、基於 Oxc 的 Angular 編譯器（快 20 倍）、Vite lazyPlugin 與 Vitest 瀏覽器 trace 檢視器。 [↗](https://x.com/voidzerodev/status/2051912179511611815)
-- Anything 正在招多個前端職位，地點為舊金山或遠端，開放全職與合約，提供具競爭力的薪資，鼓勵有作品者回覆。 [↗](https://x.com/DataChaz/status/2052315002904736071)
-- Rolldown 1.0 發布：以 Rust 實作的高效 JavaScript 打包器，速度比 Rollup 快 10–30 倍，兼容 Rollup 與 Vite 插件，為 Vite 8 的底層打包器。 [↗](https://x.com/voidzerodev/status/2052323217109377443)
-- Frontend Nation 宣布邀請 AWS 的 ErikCH 參與 FEN2026，並鼓勵大家報名參加與留言猜測他的議題。 [↗](https://x.com/frontendnation/status/2052003328096076267)
-- 用幾行 CSS 即可建立捲動進度條，無需 JavaScript，並可用 animation-timeline 實作原生捲動動畫。 [↗](https://x.com/vponamariov/status/2052044407986401583)
-- 用一個 prompt，Gemini 將我的 3D Planet Explorer 網站變成 3D Voxel Planet Explorer，複製相同貼圖、動畫與效果，使用 @GoogleAIStudio 與 @threejs。 [↗](https://x.com/thebuggeddev/status/2052257940850315598)
-- 新增檔案目標別名支援，例如使用別名 `@ ui` 或 `@ components`，CLI 會為本地專案解析，也可安裝子目錄檔案。 [↗](https://x.com/shadcn/status/2051652930680361195)
-- OpenTUI Keymap 是為 DOM 應用的跨主機鍵/命令引擎，支援按鍵語法解析、命令解析與自適應派發。 [↗](https://x.com/kmdrfx/status/2051840415024681049)
+- 推出 `comptime`：受 Zig 啟發的 build-time 評估原語，以 Vite 與 Rolldown 外掛釋出，可在建置時執行程式碼並以評估結果取代呼叫位置。 [↗](https://x.com/lukeed05/status/2052480459863658752)
+- 把 Remix 3 接到 Nitro 與 Vite，dist 從 163 MB 減至 295 KB、檔案數從 2,891 減至 25、啟動從 389ms 減至 59ms，可部署到 Nitro 支援的任何地方，零設定。 [↗](https://x.com/_pi0_/status/2052457868440273098)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/creativestefan/status/2052407340570235246)
+- 剛結束本地聚會，教大家用 Replit 在一小時內打造 MVP，參與者帶走首個網頁/行動應用並更了解 AI。 [↗](https://x.com/raymmar/status/2052580739078578445)
+- TanStack Form 的 Vue 支援在 Vue 3.6 推出後會大幅改善，已由「Fuzzyma」透過上游合併修復一個主要阻礙。 [↗](https://x.com/crutchcorn/status/2051949950645502130)
+- 我們讓 @remix_run 專注於 runtime，但仍可在其上層套用 @vite_js；Pooya 的 `vite-plugin-remix3` 簡潔實作證明了 Remix 架構。 [↗](https://x.com/pcattori/status/2052467236380520892)
+- 為一家虛構公司做了以 @threejs 與 #webgpu 的實驗網站，並加入當下流行的 ASCII 呈現。 [↗](https://x.com/shadersweden/status/2052577487792615758)
 
 ## 🔐 資安
 
-- Replit 現在允許所有建置者（免費與付費）發布私有應用，僅讓指定人員存取以提升應用安全。 [↗](https://x.com/Replit/status/2052162465123942818)
+- 多個影響 React Server Components 與 Next.js 的安全漏洞已被披露，建議立即更新應用；Cloudflare WAF managed rules 已緩解公開的拒絕服務漏洞。 [↗](https://x.com/CloudflareDev/status/2052467567588196703)
 
 ## 💰 財經
 
-- Wyoming 訂定數位資產標準，要求加密公司有 living will 並有高於社區銀行的 BSA 與資本要求 [↗](https://x.com/SenLummis/status/2052183753762480304)
-- 多數 fintech 起於矽谷並向外擴張；我們則在墨爾本咖啡店開始，從各方面都是局外人。 [↗](https://x.com/awxjack/status/2052025679554990257)
-- Ken Griffin 於 1987 在哈佛宿舍以親友籌得 265,000 美元創立 Citadel，並架設衛星碟取得即時股價。 [↗](https://x.com/MilkRoadMacro/status/2052174320974106862)
+- 貼文指出 BlackRock 在川普緊急公告前開始清算加密貨幣，正在不停拋售數百萬比特幣與以太坊，並表示可能會有巨大市場崩盤。 [↗](https://x.com/CryptoNobler/status/2052366607934984409)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/0xwhrrari/status/2052451704218468738)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/nico_laqua/status/2052056748090085756)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/gazza_jenks/status/2052462966730100784)
+- 與 @1MarkMoss 的訪談探討 Digital Capital、Equity、Credit，及我走向 Bitcoin、@Strategy 與 $STRC 的職業與個人歷程。 [↗](https://x.com/phongle/status/2052394156786327763)
+- 有報導說奧斯汀約 160 人可能從 SpaceX IPO 取得超過 1 億美元收益，12 人可超過 10 億美元。 [↗](https://x.com/fortworthchris/status/2052568241118106003)
 
 ## 📌 其他
 
-- Scott Galloway 在 92nd Street Y 表示婚姻成為奢侈品：80% 高收入者結婚，底層男性僅 1/5，歷史上 80% 女性生育但僅 40% 男性。 [↗](https://x.com/newstart_2024/status/2052137046693519749)
-- WHO 表示公共風險低，確認 8 起郵輪病例中 5 起為 Andes Hantavirus、3 起為疑似病例，並指出潛伏期可達 6 週，可能會有更多通報。 [↗](https://x.com/disclosetv/status/2052379743392063607)
-- 昨天 @xincctnnq 說頭痛可能是眼睛或眼鏡，今天決定不戴眼鏡出門，世界一片模糊，處方剛超過100度。 [↗](https://x.com/connectfarm1/status/2052221986823393548)
-- 我的創辦人在一次 Manali 旅行中建立印度最大的創作者平台，創辦人為 Dinesh Singh（DS），IIT Bombay 冶金 '12。 [↗](https://x.com/nush_1320/status/2052284125978259687)
-- 政府準備公開關於外星/跨維度生物的文件；耶穌基督教會稱有 80,000 名傳教士在全球傳播此事並邀請接納 [↗](https://x.com/ryanflorence/status/2052192863686115817)
+- 多數 Obsidian vault 在 capture 後缺乏回收路徑，建議建立回收路徑並使用 5 個資料夾（例如 00-INBOX）。 [↗](https://x.com/alphabatcher/status/2052753374160838896)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/adxtyahq/status/2051934853269196986)
+- 這則貼文整理了原文的主要觀點與關鍵脈絡。 [↗](https://x.com/ycombinator/status/2052630315496243540)
+- Elon Musk 問為何未見外星人，並說智慧或許極為罕見，可能只有我們，應盡力確保這微小燭光不熄。 [↗](https://x.com/cb_doge/status/2052749719399702671)
+- Elon Musk 想在月球建質量加速器，以發射 AI 衛星到深空，並在月表建立自給自足的發光城市，然後擴展到火星。 [↗](https://x.com/XFreeze/status/2052709761880408573)
 
 ---
-📊 採集 392 條，精選 50 則 ｜ 來源：X ｜ 更新：13:54 UTC
+📊 採集 236 條，精選 50 則 ｜ 來源：X ｜ 更新：15:17 UTC
