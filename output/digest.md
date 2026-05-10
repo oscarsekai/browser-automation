@@ -1,71 +1,68 @@
 # X 動態摘要
-📅 2026 年 5 月 9 日 ｜ 最後更新：11:31 UTC
+📅 2026 年 5 月 10 日 ｜ 最後更新：12:46 UTC
 
 ## 🤖 AI 模型與工具
 
-- 《How to Build Your First AI Agent That Companies Will Pay $10K+ For（完整課程）》文章介紹 AI agent 與普遍印象。 [↗](https://x.com/eng_khairallah1/status/2053043365781119482)
-- Codex 的 Chrome 外掛能測試網頁應用、跨分頁蒐集上下文，並行使用 DevTools，且整理結果不接管瀏覽器。 [↗](https://x.com/OpenAIDevs/status/2052481136971125158)
-- 把輸出從 Markdown 轉為 HTML，讓 AI 有更豐富的畫布呈現人類會閱讀的內容，如計畫與規格，並保留更多人參與。 [↗](https://x.com/addyosmani/status/2052998409213358255)
-- GitHub 將出席 Microsoft Build，提供多場 GitHub 會議、GitHub Social Club 與 OpenClaw meetup，並與建置與擴展 AI 的團隊分享實作與工作流程。 [↗](https://x.com/github/status/2052809537946599620)
-- 雲端與 AI 是重大創新，可在其上建立新型且獲利的事業，舉例 Duck Bill Group 在優化雲端花費，且會有許多類似為 AI 的公司出現。 [↗](https://x.com/GergelyOrosz/status/2052684733885132815)
-- 歡迎熱衷推動最新 AI 模型與 coding agents 的工程師來與我共事，強調有大量可以學、可以建、可以教的機會。 [↗](https://x.com/leerob/status/2052519840141983829)
-- 讓 Kody 主要透過 MCP 運作的好處之一，是能受惠於他人建置的 agents（如 Cursor、Claude 等）改進，而不用自己構建與迭代 harness。 [↗](https://x.com/kentcdodds/status/2052498893318095210)
-- Real-time World Models 被視為下一個 AI 前沿；@reactorworld 推出早期預覽，能在全球低延遲基礎設施上體驗即時生成的世界。 [↗](https://x.com/_bschmidtchen/status/2052454092061179945)
-- 有人用 Obsidian 作為腦，打造 Polymarket 交易機器人，將每個市場、論點、預測、錯誤與交易存入本地知識庫，Obsidian 追蹤上下文，機器人追蹤市場。 [↗](https://x.com/Roxx_0x/status/2052779195017650284)
-- 多人在 Arena Code 注意到 Gemini 3.2 Flash 相較 Gemini 3.1 Pro 有 SVG/frontend 品質較弱、更多「GPT-」輸出，且可能有過度的 RL 調教。 [↗](https://x.com/intheworldofai/status/2052887223867974138)
-- Anthropic 昨日在 code with claude 發放了這些，加入個人化記憶與 Claude，可以直接構建應用；作者表示該加入 managed agents。 [↗](https://x.com/Dakshay/status/2052855651341423099)
-- 用 10 篇最愛貼文做語音複製會聽起來假，語料太小且太表演化；建議下載 X 存檔（.zip 含機器可讀 HTML 與 JSON），抽出原始貼文與 QRTs。 [↗](https://x.com/alphabatcher/status/2052796389378162765)
-- 正在全職打造 Executor，指出工具呼叫混亂：每個人用不同 agents、無法預知會執行哪些動作、破壞性動作與一般動作同等對待；Executor 可一次設定後重複使用。 [↗](https://x.com/RhysSullivan/status/2052896456454119455)
-- 設定 Claude Code 為完整開發團隊只需五個資料夾：CLAUDE.md 作為記憶與 repo 憲章，skills/ 為知識。 [↗](https://x.com/dr_cintas/status/2052417046789714123)
-- NVIDIA 表示其實體 AI 平台已協助主要電子製造商重新設計並自動化工廠建造與營運。 [↗](https://x.com/Cointelegraph/status/2052813280721211789)
-- v0 現能執行終端命令，能啟動瀏覽器測試互動、檢視提交歷史、撰寫與執行單元測試，並用 CLI 與 Vercel、GitHub 互動。 [↗](https://x.com/v0/status/2052849095598133593)
-- 首個具推理能力的語音模型已上線，會在背景推理時先說出短序言（例如「hmm.. let me think about that」）。 [↗](https://x.com/sherwinwu/status/2052601655015981434)
-- 《2026 LLM Engineering Roadmap》提供免費且 100% 開源資源，強調生產級 LLM 需理解工程、部署與優化。 [↗](https://x.com/_avichawla/status/2053049489963811135)
-- Ruoming Pang 曾在 Apple 負責 AI，Meta 支付超過 2 億美元挖角；七個月後他離開 Meta 加入 OpenAI，放棄大部分未歸屬款項。 [↗](https://x.com/TheGeorgePu/status/2052919000330314001)
-
-## 🌐 地緣政治
-
-- 恭賀 Shri Suvendu Adhikari 宣誓就任西孟加拉邦首席部長，並祝其任期有成果。 [↗](https://x.com/narendramodi/status/2053017157999763944)
-- 若民主黨在2032年前未取得眾院、參院、總統、擴編最高法院、重新授權種族傑利選區並對非法移民實施大赦，民主黨就會幾乎消亡。 [↗](https://x.com/SensibleFascist/status/2052889400422654108)
-- 該貼文警告美伊和平協議已取消，宣稱 99% 人會在週末一夜間失去一切，並預測股市將暴跌。 [↗](https://x.com/CryptoNobler/status/2052848332846805072)
+- GitHub 的 spec-kit 改變工作流程，主張先把想法轉為規格並列出品質、測試與 UX 要求 [↗](https://x.com/Roxx_0x/status/2053167314061647969)
+- 用百度 ERNIE 5.1 在瀏覽器內構建完整 macOS 風格 Browser OS，含可拖動視窗、可用應用與檔案系統，並勝過 DeepSeek V4 [↗](https://x.com/intheworldofai/status/2053251620444742138)
+- 一名首爾 22 歲青年用 Claude 與 Obsidian 建構第二大腦，每月賺 17,000 美元，並以每天 7:30 的 cron 由 Claude 撰寫 12–15 篇文章摘要 [↗](https://x.com/0xCortexl/status/2053229819824136675)
+- 有人用 Claude Opus 4.7 掃描現實並販售成果，在家建 Lego 雲端並戴上 VR，AI 已知每塊磚位置，Claude 寫出 LiDAR [↗](https://x.com/polydao/status/2053380770446839844)
+- Anthropic 執行長表示未來 3 至 6 個月內 AI 會撰寫 90% 的程式碼；貼文並指出目前只有 0.03% 的人付費使用 AI [↗](https://x.com/eng_khairallah1/status/2053445621760037333)
+- Andrej Karpathy 發布「LLM Wiki」gist，評論區呈現新 AI 類別誕生，5000+ 星後開發者在建構持久化 AI 記憶。 [↗](https://x.com/NainsiDwiv50980/status/2053144922430345615)
+- 現行 Cowork 做了四件事，下個更新會悄悄改變；Anthropic 執行長在 60 Minutes 警告「the more autonomy we give these systems.」。 [↗](https://x.com/shmidtqq/status/2053164961287840215)
+- 把該概念做成可運作的 iOS 應用，內含 8 個由 Apple Foundation 模型驅動的小代理、可自訂 system prompts，並採 iMessage 風格 UI。 [↗](https://x.com/ParkerOrtolani/status/2053283617556631786)
+- Claude 達到速率限制後，他沒有打開 ChatGPT，而是切換到自己打造的 JARVIS，該介面無訂閱、無使用上限，也沒有「you've reached your limit, upgrade to Pro」提示。 [↗](https://x.com/defileo/status/2053216853342961842)
+- Boris Cherny 用 30 分鐘免費示範 Claude Code 的使用，並指出每日使用者遺漏了 40+ 隱藏功能。 [↗](https://x.com/Suryanshti777/status/2053157090768945654)
+- Brian Chesky 在財報會表示 60% 的新程式碼由 AI 撰寫，並稱 AI 在旅遊與電商尚未被解決；列出聊天機器人問題：文字過多、無滑桿、單人化群組訂房 UI。 [↗](https://x.com/TheGeorgePu/status/2052791485070709022)
+- 文章《如何建立完全由 Claude Agents 驅動的一人行銷代理機構（完整課程）》 [↗](https://x.com/sukh_saroy/status/2053025940016619890)
+- 中國發布一個全天候自動運作且完全在地端執行的 AI 員工，會研究、寫程式、架站、做簡報與影片，且為 100% 開源 [↗](https://x.com/HowToAI_/status/2053409004504961409)
+- 有人在筆電離線建成 Iron Man 風格的 AI，無需 API 或訂閱、完全本機運行；一年前需 40,000 美元伺服器，現在可在消費筆電以 $0/月運行 [↗](https://x.com/0xDepressionn/status/2053168460562104784)
+- 文章《The Agent Development Lifecycle》指出最佳組織能重複且安全地交付 agents，透過早期上線與快速迭代學習實際使用情況 [↗](https://x.com/hwchase17/status/2053157547985834227)
+- 一個常見的 AI 陷阱是讓 AI 生成 Markdown 檔案後僅略讀不修正，隨時間會讓問題累積 [↗](https://x.com/petergyang/status/2053317001976881312)
+- 完全同意 Context Hub，指出開發者在每次新模型與工具釋出後持續調整提示管理，並將核心問題稱為 'Config Hub'（模型與 harness 的不同設定） [↗](https://x.com/rishiskhare/status/2053175561975992578)
+- Andrej Karpathy 不用 Notion、Roam 或 Obsidian 插件，從零建第二大腦；我照做後有 378 筆筆記、1,854 個節點、3,856 條邊和一個 3D 知識星系。 [↗](https://x.com/leopardracer/status/2053045302777594245)
+- 朋友釋出一個 Claude skill，能把介面截圖轉成互動式 UI 並產生可用的引導影片。 [↗](https://x.com/seraleev/status/2053110460669395377)
+- 14 分鐘內，Anthropic 的工程師講解如何建構 agents，比多數開發者數月自學收穫更多。 [↗](https://x.com/Alokkumarzz/status/2053144028355739767)
 
 ## ⚙️ 軟體工程
 
-- Expo 可在數分鐘為應用建立移動 QA agent，CI/CD 提供 Android 與 iOS runner，加入 Node agent 後每個 PR 顯示 UI 檢查與截圖。 [↗](https://x.com/expo/status/2052746792845070726)
-- eBPF 是 Linux 核心中的超能力，多數開發者仍忽視；可在不寫核心模組或重開機下於核心執行 sandboxed 程式，並可取代 tcpdump/Wireshark。 [↗](https://x.com/immanuel_vibe/status/2052966686110716223)
-- GitHub 的可靠性低於 90% 且持續惡化，領導層歸咎於過去兩年約 3.5 倍的服務負載增加，或可能是自我造成的。 [↗](https://x.com/Pragmatic_Eng/status/2052756570111398345)
-- 作者表示若獲得更多 Coinbase 細節會改變立場，並希望有公開事後檢討，認為被視為核心基礎設施（如金融）的服務應有高標準。 [↗](https://x.com/GergelyOrosz/status/2052767014356193435)
-- 貼文指責 @GergelyOrosz 在事實與立場上錯誤，應撤回並向 Coinbase 工程師道歉，作者為此發出了首則推文。 [↗](https://x.com/smehmood/status/2052763833974804754)
-- 他原本以為領先美國加密交易所有 AZ 韌性，對缺乏 AZ 韌性感到驚訝。 [↗](https://x.com/GergelyOrosz/status/2052999537803858066)
-- 他在主終端緩衝區開發索引化 ANSI 顏色與極簡 OpenCode UI，兩者相容。 [↗](https://x.com/simonklee/status/2052832005272871230)
-- 他為測試無 iGPU 的 CPU，用 Mercari 上約 1,000 日圓的舊顯卡，但 BIOS 時代顯卡有時在新主機板無法顯示。 [↗](https://x.com/shimarin/status/2052870212068999515)
-- 他讀到工程說明，指出 Coinbase 曾準備在 AZ 故障時故障轉移，但因故障影響 Kafka 導致轉移失效。 [↗](https://x.com/GergelyOrosz/status/2053008483990020252)
-- Coinbase 承認其全球交易服務刻意未啟用多可用區支援，導致昨日交易停止 8 小時，並將著手研究多 AZ。 [↗](https://x.com/GergelyOrosz/status/2052998628420014439)
+- 列出取得 Google 99 DR 反向連結的步驟：至 Chrome Web Store 註冊開發者（一次性 $5）、建立並發布 Chrome 擴充套件，即可獲反向連結與推薦流量。 [↗](https://x.com/hridoyreh/status/2053138171664458189)
+- Peekaboo 3.0 已上線，為自 2.0 起最大更新，具統一截圖與 UI 偵測、CLI/MCP 更清晰的 JSON 與改進快照 [↗](https://x.com/steipete/status/2053114837698249190)
+- AWS 在推出 serverless 前花至少十年累積以 CPU 時間付費的客戶；核心想法是以充足需求與 LLM 推理吸收閒置 CPU 成本 [↗](https://x.com/thdxr/status/2053191280281403498)
+- 過去 3 天 @steipete 與維護者在 #clawtributors 進行 takedown、審查 PR 並迅速協助社群成員。 [↗](https://x.com/HixVAC/status/2053148514234896555)
+- PlanetScale 將 Traffic Control 作為 Postgres 擴充而非代理建置，並指出與 sqlcommenter 標記結合時更強大。 [↗](https://x.com/BenjDicken/status/2053148176530772342)
+- 用戶測試顯示 Tesla 全自動駕駛在模擬小孩從校車後方突然冒出時未停車，撞上假人且未遵守停牌。 [↗](https://x.com/ww3mediaa/status/2053247592335647171)
+- Figma 發表文章討論規模化流量尖峰管理的複雜性與自建代理 PGKeeper，並展示 Grafana 儀表板樣貌。 [↗](https://x.com/BenjDicken/status/2053137303904915719)
+- 此 Kafka 實作實驗可在一小時內以任意 LLM 完成，涵蓋 topics、partitions、資料保留與 Kafka 內建測試工具。 [↗](https://x.com/distroaryan/status/2053324150295712231)
+- OpenCode v1.14.45 發佈，修正 TUI/插件相容性、改善 SDK/TUI 錯誤呈現、修復 workspace 路由 HTTP API 與 session/provider schema。 [↗](https://x.com/OpenCodeLog/status/2053268283780923459)
+- 使用 Object.hasOwn() 安全檢查物件自有屬性，支援 null prototype。 [↗](https://x.com/MozDevNet/status/2052825961922732423)
+- 發布一小時課程，涵蓋從設定 Hermes 到如何建立大量 Hermes 的內容。 [↗](https://x.com/nateherk/status/2053308985575362681)
+- 問題不是知識而是建置能力；路徑：找每週可解決的問題、把 80% 工作產品化、以軟體支援流程。 [↗](https://x.com/TheGeorgePu/status/2053282389854408900)
 
 ## 🖥️ 前端開發
 
-- shadcn 讓發文者看起來比實際更會設計，並被描述為可在其上構建的基底。 [↗](https://x.com/MiladmoHQ/status/2052826699952443776)
-- 找到可立即整合到任何專案的現成設計系統，用於建立美觀頁面。 [↗](https://x.com/jamesqquick/status/2052801105898209523)
-- Claude Code 寫出差的 React；React Doctor 對一個 vibe-coded 專案評 42/100（CRITICAL），於 18 檔案發現 36 個問題，包含狀態管理、broken effects、以陣列索引當 ke [↗](https://x.com/ErickSky/status/2052837420580970988)
-- TanStack Form 現在原生支援 Preact，無需 React 相容模式，並感謝 Preact 維護者 Jovi De Croock 協助移植。 [↗](https://x.com/tan_stack/status/2052809298615394764)
-- Astro 6.3 推出，實驗性 advanced routing 讓使用者掌控請求管線，可自帶 Hono、組合 handlers 並精確控制執行順序。 [↗](https://x.com/astrodotbuild/status/2052455580074131947)
+- zero-native 用 Zig 與 web UI 建置原生桌面與行動應用，生成小型二進位檔並支援 Next.js/Vue/Svelte/Vite/React [↗](https://x.com/ctatedev/status/2052907884728467699)
+- 用一行 CSS（font-size: clamp(1rem, 1vw, 1.75rem)）實現各螢幕的響應式字體，無需媒體查詢或斷點 [↗](https://x.com/kyrylo/status/2053338909212635500)
+- 在對 300 名 builders 的演講中，他說若不知道 shadcn 就去 Google 並使用它 [↗](https://x.com/netadror/status/2049581817229983932)
+- 放棄 Next.js，認為 RSC 實務上會把簡單應用變成分散式系統，增加抽象而非清晰 [↗](https://x.com/icanvardar/status/2053157177162977353)
+- 開發者推出 Logo Lattice，訴求快速、簡單且免費，並強調 100% 瀏覽器執行與對作品完整所有權 [↗](https://x.com/ldo_dev/status/2053058677293162537)
+- 在 React Native 0.86-RC Release Notes 中看到 view transitions，可能為實驗性但新增動畫原語受歡迎。 [↗](https://x.com/Danny_H_W/status/2053100634178498896)
 
 ## 💰 財經
 
-- 2022 MVP 約 $50K–$150K、耗數月；2026 獨立創辦人可在週末上線，門檻降 1,000 倍；不到 3% 的自籌 SaaS 創辦人達 $1.2M ARR。 [↗](https://x.com/TheGeorgePu/status/2053009619027431557)
-- BlackRock 在週末低流動時段開始清算加密貨幣，每幾分鐘拋售數百萬美元的比特幣與以太坊，並暗示週一會有壞消息。 [↗](https://x.com/CryptoNobler/status/2053010409586663532)
-- 推出一個面向外國人的韓國股市資訊網站，宣稱 100% 免費、無廣告且免登入。 [↗](https://x.com/DeepDive_KR/status/2052951148441788904)
-- Coinbase 週二裁員700人（14%）；執行長備忘錄將市場與 AI 並列，並公布新組織圖：取消純管理者、CEO 下最多五層、以一人團隊運行 AI agents。 [↗](https://x.com/TheGeorgePu/status/2052962784682410125)
-- Michael Burry 建立約 10 億美元空頭部位：約 9.12 億美元做空 $PLTR、1.87 億美元做空 $NVDA。 [↗](https://x.com/DeFiTracer/status/2052907300529021104)
-- 貼文指出一名自稱 100% 勝率的川普內部人士在川普緊急宣布前開出 6,000 萬美元多單，並表示其過去三筆交易獲利 1.3 億美元。 [↗](https://x.com/CryptoNobler/status/2052780202271318331)
+- 他曾建立 3,000 萬美元房地產組合，於加密崩盤中全失，之後以每件 0.50 美元購買無法銷售的零售存貨重新開始 [↗](https://x.com/hammertime_one/status/2053168877748527325)
+- 一名 23 歲芝加哥人上月從 Polymarket 和 Hyperliquid 提領 $487,290，他不看圖、不調倉、不查 PnL，gabagool22 稱為「High-frequency trading farm」。 [↗](https://x.com/slash1sol/status/2053262391920460018)
+- CME 在 $80–82K 的缺口被填補，空頭被清算，交易量在高位乾涸，200 日均線首次接觸即拒絕，下一站 $75K。 [↗](https://x.com/leshka_eth/status/2053075781874753798)
+- SEC 主席 Paul Atkins 表示正在以區塊鏈構建金融系統，稱區塊鏈比任何傳統金融系統更透明。 [↗](https://x.com/Stellar_Rippler/status/2053214883823653216)
+- 首次下 parlay 複式注，在預測市場挑選並合併下注，30 秒內完成，$10 投注 x2.20 若雙方命中返 $22。 [↗](https://x.com/hammertime_one/status/2053141151104864419)
 
 ## 📌 其他
 
-- Replit 的 Amjad Masad 在一年內把 ARR 從 2.5M 提升到 250M，並坦率談及前十年的裁員與人員流失。 [↗](https://x.com/VedranRasic/status/2052841796804448388)
-- 現代社會常把東西丟棄，讓深度修復成為失落的技藝，多數人習慣在污垢上生活，漸漸忘記原本表面的樣貌。 [↗](https://x.com/PeachProof23/status/2052685057077153888)
-- 身為聾人教育老師與 EdTech 創辦人，我很高興推動教育科技觸及常被傳統科技忽視的學習者、教師與社群，並感謝 Replit，我對獲獎感到榮幸。 [↗](https://x.com/NIftek/status/2052848364769685654)
-- 這可能是一段東南亞製作的「假日本刀」淬火過程影片，展示用感應加熱爐把刀刃加熱到通紅，爐體向上彎曲不少。 [↗](https://x.com/daizo160/status/2052831255742550048)
-- 多數 Obsidian vault 擷取有效但沒有回流，六個月後可能有 400 筆筆記卻不知寫什麼，建議建立回流路徑並使用 5 個資料夾（如 00-INBOX）。 [↗](https://x.com/alphabatcher/status/2052753374160838896)
+- 宣稱洛杉磯有超過 40K 吸毒者挾持居民，並呼籲今天投票支持 Pratt。 [↗](https://x.com/spencerpratt/status/2052981973409513626)
+- hobbyist 的動機是促使成功創辦人在賺夠後仍持續投入公司的強大動力，因為那是他們心愛的專案。 [↗](https://x.com/paulg/status/2053432032621965741)
+- 今晚用一小時觀看這段 60 分鐘的 MIT 講座；貼文說它比所有創業書合起來更能教你建立公司 [↗](https://x.com/anujcodes_21/status/2053105204292391057)
+- 英國保育區一隻原本怕水的小水獺，靠飼養員設計的抓魚裝置逐漸習慣水並學會潛水。 [↗](https://x.com/GuGi263/status/2053296464550367416)
+- 2000 年代出生、哈爾濱工業大學畢業的中國男子辭職後，在租屋一間房內做 Amazon 商品銷售，想法很離奇。 [↗](https://x.com/kuri_matsu1/status/2053121495757623420)
 
 ---
-📊 採集 314 條，精選 50 則 ｜ 來源：X ｜ 更新：11:31 UTC
+📊 採集 298 條，精選 50 則 ｜ 來源：X ｜ 更新：12:46 UTC
