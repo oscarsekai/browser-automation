@@ -1,5 +1,5 @@
 # X 動態摘要
-📅 2026 年 5 月 19 日 ｜ 最後更新：15:06 UTC
+📅 2026 年 5 月 19 日 ｜ 最後更新：15:12 UTC
 
 ## 🤖 AI 模型與工具
 
@@ -20,9 +20,9 @@
 - 這則貼文聚焦 AI agents。 [↗](https://x.com/bindureddy/status/2056488780660343122)
 - 這則貼文聚焦 AI agents。 [↗](https://x.com/Creatify_AI/status/2056431644056441007)
 - Components may fail, but the system cannot [↗](https://x.com/Dell/status/2056563278629703800)
+- 這則貼文聚焦 AI agents。 [↗](https://x.com/huntlovell/status/2056465854230053058)
 - Excited that our paper StreamdiffusionV2 received the Best Research Paper Award at #MLSys26 [↗](https://x.com/Chenfeng_X/status/2056532144990851110)
 - 這則貼文聚焦 React。 [↗](https://x.com/SawyerMerritt/status/2056477364134044055)
-- INTERESTING: Massachusetts Institute of Technology students built an AI-powered wearable hand controlled by Anthropic’s [↗](https://x.com/Cointelegraph/status/2056498651401445875)
 
 ## ⚙️ 軟體工程
 
@@ -30,9 +30,9 @@
 - Silicon is running out of runway [↗](https://x.com/mmoderwell/status/2056421239111979022)
 - updated setup: - warp (terminal) - hermes (harness) - codex / claude / zai / deepseek - raycast (spotlight) - obsidian ( [↗](https://x.com/_jonatasantos/status/2056035232688587042)
 - Launching Mentra Live open-source smart glasses [↗](https://x.com/caydengineer/status/2056445561428218004)
-- 這則貼文聚焦 AI agents。 [↗](https://x.com/huntlovell/status/2056465854230053058)
 - He weighs 198 lbs, can haul a mini-fridge, and still hits a backflip it’s showing off [↗](https://x.com/coinbureau/status/2056468616623853959)
 - 這則貼文聚焦 prompt 設計。 [↗](https://x.com/jandedobbeleer/status/2056439557004972148)
+- 這則貼文聚焦 Claude prompts，強調加快處理速度。 [↗](https://x.com/Blum_OG/status/2056332206532862311)
 
 ## 🖥️ 前端開發
 
@@ -52,14 +52,14 @@
 - BREAKING BLACKROCK JUST DUMPED $450,000,000.00 IN BITCOIN RIGHT AFTER THE U [↗](https://x.com/CryptoNobler/status/2056726882708566092)
 - BANKS ARE JUST WAITING FOR THE GREEN LIGHT Raoul Pal: Once the CLARITY ACT passes ALL the banks are going to come in an [↗](https://x.com/BankXRP/status/2056328387355136400)
 - BREAKING: SEC IS ABOUT TO INTRODUCE STOCK TRADING ON THE BLOCKCHAIN THE BIGGEST STOCKS, $NVDA OR $AAPL WILL BE TRADED 24 [↗](https://x.com/DeFiTracer/status/2056720151760744749)
-- Sam Altman 將全部流動資產投入抗老公司 Retro Biosciences 並注資超過 10 億美元。 [↗](https://x.com/Ric_RTP/status/2056371812519362921)
-- StiltaIP 完成由 a16z 領投的 1050 萬美元融資，旨在提升專利分析與法律工作效率。 [↗](https://x.com/oskarblock/status/2056706800552902666)
+- Sam Altman just revealed he put his ENTIRE liquid net worth into one company to reverse aging [↗](https://x.com/Ric_RTP/status/2056371812519362921)
+- In 2014, Peter Thiel gave a one-hour masterclass on how to build a monopoly from scratch [↗](https://x.com/saylordocs/status/2056341529355063756)
+- We just raised $10.5M led by @a16z [↗](https://x.com/oskarblock/status/2056706800552902666)
 
 ## 📌 其他
 
 - Your morning can be one Obsidian note instead of 45 minutes of tab-hopping [↗](https://x.com/alphabatcher/status/2056640940387827932)
 - BREAKING NEWS: JAMES O'KEEFE INVESTIGATION LEADS TO DOJ INDICTMENT OF ELECTION FRAUDSTER IN LOS ANGELES, CA Brenda Brown [↗](https://x.com/JamesOKeefeIII/status/2056411089894576281)
-- Peter Thiel 主講壟斷企業構建課程，解析 Google 與 PayPal 擊敗競爭對手的關鍵。 [↗](https://x.com/saylordocs/status/2056341529355063756)
 
 ---
-📊 採集 310 條，精選 50 則 ｜ 來源：X ｜ 更新：15:06 UTC
+📊 採集 310 條，精選 50 則 ｜ 來源：X ｜ 更新：15:12 UTC
