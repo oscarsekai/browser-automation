@@ -1,5 +1,5 @@
 # X 動態摘要
-📅 2026 年 5 月 19 日 ｜ 最後更新：15:12 UTC
+📅 2026 年 5 月 19 日 ｜ 最後更新：15:17 UTC
 
 ## 🤖 AI 模型與工具
 
@@ -16,23 +16,25 @@
 - 這則貼文聚焦 AI agents。 [↗](https://x.com/MervinPraison/status/2056705494647963704)
 - Prism is an AI-native recruiting agency [↗](https://x.com/ycombinator/status/2056449742805065984)
 - 這則貼文聚焦 React。 [↗](https://x.com/chetaslua/status/2056676690051662193)
-- 這則貼文整理原文的重點脈絡，強調加快處理速度。 [↗](https://x.com/browomo/status/2056291094862692389)
 - 這則貼文聚焦 AI agents。 [↗](https://x.com/bindureddy/status/2056488780660343122)
 - 這則貼文聚焦 AI agents。 [↗](https://x.com/Creatify_AI/status/2056431644056441007)
 - Components may fail, but the system cannot [↗](https://x.com/Dell/status/2056563278629703800)
-- 這則貼文聚焦 AI agents。 [↗](https://x.com/huntlovell/status/2056465854230053058)
 - Excited that our paper StreamdiffusionV2 received the Best Research Paper Award at #MLSys26 [↗](https://x.com/Chenfeng_X/status/2056532144990851110)
 - 這則貼文聚焦 React。 [↗](https://x.com/SawyerMerritt/status/2056477364134044055)
+- 數學家陶哲軒提出反直覺觀點，認為人工智慧看起來不聰明是因為人類對智慧的定義一直有誤。 [↗](https://x.com/realBigBrainAI/status/2056351691533136167)
+- 開發者應將 Claude Code 視為配置環境而非搜尋列，透過 /init 對應架構並建立 CLAUDE.md 規範。 [↗](https://x.com/Blum_OG/status/2056332206532862311)
 
 ## ⚙️ 軟體工程
 
 - 這則貼文聚焦 React。 [↗](https://x.com/Megatron_ron/status/2056640119927419086)
 - Silicon is running out of runway [↗](https://x.com/mmoderwell/status/2056421239111979022)
 - updated setup: - warp (terminal) - hermes (harness) - codex / claude / zai / deepseek - raycast (spotlight) - obsidian ( [↗](https://x.com/_jonatasantos/status/2056035232688587042)
+- 這則貼文整理原文的重點脈絡，強調加快處理速度。 [↗](https://x.com/browomo/status/2056291094862692389)
 - Launching Mentra Live open-source smart glasses [↗](https://x.com/caydengineer/status/2056445561428218004)
+- 這則貼文聚焦 AI agents。 [↗](https://x.com/huntlovell/status/2056465854230053058)
 - He weighs 198 lbs, can haul a mini-fridge, and still hits a backflip it’s showing off [↗](https://x.com/coinbureau/status/2056468616623853959)
+- INTERESTING: Massachusetts Institute of Technology students built an AI-powered wearable hand controlled by Anthropic’s [↗](https://x.com/Cointelegraph/status/2056498651401445875)
 - 這則貼文聚焦 prompt 設計。 [↗](https://x.com/jandedobbeleer/status/2056439557004972148)
-- 這則貼文聚焦 Claude prompts，強調加快處理速度。 [↗](https://x.com/Blum_OG/status/2056332206532862311)
 
 ## 🖥️ 前端開發
 
@@ -52,9 +54,9 @@
 - BREAKING BLACKROCK JUST DUMPED $450,000,000.00 IN BITCOIN RIGHT AFTER THE U [↗](https://x.com/CryptoNobler/status/2056726882708566092)
 - BANKS ARE JUST WAITING FOR THE GREEN LIGHT Raoul Pal: Once the CLARITY ACT passes ALL the banks are going to come in an [↗](https://x.com/BankXRP/status/2056328387355136400)
 - BREAKING: SEC IS ABOUT TO INTRODUCE STOCK TRADING ON THE BLOCKCHAIN THE BIGGEST STOCKS, $NVDA OR $AAPL WILL BE TRADED 24 [↗](https://x.com/DeFiTracer/status/2056720151760744749)
-- Sam Altman just revealed he put his ENTIRE liquid net worth into one company to reverse aging [↗](https://x.com/Ric_RTP/status/2056371812519362921)
-- In 2014, Peter Thiel gave a one-hour masterclass on how to build a monopoly from scratch [↗](https://x.com/saylordocs/status/2056341529355063756)
-- We just raised $10.5M led by @a16z [↗](https://x.com/oskarblock/status/2056706800552902666)
+- Sam Altman 將全部流動資產投入抗衰老公司 Retro Biosciences，該公司估值已達 50 億美元。 [↗](https://x.com/Ric_RTP/status/2056371812519362921)
+- Peter Thiel 透過大師課程分析 Google 與 Facebook 如何建立壟斷地位並戰勝競爭對手。 [↗](https://x.com/saylordocs/status/2056341529355063756)
+- StiltaIP 獲得 a16z 領投的 1,050 萬美元融資，旨在透過 AI 加速專利法律分析工作。 [↗](https://x.com/oskarblock/status/2056706800552902666)
 
 ## 📌 其他
 
@@ -62,4 +64,4 @@
 - BREAKING NEWS: JAMES O'KEEFE INVESTIGATION LEADS TO DOJ INDICTMENT OF ELECTION FRAUDSTER IN LOS ANGELES, CA Brenda Brown [↗](https://x.com/JamesOKeefeIII/status/2056411089894576281)
 
 ---
-📊 採集 310 條，精選 50 則 ｜ 來源：X ｜ 更新：15:12 UTC
+📊 採集 310 條，精選 50 則 ｜ 來源：X ｜ 更新：15:17 UTC
