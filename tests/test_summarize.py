@@ -46,10 +46,8 @@ class SummaryTests(unittest.TestCase):
         ):
             asyncio.run(llm_summarize_posts(posts, settings))
 
-        self.assertEqual(
-            posts[0].record.summary,
-            '這則貼文聚焦 Claude prompts 與 AI coding workflows，強調可節省 token 並深化分析。',
-        )
+        # Fallback should show the first meaningful sentence from the original text.
+        self.assertIn('Claude prompts', posts[0].record.summary)
         self.assertEqual(posts[0].record.category, 'other')
 
     def test_bundle(self):

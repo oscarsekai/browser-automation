@@ -137,41 +137,12 @@ def _join_benefits(benefits: list[str]) -> str:
 def _fallback_summary(text: str) -> str:
     """Produce a fallback summary when LLM output is unavailable.
 
-    Priority order:
-    1. For CJK text: extract the first meaningful sentence directly.
-    2. For non-CJK text with recognisable keywords: produce a concise Chinese
-       description so the digest stays in 繁體中文.
-    3. For non-CJK text without recognisable keywords: show the first
-       meaningful sentence from the original text — real content beats a
-       generic placeholder.
-    4. Last resort: generic placeholder.
+    Always extracts the first meaningful sentence from the original text so
+    the reader sees real content rather than a generic keyword phrase.
     """
     if not text:
         return ''
-
-    normalized = normalize_whitespace(text)
-    if _contains_cjk(normalized):
-        return _extract_meaningful_sentence(normalized)
-
-    topics = _collect_fallback_topics(normalized)
-    benefits = _collect_fallback_benefits(normalized)
-
-    if topics or benefits:
-        summary = '這則貼文'
-        if topics:
-            summary += f'聚焦 {join_phrases(topics)}'
-        else:
-            summary += '整理原文的重點脈絡'
-        if benefits:
-            summary += f'，強調{_join_benefits(benefits)}'
-        return summary + '。'
-
-    # No keyword match — show actual content rather than a meaningless placeholder.
-    sentence = _extract_meaningful_sentence(normalized)
-    if sentence:
-        return sentence
-
-    return '這則貼文整理了原文的主要觀點與關鍵脈絡。'
+    return _extract_meaningful_sentence(normalize_whitespace(text))
 
 
 def _load_codex_token() -> Optional[str]:
@@ -572,7 +543,11 @@ async def llm_summarize_posts(posts: list[ScoredPost], settings: Settings) -> No
     if not posts:
         return
 
-    BATCH = 10
+    # Gemini CLI has high per-process startup overhead (agents/skills loading),
+    # so use smaller batches to stay within the per-call timeout budget.
+    BATCH = 5 if settings.summarize_backend == 'gemini' else 10
+    CLI_TIMEOUT = 180 if settings.summarize_backend == 'gemini' else 90
+
     summary_map: dict[str, str] = {}
     category_map: dict[str, str] = {}
 
@@ -586,7 +561,7 @@ async def llm_summarize_posts(posts: list[ScoredPost], settings: Settings) -> No
         elif settings.summarize_backend == 'acp':
             raw = await _run_cli_acp(prompt, settings, timeout=120)
         if not raw and settings.summarize_backend in {'acp', 'codex', 'gemini'}:
-            raw = _run_llm_cli_exec(prompt, settings, timeout=90)
+            raw = _run_llm_cli_exec(prompt, settings, timeout=CLI_TIMEOUT)
         if raw:
             s, c = _parse_summary_map(raw)
             summary_map.update(s)
