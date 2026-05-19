@@ -57,10 +57,12 @@ def join_phrases(items: list[str]) -> str:
 def _extract_meaningful_sentence(text: str) -> str:
     if not text:
         return ''
-    sentences = re.split(r'[.!?。！？\n]+', text)
+    # Split on sentence-ending punctuation, but not on dots inside version
+    # numbers or decimals (e.g. "4.1.6" or "3.14").
+    sentences = re.split(r'(?<![0-9])\.(?![0-9])|[!?。！？\n]+', text)
     for sentence in sentences:
         normalized = normalize_whitespace(sentence)
-        if len(normalized) >= 15 and any(ch.isalpha() for ch in normalized):
+        if len(normalized) >= 20 and any(ch.isalpha() for ch in normalized):
             return normalized[:120]
     return normalize_whitespace(text)[:120]
 
@@ -133,7 +135,17 @@ def _join_benefits(benefits: list[str]) -> str:
 
 
 def _fallback_summary(text: str) -> str:
-    """Produce a Traditional Chinese fallback summary when LLM output is unavailable."""
+    """Produce a fallback summary when LLM output is unavailable.
+
+    Priority order:
+    1. For CJK text: extract the first meaningful sentence directly.
+    2. For non-CJK text with recognisable keywords: produce a concise Chinese
+       description so the digest stays in 繁體中文.
+    3. For non-CJK text without recognisable keywords: show the first
+       meaningful sentence from the original text — real content beats a
+       generic placeholder.
+    4. Last resort: generic placeholder.
+    """
     if not text:
         return ''
 
@@ -153,6 +165,11 @@ def _fallback_summary(text: str) -> str:
         if benefits:
             summary += f'，強調{_join_benefits(benefits)}'
         return summary + '。'
+
+    # No keyword match — show actual content rather than a meaningless placeholder.
+    sentence = _extract_meaningful_sentence(normalized)
+    if sentence:
+        return sentence
 
     return '這則貼文整理了原文的主要觀點與關鍵脈絡。'
 
@@ -222,7 +239,7 @@ def _build_prompt(posts: list[ScoredPost]) -> str:
 
 
 VALID_CATEGORIES = {'ai', 'geopolitics', 'engineering', 'frontend', 'security', 'finance', 'other'}
-VALID_SUMMARIZE_CLIS = {'codex', 'copilot'}
+VALID_SUMMARIZE_CLIS = {'codex', 'copilot', 'gemini'}
 
 
 def _summarize_cli_name(settings: Settings) -> str:
@@ -235,6 +252,8 @@ def _resolve_cli_binary(settings: Settings, cli_name: str) -> str:
         return settings.summarize_cli_path
     if cli_name == 'copilot':
         return shutil.which('copilot') or COPILOT_BIN_DEFAULT
+    if cli_name == 'gemini':
+        return shutil.which('gemini') or 'gemini'
     return shutil.which('codex') or CODEX_BIN_DEFAULT
 
 
@@ -409,9 +428,37 @@ def _run_copilot_exec(
         return None
 
 
+def _run_gemini_exec(
+    prompt: str,
+    *,
+    cli_path: str | None = None,
+    timeout: int = 120,
+) -> Optional[str]:
+    gemini = cli_path or shutil.which('gemini') or 'gemini'
+    try:
+        result = subprocess.run(
+            [gemini, '--approval-mode', 'yolo', '--output-format', 'json', '-p', prompt],
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            check=False,
+        )
+        stdout = result.stdout or ''
+        # stdout may contain prefix lines (e.g. "MCP issues detected") before the JSON blob.
+        match = re.search(r'\{.*\}', stdout, re.S)
+        if not match:
+            return None
+        data = json.loads(match.group(0))
+        return str(data.get('response', '')).strip() or None
+    except (subprocess.TimeoutExpired, FileNotFoundError, OSError, json.JSONDecodeError):
+        return None
+
+
 def _run_llm_cli_exec(prompt: str, settings: Settings, timeout: int) -> Optional[str]:
     cli_name = _summarize_cli_name(settings)
     cli_path = _resolve_cli_binary(settings, cli_name)
+    if cli_name == 'gemini':
+        return _run_gemini_exec(prompt, cli_path=cli_path, timeout=timeout)
     if cli_name == 'copilot':
         return _run_copilot_exec(
             prompt,
@@ -444,6 +491,23 @@ async def _run_cli_acp(prompt: str, settings: Settings, timeout: int = 120) -> O
             ),
             timeout=timeout,
         )
+    except Exception:
+        return None
+
+
+def _run_claude_prompt(prompt: str, settings: Settings, timeout: int = 90) -> Optional[str]:
+    api_key = settings.anthropic_api_key or os.environ.get('ANTHROPIC_API_KEY')
+    if not api_key:
+        return None
+    try:
+        import anthropic
+        client = anthropic.Anthropic(api_key=api_key)
+        message = client.messages.create(
+            model=settings.summarize_model,
+            max_tokens=4096,
+            messages=[{'role': 'user', 'content': prompt}],
+        )
+        return message.content[0].text if message.content else None
     except Exception:
         return None
 
@@ -486,9 +550,11 @@ async def _llm_classify_missing_categories(posts: list[ScoredPost], settings: Se
         prompt = _build_category_prompt(batch)
 
         raw: Optional[str] = None
-        if settings.summarize_backend == 'acp':
+        if settings.summarize_backend == 'claude':
+            raw = _run_claude_prompt(prompt, settings, timeout=90)
+        elif settings.summarize_backend == 'acp':
             raw = await _run_cli_acp(prompt, settings, timeout=90)
-        if not raw and settings.summarize_backend in {'acp', 'codex'}:
+        if not raw and settings.summarize_backend in {'acp', 'codex', 'gemini'}:
             raw = _run_llm_cli_exec(prompt, settings, timeout=60)
         if raw:
             category_map.update(_parse_category_map(raw))
@@ -502,7 +568,7 @@ async def _llm_classify_missing_categories(posts: list[ScoredPost], settings: Se
 
 
 async def llm_summarize_posts(posts: list[ScoredPost], settings: Settings) -> None:
-    """Populate post.record.summary and post.record.category for each post using codex exec in batches."""
+    """Populate post.record.summary and post.record.category for each post in batches."""
     if not posts:
         return
 
@@ -515,9 +581,11 @@ async def llm_summarize_posts(posts: list[ScoredPost], settings: Settings) -> No
         prompt = _build_prompt(batch)
 
         raw: Optional[str] = None
-        if settings.summarize_backend == 'acp':
+        if settings.summarize_backend == 'claude':
+            raw = _run_claude_prompt(prompt, settings, timeout=90)
+        elif settings.summarize_backend == 'acp':
             raw = await _run_cli_acp(prompt, settings, timeout=120)
-        if not raw and settings.summarize_backend in {'acp', 'codex'}:
+        if not raw and settings.summarize_backend in {'acp', 'codex', 'gemini'}:
             raw = _run_llm_cli_exec(prompt, settings, timeout=90)
         if raw:
             s, c = _parse_summary_map(raw)

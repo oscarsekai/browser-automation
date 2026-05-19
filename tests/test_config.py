@@ -31,7 +31,7 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual(settings.raw_retention_days, 3)
             self.assertEqual(settings.summarize_backend, 'acp')
             self.assertEqual(settings.summarize_cli, 'copilot')
-            self.assertEqual(settings.summarize_model, 'gpt-5-mini')
+            self.assertEqual(settings.summarize_model, 'claude-sonnet-4-6')
 
     def test_load_settings_supports_cli_selection(self):
         with TemporaryDirectory() as tmp:

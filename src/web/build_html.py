@@ -126,9 +126,14 @@ def _theme_for_text(text: str) -> str:
 
 
 def _theme_for_post(post: ScoredPost) -> str:
-    """Use AI-assigned category if available, fall back to keyword matching."""
+    """Use AI-assigned category if available, fall back to keyword matching.
+
+    'other' is treated as unclassified: always re-try keyword matching so that
+    LLM failures (which default every post to 'other') don't collapse the whole
+    digest into the capped 'other' section.
+    """
     cat = (post.record.category or '').strip().lower()
-    if cat and cat in {name for name in SECTION_ORDER}:
+    if cat and cat in {name for name in SECTION_ORDER} and cat != 'other':
         return cat
     return _theme_for_text(post.record.text)
 
