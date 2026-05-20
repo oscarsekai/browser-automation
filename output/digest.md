@@ -1,58 +1,65 @@
 # X 動態摘要
-📅 2026 年 5 月 19 日 ｜ 最後更新：15:55 UTC
+📅 2026 年 5 月 20 日 ｜ 最後更新：12:14 UTC
 
 ## 🤖 AI 模型與工具
 
-- Browse.sh 開源專為瀏覽器任務設計的 Agent 技能生態系，能自動研究並執行複雜的端到端任務。 [↗](https://x.com/shreypandya/status/2056412013501587560)
-- Anthropic 開發團隊釋出 24 分鐘的免費 Claude 提示詞工作坊，無需註冊且無付費牆，前 8 分鐘的內容勝過 300 美元的課程。 [↗](https://x.com/ai_rohitt/status/2056376281693069544)
-- 馬斯克在 OpenAI 訴訟遭駁回後接受採訪，表示將上訴並警告此舉對美國慈善捐款開創危險先例，同時預測了 2031 年的 AI 發展。 [↗](https://x.com/LarkDavis/status/2056699508633767970)
-- Anthropic 釋出由 Claude Code 開發者主講的兩小時免費課程，教授如何建構免監督並具備終端機權限的 Claude 代理。 [↗](https://x.com/HarrisDecodes/status/2056429993744326971)
-- Anthropic 代理團隊展示了一套專為真實世界打造的四層架構多代理系統框架，呈現出真正的生產級標準。 [↗](https://x.com/cyrilXBT/status/2056652578885390357)
-- 使用者透過 Codex 的 Build macOS App 外掛搭配語音聽寫，能在不到七分鐘內快速打造出夢想中的 macOS 應用程式。 [↗](https://x.com/dkundel/status/2056523667056820227)
-- 馬斯克在陪審團駁回對 OpenAI 的訴訟後首度受訪，表示陪審團僅裁定追訴期已過而未判定公司是否遭竊，他目前已為此提出上訴。 [↗](https://x.com/jaynitx/status/2056674407695999156)
-- Hermes Agent 在 GitHub 獲得 14 萬顆星並成為 OpenRouter 榜首，它只需一個 curl 指令，具備記憶與每日自我改進能力。 [↗](https://x.com/EvanLuthra/status/2056459400563638584)
-- Muranyi 3 是一款用於製作遊戲的 AI 模型，具備改進的圖形與特效、更流暢的動畫、進階遊戲邏輯與更聰明的 NPC 行為。 [↗](https://x.com/TesanaAI/status/2056658818960949476)
-- 史丹佛大學免費釋出一部兩小時的講座影片，內容教導 ChatGPT 與 Claude 等大型語言模型實際的建構方式。 [↗](https://x.com/Tabbu_ai/status/2056705487828287973)
-- Hermes Agent V0.14 發布，新功能包含 Super Grok OAuth、支援 OpenAI Codex、內建 XSearch 與電腦使用能力。 [↗](https://x.com/MervinPraison/status/2056705494647963704)
-- Jonata Santos 更新其開發設置，整合 Warp、Hermes、Claude 與 DeepSeek，並對測試中的 AI 代理 Devin 給予好評。 [↗](https://x.com/_jonatasantos/status/2056035232688587042)
-- AI 原生招聘機構 Prism 正式推出，使用者提供招聘需求後，該工具能自動尋找、聯繫並交付準備好面試的候選人。 [↗](https://x.com/ycombinator/status/2056449742805065984)
-- Gemini Omni 展現出利用影片解釋科學與數學的能力，能為每位學生針對特定科學主題產生客製化的教學影片。 [↗](https://x.com/chetaslua/status/2056676690051662193)
-- 某位開發者打造一款 AI 雙輪機器人，能後空翻並獨立跨越崎嶇地形，速度快於 Spot 且耗電量低四倍。 [↗](https://x.com/browomo/status/2056291094862692389)
-- Agent Swarms 結合 Opus 4.7、GPT 5.5 與 Gemini 3.2 構建複雜全棧軟體，為組織打造客製化工具。 [↗](https://x.com/bindureddy/status/2056488780660343122)
-- Creatify Agent 推出首款多代理編排器，能根據使用者提供的創意製作不含 AI 廢料的病毒式廣告。 [↗](https://x.com/Creatify_AI/status/2056431644056441007)
-- Mentra Live 開源智慧眼鏡正式全面發售，目前已出貨數千副，開發者可藉此建立脫離螢幕的應用程式，讓 AI 走入真實世界。 [↗](https://x.com/caydengineer/status/2056445561428218004)
-- 禮來公司正利用 AI 與 Dell 基礎架構來擴展藥物研發與製造的規模，以實踐系統絕不故障的理念。 [↗](https://x.com/Dell/status/2056563278629703800)
-- deepagents 在最新版本中專注於打造最高效能的測試框架，並致力於提供開發者更愉快的構建與使用體驗。 [↗](https://x.com/huntlovell/status/2056465854230053058)
+- Qwen3.7-Max 正式發布，支援構建前端原型與多智能體協作，並在自主測試中實現 10 倍的速度提升。 [↗](https://x.com/LunchangG7603/status/2056951789715706346)
+- Anthropic 釋出由原廠團隊授課的 27 分鐘 Claude 提示工程免費工作坊，無須註冊或付費即可觀看。 [↗](https://x.com/anujcodes_21/status/2056925378128625735)
+- Anthropic、OpenAI 與 Meta 均採用專門工具生成 SDK，因為 LLM 難以確保 SDK 的一致性與可靠性。 [↗](https://x.com/GergelyOrosz/status/2056770702586360140)
+- Andrej Karpathy 解釋當 AI 接管知識工作時對人類產生的影響。 [↗](https://x.com/rewind02/status/2057031915283079534)
+- 開發者利用環境代理引擎消化並分析大量執行追蹤紀錄，藉此持續優化 AI agent。 [↗](https://x.com/sydneyrunkle/status/2056801496566775936)
+- GitHub 推出要求 AI agent 在撰寫程式碼前必須先規劃完整架構並定義所有需求的系統。 [↗](https://x.com/cyrilXBT/status/2057026072404021715)
+- YC 合夥人 @t_blom 拆解如何打造具備遞迴自我改進循環的 AI 原生公司。 [↗](https://x.com/ycombinator/status/2056908727400423481)
+- Anthropic 展示用於多代理系統的四層架構框架，旨在將 Agent 提升至可實際運行的生產等級。 [↗](https://x.com/cyrilXBT/status/2056933229924372546)
+- deepagents v0.6 透過根據供應商指南調整提示詞與工具描述，在模型層級優化執行效能。 [↗](https://x.com/sydneyrunkle/status/2056803223240053091)
+- Google AI 的 Gemini 3.5 Flash 已在 GitHub Copilot 正式推出，具備強大的工具使用能力與快速反應時間。 [↗](https://x.com/github/status/2056801675042779279)
+- xAI 團隊發布 xurl 技能使用指南，讓使用者透過自然語言指揮 Hermes Agent 在 X 平台執行各項操作。 [↗](https://x.com/NousResearch/status/2056872329561710766)
+- C# 與 TypeScript 創作者 Anders Hejlsberg 認為 AI 正在將軟體開發重心從撰寫程式碼轉向審核程式碼。 [↗](https://x.com/Pragmatic_Eng/status/2056822839442120816)
+- Agent Swarms 透過 Gemini 3.5 Flash、Opus 4.7 與 GPT 5.5 xHIgh 構建多代理系統，由主代理協調工作代理自動開發全端與行動 App。 [↗](https://x.com/abacusai/status/2056903582574661897)
+- 使用者可透過對話配置 Executor 並支援 MCP 或 GraphQL 來源熱重載，代理程式會協助安全添加金鑰且不將其存入上下文。 [↗](https://x.com/RhysSullivan/status/2056941821318860941)
+- Claude Code 工程師發布影片教學，涵蓋 CLAUDE.md 檔案、記憶快捷鍵、並行會話與提示詞模式等 Prompt 實作技巧。 [↗](https://x.com/Nona_xai/status/2056781433801175217)
+- Demis Hassabis 揭露 AGI 構建計畫，並指出機器人技術的瓶頸在於軟體智慧而非硬體設備。 [↗](https://x.com/r0ck3t23/status/2056707617955700882)
+- 使用 Lovable 串接 Gmail、日曆與雲端硬碟數據，可建立收件匣分類器、排程器及文件生成器。 [↗](https://x.com/belmiq/status/2056757054967075199)
+- Google Flow 推出 Tools 功能，使用者透過描述需求，即可自動建立影像編輯器或影片縮放工具。 [↗](https://x.com/FlowbyGoogle/status/2056810760056254718)
+- Google Antigravity 2.0 運用 93 個子代理程式，在 12 小時內構建出可執行 Doom 的作業系統框架。 [↗](https://x.com/kimmonismus/status/2056897011493044277)
+- 透過 Obsidian 與 Claude Code 的結合，使用者能打造全天候自動運行的個人作業系統。 [↗](https://x.com/cyrilXBT/status/2056741132592164958)
+
+## 🌐 地緣政治
+
+- Costco 在集體訴訟中抗辯關稅退稅要求，主張消費者已獲得與其支付金額相符的商品。 [↗](https://x.com/Polymarket/status/2056797573080305916)
+
+## ⚙️ 軟體工程
+
+- 世衛組織因伊波拉病毒僅透過直接接觸傳播而反對美國旅遊禁令，建議改以接觸者追蹤應對。 [↗](https://x.com/disclosetv/status/2057038211499557228)
 
 ## 🖥️ 前端開發
 
-- 杭州宇樹科技展現 G1 機器人平衡測試，實機示範機器人在受力失去平衡時如何即時反應。 [↗](https://x.com/Megatron_ron/status/2056640119927419086)
-- 開發者開源 ngx-transforms 函式庫，提供 90 個可組合的 Angular Standalone Pipes 並分享開發心得。 [↗](https://x.com/mofirojean/status/2056133240520380914)
-- 開發者開源以純 JS 撰寫的人群系統，讓瀏覽器能在不使用著色器的情況下，以 60fps 順暢運行 2000 個行人。 [↗](https://x.com/boona11/status/2056533927104233971)
-- 前 Vercel 工程師 Mat 曾參與 Next.js 早期開發，他將經驗化為開源專案，登上 GitHub 趨勢榜首並獲破九萬顆星。 [↗](https://x.com/axichuhai/status/2056559813308383669)
-- 開發者將 Vue Fes Japan 2025 網站中的墨流著色器視覺效果，移植到了 TresJS 與 Three.js 的 TSL 著色語言。 [↗](https://x.com/alvarosabu/status/2056656448680075556)
-- Hermes Web UI v0.5.30 更新發佈，支援 Grok 4.3 影片模型本地介面，並修復了模型對話歷史紀錄的結構化問題。 [↗](https://x.com/libapi_/status/2056705525975585210)
-- AXL Labs 展示「liquid photos」iOS 應用程式概念，展現未來使用者介面與現今截然不同的感受。 [↗](https://x.com/mr_sudo_/status/2056392140578554337)
+- Gemini 3.5 Flash 在 Frontend 程式競技場排名第九，得分 1507 分較 Gemini-3 Flash 提升 70 分。 [↗](https://x.com/arena/status/2056793176720195693)
+- Andrew Prifer 推出 Liquid DOM，在 Web 上實現支援形狀變形與動態折射等特性的 Liquid Glass 效果。 [↗](https://x.com/AndrewPrifer/status/2056923983581446529)
+- yui540 在作品集網站建立直播存檔頁面，並計畫再次進行 CSS 動畫程式碼直播。 [↗](https://x.com/yui540/status/2057045740195885538)
+- 開發者針對維基百科開發可視化瀏覽器，解決使用者因開啟過多分頁而遺忘瀏覽起點的問題。 [↗](https://x.com/om_patel5/status/2056920337212674234)
+- 開發者工具包含開源履歷生成器 rxresu.me、高解析度影音生成 Sana、免費 CSS 片段與 AI 生成代碼的設計層 typeui.sh。 [↗](https://x.com/csaba_kissi/status/2056982047818662306)
+- @callstack/react-native-brownfield 最新版本已正式公開發布，並提供逐步安裝指南。 [↗](https://x.com/hurali97/status/2056355706035487134)
+- ghostty-web 實驗在瀏覽器中運行，每個窗格皆連接至伺服器上可跨重新整理保存的實體 nushell pty。 [↗](https://x.com/cablelounger/status/2056854275980931551)
+- Claude 透過電腦使用功能操作真實 UI，並藉由提升點擊準確度與記錄操作示範確保生產環境可靠性。 [↗](https://x.com/ClaudeDevs/status/2056835339193561170)
+- Dither 與 Particle UI 呈現包含 Gamma 波與 Beta 波的腦波律動，展示神經元同步通訊的電脈衝。 [↗](https://x.com/praveenisomer/status/2056707186064257038)
+- React Native 透過 OpenMLS 與 Rust 實現約 0.87ms 的加密，讓 MLS 群組聊天具備原生效能。 [↗](https://x.com/adnansahinovich/status/2057031524092985714)
+- Tim Wilson 發布一組 Tailwind CSS 工具，利用滾動驅動動畫在滾動容器邊緣實現遮罩與淡出效果。 [↗](https://x.com/actualTimWilson/status/2056803280651772296)
+- 設計公司 Zimal 招聘美國網頁設計師與 UI-UX 開發者，提供月薪 4,000 美元並支援遠端工作。 [↗](https://x.com/Zimal_kk/status/2056595155000713377)
+- React Compiler 的 Rust 版本目前運作良好，開發團隊正於 Meta 的 Monorepo 進行測試與修復，隨後將在 Cursor 的專案中展開測試。 [↗](https://x.com/poteto/status/2056865079543681329)
+- Codex 現在可操作 Open Design 工具，自動執行工作流選擇、檔案檢查、互動測試與產品迭代。 [↗](https://x.com/nexudotio/status/2057048563998208235)
+- Alpha Ω Double Dragon Core Engine Scaffold v1.0 發表，這是一款探索外殼繼承與手性的瀏覽器原生遞迴系統。 [↗](https://x.com/ArchMic44660667/status/2056853445563277418)
+- Swmansion 正在製作以 TypeGPU 為核心的實務指南，透過程式碼片段與範例協助開發者掌握 WebGPU 基礎。 [↗](https://x.com/swmansion/status/2056756735574946149)
+- Milad Akarie 利用 Cue 實作 X 風格側邊欄，並透過 CueDragScrubber 直接操作控制器以簡化 Flutter 動畫程式碼。 [↗](https://x.com/milad_akarie/status/2056804475642265721)
+- 開發者在 @orca_build 內部打造更優質的 GitHub，目前正進行 HTML 設計的迭代工作。 [↗](https://x.com/JinjingLiang/status/2056920082681622597)
 
 ## 🔐 資安
 
-- Vitest 發佈 4.1.6 與 5.0.0-beta.3 版本，修復包含任意檔案暴露、任意代碼執行與 XSS 等安全漏洞。 [↗](https://x.com/vitest_dev/status/2056716688259727677)
+- Terraria 開發者 Andrew Spinks 失去 Google 帳號存取權，Truffle Security 揭露舊網域可被用於濫用 Google OAuth。 [↗](https://x.com/alphabatcher/status/2056696631265726837)
 
 ## 💰 財經
 
-- 貝萊德在美國市場開盤後隨即拋售價值 4.5 億美元的比特幣，目前正持續每幾分鐘賣出數百萬美元清算加密貨幣。 [↗](https://x.com/CryptoNobler/status/2056726882708566092)
-- 各大銀行正等待《Clarity Act》通過，屆時將迅速建構加密貨幣基礎設施，並使用已受監管且經考驗的代幣軌道。 [↗](https://x.com/BankXRP/status/2056328387355136400)
-- 美國證券交易委員會將在區塊鏈引入股票交易，NVDA 或 AAPL 等大型股票將可 24/7 全天候交易。 [↗](https://x.com/DeFiTracer/status/2056720151760744749)
-- Sam Altman 將所有流動淨資產投入抗衰老公司 Retro Biosciences，該公司目前估值達 50 億美元。 [↗](https://x.com/Ric_RTP/status/2056371812519362921)
-- a16z 領投 StiltaIP 一千零五十萬美元融資，該公司改善專利分析速度與成本，已獲多家 AmLaw 100 事務所採用。 [↗](https://x.com/oskarblock/status/2056706800552902666)
-
-## 📌 其他
-
-- 矽面臨物理問題的發展瓶頸，為了持續提升晶片效能需要新化學技術，研究人員已轉向石墨烯與 MoS₂ 等原子級厚度的二維材料。 [↗](https://x.com/mmoderwell/status/2056421239111979022)
-- 使用者在 Obsidian 為筆記設定屬性並讓 Dataview 抓取即時畫面，就能建立讀取個人資料庫的儀表板來取代分頁切換。 [↗](https://x.com/alphabatcher/status/2056640940387827932)
-- James O'Keefe 的調查促使美國司法部在洛杉磯起訴選舉欺詐者 Brenda Brown，這名被隱蔽攝影機拍下的嫌犯已經認罪。 [↗](https://x.com/JamesOKeefeIII/status/2056411089894576281)
-- Boston Dynamics 開發重 198 磅的 Atlas 機器人，具備搬運小冰箱與後空翻能力，並採用液壓系統驅動。 [↗](https://x.com/coinbureau/status/2056468616623853959)
-- Peter Thiel 在 2014 年的大師課中，以 Google 等公司為例，說明如何從零開始建立壟斷企業。 [↗](https://x.com/saylordocs/status/2056341529355063756)
+- FOMC 召開緊急會議討論降息、流動性注入與石油危機，市場預計將會出現劇烈波動。 [↗](https://x.com/CryptoNobler/status/2056980747517301127)
 
 ---
-📊 採集 310 條，精選 50 則 ｜ 來源：X ｜ 更新：15:55 UTC
+📊 採集 334 條，精選 50 則 ｜ 來源：X ｜ 更新：12:14 UTC
